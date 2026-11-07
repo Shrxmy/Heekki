@@ -1,0 +1,23 @@
+services:
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:4.2.2
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./lavalink/application.yml:/opt/Lavalink/application.yml:ro
+    ports:
+      - "127.0.0.1:2333:2333"
+    depends_on:
+      - ytcipher
+
+  # Decodes YouTube stream signatures for the youtube plugin (https://github.com/kikkia/yt-cipher).
+  # No published ports: only Lavalink can reach it, at http://ytcipher:8001.
+  ytcipher:
+    image: ghcr.io/kikkia/yt-cipher:master
+    restart: unless-stopped
+    environment:
+      - API_TOKEN=${YT_CIPHER_PASSWORD:?set YT_CIPHER_PASSWORD in .env}
+      - OVERRIDE_PLAYER_VARIANT=IAS
+      - OVERRIDE_SCRIPT_VARIANT=IAS

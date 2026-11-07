@@ -1,0 +1,72 @@
+# Lavalink v4 server config for this bot. Started by docker-compose.yml.
+server:
+  port: 2333
+  address: 0.0.0.0
+
+lavalink:
+  plugins:
+    # shortcut: pinned snapshot of main (2026-09-17) for the TV-client fix (issue #226) not yet in 1.18.2;
+    # switch back to the next release (1.18.3+) from /releases once it's out.
+    - dependency: "dev.lavalink.youtube:youtube-plugin:2be8e542d3f6f178e048dca565892684c2e40177"
+      repository: "https://maven.lavalink.dev/snapshots"
+      snapshot: true
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.3"
+      repository: "https://maven.lavalink.dev/releases"
+  server:
+    password: "${LAVALINK_PASSWORD:youshallnotpass}"
+    sources:
+      youtube: false # replaced by the youtube plugin below
+      soundcloud: true
+      bandcamp: true
+      twitch: true
+      vimeo: true
+      http: true
+      local: false
+    filters:
+      volume: true
+      equalizer: true
+      karaoke: true
+      timescale: true
+      tremolo: true
+      vibrato: true
+      distortion: true
+      rotation: true
+      channelMix: true
+      lowPass: true
+
+plugins:
+  youtube:
+    enabled: true
+    remoteCipher: # the ytcipher container from docker-compose.yml
+      url: "http://ytcipher:8001"
+      password: "${YT_CIPHER_PASSWORD:}"
+      userAgent: "musicbotforsomeone"
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - MUSIC
+      - TV # plays through the signed-in account below
+      - ANDROID_VR
+      - WEB
+      - WEBEMBEDDED
+    # YouTube blocks anonymous playback for most videos. Sign in with a SPARE Google account (bots can get it banned).
+    # With no token, the log prints a google.com/device code; afterwards it prints a refresh token for .env.
+    oauth:
+      enabled: true
+      refreshToken: "${YOUTUBE_REFRESH_TOKEN:}"
+  lavasrc:
+    providers:
+      - "ytsearch:\"%ISRC%\""
+      - "ytsearch:%QUERY%"
+    sources:
+      spotify: ${SPOTIFY_ENABLED:false} # set SPOTIFY_ENABLED=true plus the two keys below in .env
+    spotify:
+      clientId: "${SPOTIFY_CLIENT_ID:}"
+      clientSecret: "${SPOTIFY_CLIENT_SECRET:}"
+      countryCode: "US"
+
+logging:
+  level:
+    root: INFO
+    lavalink: INFO
