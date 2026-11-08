@@ -5,6 +5,7 @@ const { getPrefix } = require("../../lib/db");
 const HOME = { color: "#7632A0", colorName: "Choerry purple" };
 const CATEGORIES = {
     music: { label: "Music", blurb: "Play songs from YouTube and Spotify, with filters.", color: "#1313D6", colorName: "JinSoul blue" },
+    lastfm: { label: "Last.fm", blurb: "Scrobbles, charts, who knows, crowns and taste matches.", color: "#EB1326", colorName: "Kim Lip red" },
     loona: { label: "LOONA", blurb: "Member profiles, photos and fun facts.", color: "#39BB9D", colorName: "Go Won Eden green" },
     fun: { label: "Fun & Games", blurb: "Games and small toys for the chat.", color: "#FFCB07", colorName: "HyunJin yellow" },
     greetings: { label: "Greetings", blurb: "Welcome and leave cards. Needs Manage Server.", color: "#F4028E", colorName: "HeeJin pink" },

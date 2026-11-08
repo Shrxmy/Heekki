@@ -32,6 +32,7 @@
 | | |
 |---|---|
 | **Music** | YouTube and Spotify through Lavalink v4, search-and-pick, queue, seek, volume, loop, filters (8D, nightcore, karaoke, bassboost...). Stays in the call until it's been alone for 3 minutes. |
+| **Last.fm** | Now playing, recent scrobbles, top lists, album collages up to 10x10, artist/album info, who knows an artist/track/album, crowns, and taste matches. |
 | **Welcome cards** | The "twelve stars" card for joins and leaves, with your own message, background and star colours. |
 | **LOONA** | Profiles for all 12 members with photos, fun facts, official colours and birthdays. |
 | **Fun & games** | LOONA slot machine, tic-tac-toe, rock paper scissors, trivia, memes, ratings, snipe and text toys. |
@@ -83,6 +84,7 @@ Secrets live only in `.env`; everything else is in `config.js`.
 | `YT_CIPHER_PASSWORD` | Between Lavalink and the YouTube cipher helper; any long random string |
 | `YOUTUBE_REFRESH_TOKEN` | The spare account's YouTube sign-in (step 4) |
 | `SPOTIFY_ENABLED`, `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` | Optional: Spotify links and search |
+| `LASTFM_API_KEY` | Optional: the Last.fm commands ([free key](https://www.last.fm/api/account/create)) |
 
 ## Commands
 
@@ -110,6 +112,34 @@ Run `help` in Discord for the same list with usage details.
 | `stop` | Stops the current song. | `stp` `s` |
 | `treblebass` | Changes the filter of the song to treblebass. |  |
 | `volume [level]` | Changes the volume of the player. | `vol` |
+
+</details>
+
+<details>
+<summary><b>Last.fm</b>: scrobbles, charts, who knows, crowns</summary>
+
+Link your account once with `fmset <username>`; it works in every server. Periods: `week` (default), `month`, `3months`, `6months`, `year`, `alltime`.
+Commands that take an artist, track or album use what you're playing when you leave it empty. Tracks and albums are written `Artist - Title`.
+
+| Command | What it does | Aliases |
+|---|---|---|
+| `album [album]` | Info about an album on Last.fm, with your plays and your rank in this server. | `ab` |
+| `artist [artist]` | Info about an artist on Last.fm, with your plays and your rank in this server. | `a` |
+| `collage [size] [period] [titles] [playcounts] [user]` | A picture of your top albums (3x3 by default, up to 10x10; `notitles`, `plays`). | `fmc` `chart` `c` |
+| `crowns [user]` | The artist crowns someone holds in this server (win them with whoknows). | `cw` |
+| `fm [user]` | Shows what you (or someone) are listening to on Last.fm right now. | `lastfm` `fmnp` |
+| `fmset <username>` | Links your Last.fm account so the fm commands know who you are. | `fmlogin` |
+| `fmtop [type] [period] [user]` | Your top 10 artists, tracks or albums on Last.fm for a time period. | `fmt` |
+| `fmunset` | Unlinks your Last.fm account from the bot. | `fmlogout` |
+| `recent [user]` | Your last 10 scrobbles on Last.fm. | `rc` |
+| `taste <user> [period]` | Compares your top artists on Last.fm with someone else's. | `compare` |
+| `whoknows [artist]` | Who in this server listens to an artist the most (the top listener holds its 👑 crown). | `wk` |
+| `wka [album]` | Who in this server listens to an album the most. | `whoknowsalbum` |
+| `wkt [track]` | Who in this server listens to a song the most. | `whoknowstrack` |
+
+**Crowns:** the top listener of an artist in a server holds its crown. Crowns are checked whenever someone runs
+`whoknows` or `artist`, and only change hands when someone has strictly more plays (a tie, or a lookup Last.fm
+couldn't answer, keeps the current holder).
 
 </details>
 
@@ -261,4 +291,4 @@ test/                  run with `npm test`
 - **Font:** [Noto Sans KR](https://fonts.google.com/noto/specimen/Noto+Sans+KR), SIL Open Font License (`assets/fonts/OFL.txt`).
 - **Lookups:** AniList, GitHub, Google News, PokeAPI, Steam, Open-Meteo, Wikipedia and Urban Dictionary.
 
-<div align="center"><sub>Made for the Orbit.</sub></div>
+<div align="center"><sub>Made for Orbits by Orbits.</sub></div>
