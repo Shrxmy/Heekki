@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
-const { getPrefix } = require("../../db");
+const { getPrefix } = require("../../lib/db");
 
 module.exports = {
     name: "musichelp",

@@ -1,5 +1,5 @@
-const { greetCommand } = require("../../greetings/command");
-const { previewGreeting } = require("../../greetings/post");
+const { greetCommand } = require("../../lib/greetings/command");
+const { previewGreeting } = require("../../lib/greetings/post");
 
 module.exports = greetCommand({
     name: "testjoin",

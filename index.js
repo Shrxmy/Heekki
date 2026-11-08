@@ -1,7 +1,6 @@
 const { Client, Collection, EmbedBuilder, GatewayIntentBits, Events, Partials } = require("discord.js");
 const { LavalinkManager } = require("lavalink-client");
-const { TOKEN } = require('./config')
-const config = require('./config.json');
+const { TOKEN, LAVALINK } = require('./config');
 
 const client = new Client({
     intents: [
@@ -21,9 +20,9 @@ module.exports = client;
 client.lavalink = new LavalinkManager({
     nodes: [{
         id: "Main Node",
-        host: config.host,
-        port: config.port,
-        authorization: config.password,
+        host: LAVALINK.host,
+        port: LAVALINK.port,
+        authorization: LAVALINK.password,
         retryDelay: 5000,
     }],
     sendToShard: (guildId, payload) => client.guilds.cache.get(guildId)?.shard.send(payload),

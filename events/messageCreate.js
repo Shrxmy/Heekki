@@ -1,5 +1,5 @@
 const client = require("../index");
-const { getPrefix } = require("../db");
+const { getPrefix } = require("../lib/db");
 
 client.on("messageCreate", async (message) => {
     if (message.author.bot || !message.guild) return;

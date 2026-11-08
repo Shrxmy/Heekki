@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const { emojify } = require("../../fun/text");
-const { quiet } = require("../../fun/target");
+const { emojify } = require("../../lib/fun/text");
+const { quiet } = require("../../lib/fun/target");
 
 module.exports = {
     name: "emojify",

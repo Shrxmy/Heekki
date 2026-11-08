@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
-const { recall } = require("../../fun/snipes");
+const { recall } = require("../../lib/fun/snipes");
 
 module.exports = {
     name: "snipe",

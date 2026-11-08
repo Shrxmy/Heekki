@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
-const slots = require("../../fun/slots");
-const { getCoins, setCoins } = require("../../db");
+const slots = require("../../lib/fun/slots");
+const { getCoins, setCoins } = require("../../lib/db");
 
 const DEFAULT_BET = 10, MAX_BET = 1000;
 

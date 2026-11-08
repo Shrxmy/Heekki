@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const { flipText } = require("../../fun/text");
-const { quiet } = require("../../fun/target");
+const { flipText } = require("../../lib/fun/text");
+const { quiet } = require("../../lib/fun/target");
 
 module.exports = {
     name: "fliptext",

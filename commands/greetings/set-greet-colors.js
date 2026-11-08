@@ -1,7 +1,7 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const { greetCommand, isReset } = require("../../greetings/command");
-const { updateGreetSettings } = require("../../db");
-const { parseColors } = require("../../greetings/format");
+const { greetCommand, isReset } = require("../../lib/greetings/command");
+const { updateGreetSettings } = require("../../lib/db");
+const { parseColors } = require("../../lib/greetings/format");
 
 module.exports = greetCommand({
     name: "set-greet-colors",

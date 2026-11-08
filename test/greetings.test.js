@@ -5,19 +5,19 @@ const assert = require("node:assert");
 const vars = { mention: "<@1>", username: "Heekki", server: "Orbit", count: 1234 };
 
 test("fillPlaceholders replaces every placeholder and caps the length", () => {
-    const { fillPlaceholders } = require("../greetings/format");
+    const { fillPlaceholders } = require("../lib/greetings/format");
     assert.strictEqual(fillPlaceholders("Hi {user} {user}, {username} joined {server} (#{count})", vars),
         "Hi <@1> <@1>, Heekki joined Orbit (#1234)");
     assert.ok(fillPlaceholders("x".repeat(3000), vars).length <= 1900);
 });
 
 test("cardLine is plain text: name instead of mention, no Discord markup or emoji", () => {
-    const { cardLine } = require("../greetings/format");
+    const { cardLine } = require("../lib/greetings/format");
     assert.strictEqual(cardLine("Welcome {user} <@&5> <#6> <:orbit:123> 🌙!", { ...vars, username: "희진" }), "Welcome 희진 !");
 });
 
 test("parseColors accepts 12 hex colours and rejects anything else", () => {
-    const { parseColors } = require("../greetings/format");
+    const { parseColors } = require("../lib/greetings/format");
     const twelve = "ff0092 #FFD700,#0a5 " + Array(9).fill("#123456").join(" ");
     const parsed = parseColors(twelve);
     assert.strictEqual(parsed.length, 12);
@@ -28,8 +28,8 @@ test("parseColors accepts 12 hex colours and rejects anything else", () => {
 });
 
 test("greeting settings default, save, and reset per guild", () => {
-    const { getGreetSettings, updateGreetSettings } = require("../db");
-    const { DEFAULT_JOIN_MESSAGE, DEFAULT_LEAVE_MESSAGE, DEFAULT_COLORS } = require("../greetings/format");
+    const { getGreetSettings, updateGreetSettings } = require("../lib/db");
+    const { DEFAULT_JOIN_MESSAGE, DEFAULT_LEAVE_MESSAGE, DEFAULT_COLORS } = require("../lib/greetings/format");
     const defaults = { channelId: null, joinEnabled: true, leaveEnabled: false, joinMessage: DEFAULT_JOIN_MESSAGE,
         leaveMessage: DEFAULT_LEAVE_MESSAGE, colors: DEFAULT_COLORS, background: null };
     assert.deepStrictEqual(getGreetSettings("g"), defaults);
@@ -53,8 +53,8 @@ test("greeting settings default, save, and reset per guild", () => {
 });
 
 test("renderCard draws a 1024x400 PNG, including Korean names and very long text", async () => {
-    const { renderCard } = require("../greetings/card");
-    const { DEFAULT_COLORS } = require("../greetings/format");
+    const { renderCard } = require("../lib/greetings/card");
+    const { DEFAULT_COLORS } = require("../lib/greetings/format");
     const { loadImage, GlobalFonts } = require("@napi-rs/canvas");
     assert.ok(GlobalFonts.has("Noto Sans KR"));
 
@@ -71,7 +71,7 @@ test("renderCard draws a 1024x400 PNG, including Korean names and very long text
 });
 
 test("isAllowedImageUrl only accepts https Discord CDN links", () => {
-    const { isAllowedImageUrl } = require("../greetings/background");
+    const { isAllowedImageUrl } = require("../lib/greetings/background");
     assert.ok(isAllowedImageUrl("https://cdn.discordapp.com/attachments/1/2/a.png?ex=1"));
     assert.ok(isAllowedImageUrl("https://media.discordapp.net/attachments/1/2/a.webp"));
     for (const bad of ["http://cdn.discordapp.com/a.png", "https://cdn.discordapp.com.evil.com/a.png",
@@ -80,7 +80,7 @@ test("isAllowedImageUrl only accepts https Discord CDN links", () => {
 });
 
 test("downloadBackground validates type, size and host, refuses redirects, and normalizes to 1024x400", async () => {
-    const { downloadBackground } = require("../greetings/background");
+    const { downloadBackground } = require("../lib/greetings/background");
     const { createCanvas, loadImage } = require("@napi-rs/canvas");
     const url = "https://cdn.discordapp.com/attachments/1/2/a.png";
     const calls = [];
@@ -117,8 +117,8 @@ function fakeGuild({ id = "g5", channelExists = true, canPost = true, send = asy
 const fakeMember = (guild) => ({ id: "7", user: { bot: false }, displayName: "Heekki", guild, displayAvatarURL: () => null });
 
 test("buildGreeting: join may only ping the new member, leave pings nobody", async () => {
-    const { buildGreeting } = require("../greetings/post");
-    const { getGreetSettings } = require("../db");
+    const { buildGreeting } = require("../lib/greetings/post");
+    const { getGreetSettings } = require("../lib/db");
     const guild = fakeGuild();
     const settings = { ...getGreetSettings("x"), joinMessage: "Hi {user} @everyone <@&9> <@42>" };
     const join = await buildGreeting(fakeMember(guild), "join", settings);
@@ -131,8 +131,8 @@ test("buildGreeting: join may only ping the new member, leave pings nobody", asy
 });
 
 test("greetingProblems explains why a greeting wouldn't post", () => {
-    const { greetingProblems } = require("../greetings/post");
-    const { getGreetSettings } = require("../db");
+    const { greetingProblems } = require("../lib/greetings/post");
+    const { getGreetSettings } = require("../lib/db");
     const base = { ...getGreetSettings("x"), channelId: "chan" };
     assert.deepStrictEqual(greetingProblems(fakeGuild(), base, "join"), []);
     assert.deepStrictEqual(greetingProblems(fakeGuild(), { ...base, channelId: null }, "join"), ["No greeting channel is set (use set-greet-channel)."]);
@@ -144,8 +144,8 @@ test("greetingProblems explains why a greeting wouldn't post", () => {
 });
 
 test("sendGreeting posts when set up, and only logs when sending fails", async (t) => {
-    const { sendGreeting } = require("../greetings/post");
-    const { updateGreetSettings } = require("../db");
+    const { sendGreeting } = require("../lib/greetings/post");
+    const { updateGreetSettings } = require("../lib/db");
     const sent = [];
     const ok = fakeGuild({ id: "g-ok", send: async (p) => sent.push(p) });
     updateGreetSettings("g-ok", { channelId: "chan" });
@@ -193,14 +193,14 @@ test("greetings commands: all ten exist, live in the greetings category, and are
 });
 
 test("greetings commands refuse members without Manage Server", async () => {
-    const { getGreetSettings } = require("../db");
+    const { getGreetSettings } = require("../lib/db");
     const replies = await run("set-join-message", { guildId: "c1", admin: false, args: ["Hacked", "{user}"] });
     assert.strictEqual(text(replies[0]), "You need the Manage Server permission to change greetings.");
     assert.strictEqual(getGreetSettings("c1").joinMessage, "Welcome to the Orbit, {user}! 🌙");
 });
 
 test("set-join-message saves text, refuses >500 chars, and reset restores the default", async () => {
-    const { getGreetSettings } = require("../db");
+    const { getGreetSettings } = require("../lib/db");
     await run("set-join-message", { guildId: "c2", args: ["Hi", "{user}", "@everyone"] });
     assert.strictEqual(getGreetSettings("c2").joinMessage, "Hi {user} @everyone");
     await run("set-join-message", { guildId: "c2", args: ["x".repeat(501)] });
@@ -210,7 +210,7 @@ test("set-join-message saves text, refuses >500 chars, and reset restores the de
 });
 
 test("set-greet-channel accepts a text channel and refuses a voice channel", async () => {
-    const { getGreetSettings } = require("../db");
+    const { getGreetSettings } = require("../lib/db");
     await run("set-greet-channel", { guildId: "c3", args: ["<#vc>"] });
     assert.strictEqual(getGreetSettings("c3").channelId, null);
     const replies = await run("set-greet-channel", { guildId: "c3", args: ["<#chan>"] });
@@ -219,8 +219,8 @@ test("set-greet-channel accepts a text channel and refuses a voice channel", asy
 });
 
 test("set-greet-colors needs exactly 12 colours; reset restores the defaults", async () => {
-    const { getGreetSettings } = require("../db");
-    const { DEFAULT_COLORS } = require("../greetings/format");
+    const { getGreetSettings } = require("../lib/db");
+    const { DEFAULT_COLORS } = require("../lib/greetings/format");
     await run("set-greet-colors", { guildId: "c4", args: Array(11).fill("#123456") });
     assert.deepStrictEqual(getGreetSettings("c4").colors, DEFAULT_COLORS);
     await run("set-greet-colors", { guildId: "c4", args: Array(12).fill("#123456") });
@@ -230,7 +230,7 @@ test("set-greet-colors needs exactly 12 colours; reset restores the defaults", a
 });
 
 test("set-greet-bg refuses non-Discord links and reset clears the background", async () => {
-    const { getGreetSettings, updateGreetSettings } = require("../db");
+    const { getGreetSettings, updateGreetSettings } = require("../lib/db");
     const replies = await run("set-greet-bg", { guildId: "c5", args: ["https://evil.com/x.png"] });
     assert.strictEqual(text(replies[0]), "Only Discord image uploads or Discord image links are allowed.");
     updateGreetSettings("c5", { background: Buffer.from([1]) });
@@ -239,7 +239,7 @@ test("set-greet-bg refuses non-Discord links and reset clears the background", a
 });
 
 test("toggle-join-greet flips the setting", async () => {
-    const { getGreetSettings } = require("../db");
+    const { getGreetSettings } = require("../lib/db");
     await run("toggle-join-greet", { guildId: "c6" });
     assert.strictEqual(getGreetSettings("c6").joinEnabled, false);
     await run("toggle-join-greet", { guildId: "c6" });
@@ -259,7 +259,7 @@ test("greet-settings shows an embed", async () => {
 });
 
 test("downloadBackground refuses images whose pixel size would use too much memory, before decoding them", async () => {
-    const { downloadBackground, imageSize } = require("../greetings/background");
+    const { downloadBackground, imageSize } = require("../lib/greetings/background");
     const { createCanvas } = require("@napi-rs/canvas");
     // A tiny file whose PNG header claims 30000x30000 pixels (would need ~3.6 GB once decoded).
     const bomb = Buffer.alloc(33);
@@ -286,4 +286,10 @@ test("testjoin still explains problems when the preview itself can't be posted",
     const warning = sent.map(text).join("\n");
     assert.ok(warning.includes("I couldn't post the preview here: Missing Permissions"), warning);
     assert.ok(warning.includes("No greeting channel is set"), warning);
+});
+
+test("default star colours are LOONA's official member colours (from the LOONA wiki)", () => {
+    const { DEFAULT_COLORS } = require("../lib/greetings/format");
+    assert.deepStrictEqual(DEFAULT_COLORS, ["#F4028E", "#FFCB07", "#01954A", "#F47021", "#F4A1B5", "#EB1326",
+        "#1313D6", "#7632A0", "#7A0332", "#F7917E", "#39BB9D", "#787A7D"]);
 });

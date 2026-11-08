@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const { zalgo } = require("../../fun/text");
-const { quiet } = require("../../fun/target");
+const { zalgo } = require("../../lib/fun/text");
+const { quiet } = require("../../lib/fun/target");
 
 module.exports = {
     name: "zalgo",

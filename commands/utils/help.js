@@ -1,13 +1,15 @@
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, ComponentType, MessageFlags, ApplicationCommandOptionType } = require("discord.js");
-const { getPrefix } = require("../../db");
+const { getPrefix } = require("../../lib/db");
 
 // Each category is tinted with a LOONA member colour (named in the page footer).
-const HOME = { color: "#7B3FBF", colorName: "Choerry purple" };
+const HOME = { color: "#7632A0", colorName: "Choerry purple" };
 const CATEGORIES = {
-    music: { label: "Music", blurb: "Play songs from YouTube and Spotify, with filters.", color: "#1F4FD8", colorName: "JinSoul blue" },
-    fun: { label: "Fun & Games", blurb: "Games and small toys for the chat.", color: "#FFD700", colorName: "Hyunjin yellow" },
-    greetings: { label: "Greetings", blurb: "Welcome and leave cards. Needs Manage Server.", color: "#FF0092", colorName: "Heejin pink" },
-    utils: { label: "Utilities", blurb: "Bot settings and info.", color: "#C0C0C0", colorName: "Olivia Hye silver" },
+    music: { label: "Music", blurb: "Play songs from YouTube and Spotify, with filters.", color: "#1313D6", colorName: "JinSoul blue" },
+    loona: { label: "LOONA", blurb: "Member profiles, photos and fun facts.", color: "#39BB9D", colorName: "Go Won Eden green" },
+    fun: { label: "Fun & Games", blurb: "Games and small toys for the chat.", color: "#FFCB07", colorName: "HyunJin yellow" },
+    greetings: { label: "Greetings", blurb: "Welcome and leave cards. Needs Manage Server.", color: "#F4028E", colorName: "HeeJin pink" },
+    info: { label: "Info", blurb: "Server, member and lookup tools.", color: "#01954A", colorName: "HaSeul green" },
+    utils: { label: "Utilities", blurb: "Bot settings and info.", color: "#787A7D", colorName: "HyeJu silver" },
 };
 const ORDER = Object.keys(CATEGORIES);
 

@@ -1,5 +1,5 @@
-const { greetCommand } = require("../../greetings/command");
-const { updateGreetSettings, getGreetSettings } = require("../../db");
+const { greetCommand } = require("../../lib/greetings/command");
+const { updateGreetSettings, getGreetSettings } = require("../../lib/db");
 
 module.exports = greetCommand({
     name: "toggle-join-greet",

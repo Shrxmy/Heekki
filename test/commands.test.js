@@ -10,6 +10,14 @@ const commands = fs.readdirSync(dir, { recursive: true })
     .map((f) => require(path.join(dir, f)))
     .filter((c) => c.name);
 
+test("no two commands share a name or alias (otherwise one silently shadows the other)", () => {
+    const seen = new Map();
+    for (const c of commands) for (const key of [c.name, ...(c.aliases ?? [])].map((k) => k.toLowerCase())) {
+        assert.ok(!seen.has(key) || seen.get(key) === c.name, `"${key}" is used by both ${seen.get(key)} and ${c.name}`);
+        seen.set(key, c.name);
+    }
+});
+
 test("command names are unique and volume no longer overrides seek", () => {
     const names = commands.map((c) => c.name);
     assert.deepStrictEqual(names, [...new Set(names)]);
@@ -17,7 +25,7 @@ test("command names are unique and volume no longer overrides seek", () => {
 });
 
 test("per-guild prefix falls back to the default", () => {
-    const { getPrefix, setPrefix, getCustomPrefix } = require("../db");
+    const { getPrefix, setPrefix, getCustomPrefix } = require("../lib/db");
     assert.strictEqual(getPrefix("g1"), "-");
     assert.strictEqual(getCustomPrefix("g1"), null);
     setPrefix("g1", "!");

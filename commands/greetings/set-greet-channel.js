@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
-const { greetCommand } = require("../../greetings/command");
-const { updateGreetSettings } = require("../../db");
+const { greetCommand } = require("../../lib/greetings/command");
+const { updateGreetSettings } = require("../../lib/db");
 
 const TEXT_TYPES = [ChannelType.GuildText, ChannelType.GuildAnnouncement];
 

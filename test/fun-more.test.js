@@ -3,7 +3,7 @@ const test = require("node:test");
 const assert = require("node:assert");
 
 test("text tricks: emojify, fliptext, enchant, zalgo", () => {
-    const { emojify, flipText, enchant, zalgo } = require("../fun/text");
+    const { emojify, flipText, enchant, zalgo } = require("../lib/fun/text");
     assert.strictEqual(emojify("Hi 1!"), "🇭 🇮   1️⃣ !");
     assert.strictEqual(flipText("hello"), "ollǝɥ");
     assert.strictEqual(enchant("abc"), "ᔑʖᓵ");
@@ -14,14 +14,14 @@ test("text tricks: emojify, fliptext, enchant, zalgo", () => {
 });
 
 test("decode understands binary and base64, and says when it can't", () => {
-    const { decode } = require("../fun/text");
+    const { decode } = require("../lib/fun/text");
     assert.strictEqual(decode("01001100 01001111 01001111 01001110 01000001"), "LOONA");
     assert.strictEqual(decode("T3JiaXQ="), "Orbit");
     assert.strictEqual(decode("%%% definitely not encoded %%%"), null);
 });
 
 test("ratings are stable for the same person, kind and day, and stay within 0-100", () => {
-    const { rating, loveScore } = require("../fun/rate");
+    const { rating, loveScore } = require("../lib/fun/rate");
     const day = new Date("2026-11-08T12:00:00Z");
     assert.strictEqual(rating("cute", "111", day), rating("cute", "111", day));
     for (let i = 0; i < 200; i++) { const r = rating("smart", String(i), day); assert.ok(r >= 0 && r <= 100); }
@@ -29,7 +29,7 @@ test("ratings are stable for the same person, kind and day, and stay within 0-10
 });
 
 test("slots: payouts follow the table and the long-run return is a fair-but-house-edge 85-100%", () => {
-    const { SYMBOLS, payout, JACKPOT } = require("../fun/slots");
+    const { SYMBOLS, payout, JACKPOT } = require("../lib/fun/slots");
     assert.strictEqual(SYMBOLS.length, 13);
     const [a, b, c] = SYMBOLS.filter((s) => s !== JACKPOT);
     assert.strictEqual(payout([a, b, c], 10), 0);
@@ -43,7 +43,7 @@ test("slots: payouts follow the table and the long-run return is a fair-but-hous
 });
 
 test("moon coins: start at 500 per server, save, and refill a broke player to 100", () => {
-    const { getCoins, setCoins } = require("../db");
+    const { getCoins, setCoins } = require("../lib/db");
     assert.strictEqual(getCoins("g", "u"), 500);
     setCoins("g", "u", 42);
     assert.strictEqual(getCoins("g", "u"), 42);
@@ -54,7 +54,7 @@ test("moon coins: start at 500 per server, save, and refill a broke player to 10
 
 test("snipes keep only the latest message per channel, skip bots and empty text, and expire after 15 minutes", (t) => {
     t.mock.timers.enable({ apis: ["Date"], now: 1_000_000 });
-    const { remember, recall } = require("../fun/snipes");
+    const { remember, recall } = require("../lib/fun/snipes");
     const msg = (content, bot = false) => ({ channelId: "c", content, author: { bot, tag: "heekki", displayAvatarURL: () => "" }, createdTimestamp: Date.now() });
     remember("deleted", msg("first"));
     remember("deleted", msg("second"));
@@ -80,8 +80,8 @@ function fakeMsg({ guildId = "fg", userId = "u1", members = {} } = {}) {
 const textOf = (p) => (typeof p === "string" ? p : p.content ?? p.embeds?.[0]?.toJSON().description ?? "");
 
 test("slots: refuses bets above the balance, and wins/losses change the saved balance", async (t) => {
-    const slots = require("../fun/slots");
-    const { getCoins } = require("../db");
+    const slots = require("../lib/fun/slots");
+    const { getCoins } = require("../lib/db");
     const { message, replies } = fakeMsg({ guildId: "s1" });
     await funCmd("slots").run({}, message, ["501"]);
     assert.match(textOf(replies[0]), /only have \*\*500\*\*/);
@@ -98,7 +98,7 @@ test("slots: refuses bets above the balance, and wins/losses change the saved ba
 });
 
 test("snipe shows the remembered message, or says there's nothing", async () => {
-    const { remember } = require("../fun/snipes");
+    const { remember } = require("../lib/fun/snipes");
     const { message, replies } = fakeMsg();
     message.channel.id = "snipe-chan";
     await funCmd("snipe").run({}, message, []);
@@ -160,7 +160,7 @@ test("meme skips NSFW, spoiler and non-image posts", async () => {
 
 test("review fix: expired snipes are actually dropped from memory, not just hidden", (t) => {
     t.mock.timers.enable({ apis: ["Date"], now: Date.now() }); // real "now", so earlier tests' snipes are in the past
-    const { remember, count } = require("../fun/snipes");
+    const { remember, count } = require("../lib/fun/snipes");
     const before = count();
     for (const c of ["x1", "x2", "x3"]) remember("deleted", { channelId: c, content: "old", author: { bot: false, tag: "a", displayAvatarURL: () => "" } });
     assert.strictEqual(count(), before + 3);

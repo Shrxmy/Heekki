@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 const { setTimeout: sleep } = require("node:timers/promises");
-const { targetMember, quiet } = require("../../fun/target");
+const { targetMember, quiet } = require("../../lib/fun/target");
 
 const BIASES = ["Heejin", "Hyunjin", "Haseul", "Yeojin", "ViVi", "Kim Lip", "JinSoul", "Choerry", "Yves", "Chuu", "Go Won", "Olivia Hye"];
 const STEP_MS = 1500;

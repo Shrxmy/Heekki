@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const { decode } = require("../../fun/text");
-const { quiet } = require("../../fun/target");
+const { decode } = require("../../lib/fun/text");
+const { quiet } = require("../../lib/fun/target");
 
 module.exports = {
     name: "decode",

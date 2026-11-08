@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require("discord.js");
-const { greetCommand, quiet } = require("../../greetings/command");
-const { getGreetSettings } = require("../../db");
+const { greetCommand, quiet } = require("../../lib/greetings/command");
+const { getGreetSettings } = require("../../lib/db");
 
 module.exports = greetCommand({
     name: "greet-settings",

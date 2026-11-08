@@ -1,7 +1,7 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const { greetCommand, quiet, isReset } = require("../../greetings/command");
-const { updateGreetSettings, getGreetSettings } = require("../../db");
-const { MAX_MESSAGE_LENGTH } = require("../../greetings/format");
+const { greetCommand, quiet, isReset } = require("../../lib/greetings/command");
+const { updateGreetSettings, getGreetSettings } = require("../../lib/db");
+const { MAX_MESSAGE_LENGTH } = require("../../lib/greetings/format");
 
 module.exports = greetCommand({
     name: "set-leave-message",

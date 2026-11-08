@@ -1,5 +1,5 @@
 const { PermissionFlagsBits, ApplicationCommandOptionType } = require("discord.js");
-const { getCustomPrefix, setPrefix } = require("../../db");
+const { getCustomPrefix, setPrefix } = require("../../lib/db");
 
 module.exports = {
     name: "setprefix",

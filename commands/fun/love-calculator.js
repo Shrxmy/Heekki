@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const { loveScore } = require("../../fun/rate");
-const { targetMember, quiet } = require("../../fun/target");
+const { loveScore } = require("../../lib/fun/rate");
+const { targetMember, quiet } = require("../../lib/fun/target");
 
 const VERDICTS = [[90, "Soulmates."], [70, "A strong orbit."], [40, "There's something there."], [0, "Better as friends."]];
 
