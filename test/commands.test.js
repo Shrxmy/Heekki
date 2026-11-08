@@ -34,12 +34,28 @@ test("per-guild prefix falls back to the default", () => {
     assert.strictEqual(getPrefix("g2"), "-");
 });
 
-test("nowplaying format/createBar", () => {
-    const { format, createBar } = require("../commands/music/nowplaying");
-    assert.strictEqual(format(59_999), "00:59 | 59 Seconds");
-    assert.strictEqual(format(3_725_000), "01:02:05 | 3725 Seconds");
+test("music clock/createBar", () => {
+    const { clock, createBar } = require("../lib/music/embed");
+    assert.strictEqual(clock(59_999), "0:59");
+    assert.strictEqual(clock(3_725_000), "1:02:05");
     const player = (position, info) => ({ position, queue: { current: info && { info } } });
-    assert.match(createBar(player(30_000, { duration: 60_000, isStream: false })), /🔘{6}▬{6}.*00:00:30 \/ 00:01:00/su);
+    assert.strictEqual(createBar(player(30_000, { duration: 60_000, isStream: false })), "`0:30` ▬▬▬▬▬▬▬🔘▬▬▬▬▬▬ `1:00`");
+    assert.match(createBar(player(60_000, { duration: 60_000, isStream: false })), /▬{13}🔘 `1:00`/u); // knob stays on the bar at the end
     assert.match(createBar(player(5_000, { duration: 0, isStream: true })), /LIVE/);
-    assert.match(createBar(player(0, null)), /00:00:00 \/ 00:00:00/);
+    assert.match(createBar(player(0, null)), /`0:00` 🔘▬+ `0:00`/u);
+});
+
+test("music cards are hosted by one LOONA member per song, in her colour", () => {
+    const { djFor, trackEmbed } = require("../lib/music/embed");
+    const { members } = require("../lib/loona");
+    const track = (identifier) => ({ info: { identifier, title: "Butterfly", uri: "https://youtu.be/x", author: "LOONA", duration: 223_000 },
+        requester: { username: "orbit", globalName: "Orbit", displayAvatarURL: () => "https://cdn.discordapp.com/a.png" } });
+    assert.strictEqual(djFor(track("abc")), djFor(track("abc")), "same song, same host");
+    assert.ok(new Set(["a", "b", "c", "d", "e", "f", "g", "h"].map((id) => djFor(track(id)).name)).size > 1, "different songs get different hosts");
+    const dj = djFor(track("abc"));
+    const card = trackEmbed(track("abc"), "is playing").toJSON();
+    assert.strictEqual(card.color, parseInt(dj.color.hex.slice(1), 16));
+    assert.strictEqual(card.author.name, `${dj.animal.split(" ")[0]} ${dj.name} is playing`);
+    assert.strictEqual(card.footer.text, "For Orbit");
+    assert.ok(members.includes(dj));
 });

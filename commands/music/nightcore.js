@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { musicEmbed } = require("../../lib/music/embed");
 
 module.exports = {
     name: "nightcore",
@@ -6,19 +6,14 @@ module.exports = {
     aliases: ['alvin'],
     run: async (client, message, args) => {
         const player = client.lavalink.getPlayer(message.guild.id);
-        if (!player) return message.reply("There is no queue within the server.");
+        if (!player) return message.reply("Nothing's playing yet, Orbit. Start the music with `play` 🌙");
 
         const { channel } = message.member.voice;
         
-        if (!channel) return message.reply("You need to join a voice channel.");
-        if (channel.id !== player.voiceChannelId) return message.reply("You're not in the same voice channel.");
+        if (!channel) return message.reply("Hop into a voice channel first, Orbit 🎧");
+        if (channel.id !== player.voiceChannelId) return message.reply("Come join me in my voice channel first 🌙");
 
         if (!player.filterManager.filters.nightcore) await player.filterManager.toggleNightcore();
-        const embed = new EmbedBuilder()
-            .setTitle('Adding Filter')
-            .setColor('#95E8A3')
-            .setDescription(`I'm **Adding** the Filter to the Music, Please wait.`)
-
-        message.channel.send({ embeds: [embed]});
+        return message.channel.send({ embeds: [musicEmbed().setDescription("🎚️ **Nightcore** is on! Use `filteroff` to go back to the original sound.")] });
     }
 }

@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { musicEmbed } = require("../../lib/music/embed");
 
 module.exports = {
     name: "filteroff",
@@ -6,20 +6,15 @@ module.exports = {
     aliases: ['removefilter'],
     run: async (client, message, args) => {
         const player = client.lavalink.getPlayer(message.guild.id);
-        if (!player) return message.reply("There is no queue within the server.");
+        if (!player) return message.reply("Nothing's playing yet, Orbit. Start the music with `play` 🌙");
 
         const { channel } = message.member.voice;
         
-        if (!channel) return message.reply("You need to join a voice channel.");
-        if (channel.id !== player.voiceChannelId) return message.reply("You're not in the same voice channel.");
+        if (!channel) return message.reply("Hop into a voice channel first, Orbit 🎧");
+        if (channel.id !== player.voiceChannelId) return message.reply("Come join me in my voice channel first 🌙");
 
         await player.filterManager.resetFilters();
         await player.filterManager.clearEQ();
-        const embed = new EmbedBuilder()
-            .setTitle('Filter')
-            .setColor('#95E8A3')
-            .setDescription(`I'm **Removing** the Filter to the Music, Please wait.`)
-
-        message.channel.send({ embeds: [embed]});
+        return message.channel.send({ embeds: [musicEmbed().setDescription("🎚️ Filters off, back to the original sound 🌙")] });
     }
 }

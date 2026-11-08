@@ -8,19 +8,19 @@ module.exports = {
     run: async (client, message, args) => {
         const player = client.lavalink.getPlayer(message.guild.id);
   
-        if (!player) return message.reply("There is no queue within the server.");
-        if (!args.length) return message.reply(`The player volume is \`${player.volume}\`.`)
+        if (!player) return message.reply("Nothing's playing yet, Orbit. Start the music with `play` 🌙");
+        if (!args.length) return message.reply(`🔉 The volume is at ${player.volume}%.`)
     
         const { channel } = message.member.voice;
         
-        if (!channel) return message.reply("You need to join a voice channel.");
-        if (channel.id !== player.voiceChannelId) return message.reply("You're not in the same voice channel.");
+        if (!channel) return message.reply("Hop into a voice channel first, Orbit 🎧");
+        if (channel.id !== player.voiceChannelId) return message.reply("Come join me in my voice channel first 🌙");
     
         const volume = Number(args[0]);
         
-        if (!volume || volume < 1 || volume > 100) return message.reply("You need to give me a volume between 1 and 100.");
+        if (!volume || volume < 1 || volume > 100) return message.reply("Pick a volume from 1 to 100, Orbit.");
     
         await player.setVolume(volume);
-        return message.reply(`Set the volume to \`${volume}\`.`);
+        return message.reply(`🔊 Volume set to ${volume}%.`);
     }
 }

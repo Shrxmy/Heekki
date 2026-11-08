@@ -1,4 +1,5 @@
-const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
+const { ApplicationCommandOptionType, escapeMarkdown } = require("discord.js");
+const { musicEmbed, trackEmbed, link, length, djFor, emoji } = require("../../lib/music/embed");
 
 module.exports = {
     name: "play",
@@ -8,9 +9,9 @@ module.exports = {
     run: async (client, message, args) => {
         const { channel } = message.member.voice;
 
-        if (!channel) return message.reply('You need to join a voice channel.');
-        if (!args.length) return message.reply('You need to give me a URL or a Search Term.');
-        if (!client.lavalink.useable) return message.reply('The music server is not connected right now, try again in a moment.');
+        if (!channel) return message.reply("Hop into a voice channel first, Orbit 🎧");
+        if (!args.length) return message.reply("What should we listen to, Orbit? Try `play Butterfly` 🦋");
+        if (!client.lavalink.useable) return message.reply("The music server is taking a nap 💤 Try again in a moment.");
 
         // Get (or re-create) the player right before queueing: queueEnd destroys it,
         // which can happen while we wait on the search or the user's pick.
@@ -37,32 +38,25 @@ module.exports = {
             res = await client.lavalink.nodeManager.leastUsedNodes()[0].search({ query: search }, message.author);
             if (res.loadType === 'error') throw new Error(res.exception?.message ?? 'Unknown error');
         } catch (err) {
-            return message.reply(`There was an error while searching: ${err.message}`);
+            return message.reply(`Something went wrong while searching: ${err.message}`);
         }
 
         switch (res.loadType) {
             case 'empty': {
-                return message.reply('There were no results found.');
+                return message.reply("I couldn't find that song, Orbit. Try another name or a link 🌙");
             }
             case 'track': {
-                const playmusic = new EmbedBuilder()
-                .setColor('#95E8A3')
-                .setAuthor({ name: `Enqueuing:`, iconURL: client.user.displayAvatarURL() })
-                .setDescription(`${res.tracks[0].info.title}`)
-                .setFooter({ text: `To check curent queue use the queue command.` })
-                .setTimestamp()
-
                 await enqueue(res.tracks[0]);
-                return message.channel.send({embeds: [playmusic]});
+                return message.channel.send({ embeds: [trackEmbed(res.tracks[0], "added this to the queue")] });
             }
             case 'playlist': {
                 await enqueue(res.tracks);
-                const playlist = new EmbedBuilder()
-                .setColor('#95E8A3')
-                .setAuthor({ name: `Enqueuing playlist:`, iconURL: client.user.displayAvatarURL() })
-                .setDescription(`\`${res.playlist?.name ?? 'Playlist'}\` with ${res.tracks.length} tracks.`)
-                .setFooter({ text: `To check curent queue use the queue command.` })
-                .setTimestamp()
+                const dj = djFor(res.tracks[0]);
+                const playlist = musicEmbed(dj)
+                    .setAuthor({ name: `${emoji(dj)} ${dj.name} added a playlist to the queue` })
+                    .setDescription(`**${escapeMarkdown(String(res.playlist?.name ?? 'Playlist').slice(0, 200))}** · ${res.tracks.length} tracks`)
+                    .setThumbnail(res.tracks[0]?.info.artworkUrl ?? null)
+                    .setFooter({ text: `For ${message.author.globalName ?? message.author.username}`, iconURL: message.author.displayAvatarURL() });
 
                 return message.channel.send({embeds: [playlist]});
             }
@@ -71,46 +65,37 @@ module.exports = {
                 if (res.tracks.length < max) max = res.tracks.length;
                 const results = res.tracks
                     .slice(0, max)
-                    .map((track, index) => `${++index} - `+`[${track.info.title}](${track.info.uri})`)
+                    .map((track, index) => `**${index + 1}.** ${link(track)} · \`${length(track)}\``)
                     .join('\n');
 
-                const searchResult = new EmbedBuilder()
-                        .setColor('#95E8A3')
-                        .setTitle('Search Results: ')
-                        .setDescription(results)
-                        .addFields({ name: 'Cancel Search: ', value: 'Type end or any other number to cancel the search', inline: true })
-                        .setTimestamp()
+                const searchResult = musicEmbed()
+                    .setAuthor({ name: "🌙 Which one, Orbit?" })
+                    .setDescription(results)
+                    .setFooter({ text: `Type a number from 1 to ${max}, or "end" to cancel · 30 seconds` });
 
                 await message.channel.send({embeds: [searchResult]});
 
                 try {
                     collected = await message.channel.awaitMessages({ filter, max: 1, time: 30e3, errors: ['time'] });
                 } catch (e) {
-                    return message.reply("You didn't provide a selection.");
+                    return message.reply("Time's up, no song picked 🌙");
                 }
 
                 const first = collected.first().content;
 
                 if (first.toLowerCase() === 'end') {
-                    return message.channel.send('Cancelled Selection.');
+                    return message.channel.send("Okay, cancelled 🌙");
                 }
 
                 const index = Number(first) - 1;
                 if (index < 0 || index > max - 1) {
-                    return message.reply(`The number you provided too small or too big (1-${max}).`);
+                    return message.reply(`Pick a number from 1 to ${max}, Orbit.`);
                 }
 
                 const track = res.tracks[index];
                 await enqueue(track);
 
-                const trackadd = new EmbedBuilder()
-                .setColor('#95E8A3')
-                .setAuthor({ name: `Added To Queue`, iconURL: client.user.displayAvatarURL() })
-                .setDescription(`[${track.info.title}](${track.info.uri})`)
-                .addFields({ name: `Requested By : `, value: `${track.requester}`, inline: true })
-                .setFooter({ text: `To check curent queue use the queue command.` })
-
-                return message.channel.send({embeds: [trackadd]});
+                return message.channel.send({ embeds: [trackEmbed(track, "added this to the queue")] });
             }
         }
     }

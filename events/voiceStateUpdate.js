@@ -1,4 +1,5 @@
-const { EmbedBuilder, Events } = require("discord.js");
+const { Events } = require("discord.js");
+const { musicEmbed } = require("../lib/music/embed");
 const client = require("../index");
 
 // Leave once nobody (bots don't count) has been in the bot's voice channel for this long.
@@ -24,9 +25,8 @@ client.on(Events.VoiceStateUpdate, (oldState, newState) => {
         const current = client.lavalink.getPlayer(guild.id);
         if (!current) return;
         current.destroy()
-            .then(() => client.sendToPlayerChannel(current, new EmbedBuilder()
-                .setColor('#95E8A3')
-                .setAuthor({ name: `Left the voice channel since nobody was listening`, iconURL: client.user.displayAvatarURL() })))
+            .then(() => client.sendToPlayerChannel(current, musicEmbed()
+                .setAuthor({ name: "🌙 Nobody was listening, so I left the voice channel. Bye, Orbit!" })))
             .catch((err) => console.error(`Couldn't leave voice in ${guild.id}:`, err));
     }, ALONE_LEAVE_MS));
 });

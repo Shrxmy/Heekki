@@ -117,7 +117,7 @@ test("bot leaves after 3 minutes alone in voice, and stays if someone returns", 
     t.mock.timers.tick(ALONE_LEAVE_MS);
     await new Promise((r) => setImmediate(r)); // let destroy() resolve before the goodbye message
     assert.strictEqual(destroyed, 1, "leaves after 3 minutes alone");
-    assert.deepStrictEqual(sent, ["Left the voice channel since nobody was listening"]);
+    assert.deepStrictEqual(sent, ["🌙 Nobody was listening, so I left the voice channel. Bye, Orbit!"]);
 });
 
 test("tic-tac-toe game: rejected clicks don't count, moves apply in order, win ends it", async () => {

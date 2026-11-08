@@ -13,12 +13,12 @@ module.exports = {
     options: [{ name: 'level', description: 'Bassboost level (0 turns it off)', type: ApplicationCommandOptionType.String, choices: ['0', '1', '2', '3'].map((v) => ({ name: v, value: v })) }],
     run: async (client, message, args) => {
         const player = client.lavalink.getPlayer(message.guild.id);
-        if (!player) return message.reply("There is no queue within the server.");
+        if (!player) return message.reply("Nothing's playing yet, Orbit. Start the music with `play` 🌙");
     
         const { channel } = message.member.voice;
         
-        if (!channel) return message.reply("You need to join a voice channel.");
-        if (channel.id !== player.voiceChannelId) return message.reply("You're not in the same voice channel.");
+        if (!channel) return message.reply("Hop into a voice channel first, Orbit 🎧");
+        if (channel.id !== player.voiceChannelId) return message.reply("Come join me in my voice channel first 🌙");
     
         let level = "0";
         if (args.length && args[0].toLowerCase() in levels) level = args[0].toLowerCase();
@@ -31,6 +31,6 @@ module.exports = {
     
         await player.filterManager.setEQ(bands);
     
-        return message.reply(`Set the bassboost level to ${level}`);
+        return message.reply(level === "0" ? "🔈 Bass boost is off." : `🔊 Bass boost set to level ${level}!`);
     }
 };

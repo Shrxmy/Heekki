@@ -1,6 +1,7 @@
-const { Client, Collection, EmbedBuilder, GatewayIntentBits, Events, Partials } = require("discord.js");
+const { Client, Collection, GatewayIntentBits, Events, Partials } = require("discord.js");
 const { LavalinkManager } = require("lavalink-client");
 const { TOKEN, LAVALINK } = require('./config');
+const { musicEmbed, trackEmbed, link, djFor } = require('./lib/music/embed');
 
 const client = new Client({
     intents: [
@@ -34,31 +35,25 @@ client.lavalink.nodeManager
     .on("connect", node => console.log(`Node "${node.id}" has Connected.`))
     .on("error", (node, error) => console.log(`Node "${node.id}" encountered an error: ${error?.message ?? error}.`));
 
-const botIcon = () => client.user.displayAvatarURL();
 const sendTo = (player, embed) =>
     client.channels.cache.get(player.textChannelId)?.send({ embeds: [embed] }).catch(console.error);
 
 client.lavalink
 .on("trackStart", (player, track) => {
-  sendTo(player, new EmbedBuilder()
-    .setColor('#95E8A3')
-    .setAuthor({ name: `Now Playing:`, iconURL: botIcon() })
-    .setDescription(`[${track.info.title}](${track.info.uri})`)
-    .addFields({ name: `Requested By: `, value: `${track.requester ?? 'Unknown'}`, inline: true }));
+  sendTo(player, trackEmbed(track, "is playing"));
 })
 .on("trackStuck", (player, track) => {
-  sendTo(player, new EmbedBuilder()
-    .setColor('#95E8A3')
-    .setAuthor({ name: `Track Stuck:`, iconURL: botIcon() })
-    .setDescription(`${track?.info.title ?? 'Unknown track'}`));
+  sendTo(player, musicEmbed(track ? djFor(track) : undefined)
+    .setAuthor({ name: "⚠️ This song got stuck, so I'm skipping it" })
+    .setDescription(track ? link(track) : "Unknown song"));
 })
 .on("trackError", (player, track, payload) => {
   console.log(`Track error in ${player.guildId}: ${payload?.exception?.message}`);
 })
 .on("queueEnd", player => {
-  sendTo(player, new EmbedBuilder()
-    .setColor('#95E8A3')
-    .setAuthor({ name: `Queue has ended`, iconURL: botIcon() }));
+  sendTo(player, musicEmbed()
+    .setAuthor({ name: "🌙 That's all for now, Orbit." })
+    .setDescription("Add more with `play`."));
   // The bot stays in the call; events/voiceStateUpdate.js makes it leave after 3 minutes alone.
 });
 

@@ -28,7 +28,7 @@ module.exports = {
         const answers = shuffle([q.correct_answer, ...q.incorrect_answers]).map(decodeURIComponent);
         const correct = answers.indexOf(decodeURIComponent(q.correct_answer));
         const embed = new EmbedBuilder()
-            .setColor('#95E8A3')
+            .setColor('#FFCB07') // HyunJin yellow, the Fun colour in help
             .setAuthor({ name: `${decodeURIComponent(q.category)} · ${q.difficulty}` })
             .setTitle(decodeURIComponent(q.question))
             .setFooter({ text: "First correct click wins. One guess each, 20 seconds." });

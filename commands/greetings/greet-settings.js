@@ -9,7 +9,7 @@ module.exports = greetCommand({
     run: async (client, message, args) => {
         const s = getGreetSettings(message.guild.id);
         const embed = new EmbedBuilder()
-            .setColor('#95E8A3')
+            .setColor('#F4028E') // HeeJin pink, the Greetings colour in help
             .setTitle('Greeting settings')
             .addFields(
                 { name: 'Channel', value: s.channelId ? `<#${s.channelId}>` : 'Not set (use `set-greet-channel`)' },
