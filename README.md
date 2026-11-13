@@ -96,6 +96,7 @@ Secrets live only in `.env`; everything else is in `config.js`.
 | `DATABASE_URL` | Neon Postgres connection string (added by `neon deploy`) |
 | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL_S3`, `AWS_REGION` | Neon Object Storage keys for greeting backgrounds (added by `neon deploy`) |
 | `SPOTIFY_ENABLED`, `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` | Optional: Spotify links and search |
+| `LAVALINK_HOST`, `LAVALINK_PORT` | Optional: where Lavalink runs, if not `localhost:2333` |
 | `LASTFM_API_KEY` | Optional: the Last.fm commands ([free key](https://www.last.fm/api/account/create)) |
 
 ## Commands
