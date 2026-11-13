@@ -34,7 +34,7 @@
 | **Music** | YouTube and Spotify through Lavalink v4, search-and-pick, queue, seek, volume, loop, filters (8D, nightcore, karaoke, bassboost...). Stays in the call until it's been alone for 3 minutes. |
 | **Last.fm** | Now playing, recent scrobbles, top lists, album collages up to 10x10, artist/album info, who knows an artist/track/album, crowns, and taste matches. |
 | **Welcome cards** | The "twelve stars" card for joins and leaves, with your own message, background and star colours. |
-| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours, birthdays and personal Instagram links, plus a post in your greeting channel on each birthday. |
+| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours, birthdays and personal Instagram links, collectable photocards, plus a post in your greeting channel on each birthday. |
 | **Fun & games** | LOONA slot machine, tic-tac-toe, rock paper scissors, trivia, memes, ratings, snipe and text toys. |
 | **Info** | Member, server, role and channel info, plus anime, GitHub, news, Pokédex, Steam, weather and Wikipedia lookups. |
 | **Prefix or slash** | Every command works as `-play` **and** `/play`. The prefix can be changed per server. |
@@ -157,11 +157,13 @@ couldn't answer, keeps the current holder).
 </details>
 
 <details>
-<summary><b>LOONA</b>: member profiles</summary>
+<summary><b>LOONA</b>: member profiles and photocards</summary>
 
 | Command | What it does | Aliases |
 |---|---|---|
+| `collection [user]` | Shows someone's LOONA photocards and set progress. | `cards` `binder` |
 | `loona [member]` | LOONA member profiles with photos and fun facts. | `orbit` `member` |
+| `pull` | Pull a LOONA photocard: free once a day, then 150 moon coins. | `pc` `photocard` |
 
 </details>
 
@@ -271,6 +273,15 @@ birthday line. It's on by default and posts once per member per year; `toggle-bi
 `loona` shows the group page (including whose birthday is next) and a menu of all 12 members. `loona <name>` opens a profile;
 names, Korean names and nicknames all work (`heekki`, `희진`, `olivia hye`). Buttons flip through photos and facts.
 The data is a snapshot in `lib/loona/members.json`.
+</details>
+
+<details>
+<summary><b>Photocards</b></summary>
+
+48 cards: each member in four rarities (Common 60%, Rare 27%, Super 10%, Moon 3%), each around a different licensed photo
+and framed in her colour, silver, gold or all twelve colours. `pull` is free once a day (Korea time), then costs 150 moon
+coins from `slots`. Owning any card of every member in LOONA 1/3, ODD EYE CIRCLE or yyxy pays 500 coins, and all twelve
+pays 2000, once each. Collections are per server, like coins. Every card has her Instagram button (HyeJu has none).
 </details>
 
 <details>

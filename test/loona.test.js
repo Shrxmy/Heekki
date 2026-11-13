@@ -160,3 +160,105 @@ test("Instagram: every member but HyeJu links her personal account, with undersc
     assert.strictEqual(yeojin.fields.find((f) => f.name === "Instagram").value, "[@yeojin.\\_.o\\_x](https://www.instagram.com/yeojin._.o_x/)");
     assert.ok(!cmd().memberEmbed(findMember("hyeju")).toJSON().fields.some((f) => f.name === "Instagram"));
 });
+
+test("photocards: 48 cards, rarity odds add up, and sets count any rarity", () => {
+    const pc = require("../lib/loona/photocards");
+    assert.strictEqual(pc.ALL.length, 48);
+    assert.strictEqual(new Set(pc.ALL.map((c) => c.id)).size, 48);
+    assert.strictEqual(pc.RARITIES.reduce((sum, r) => sum + r.weight, 0), 100);
+    for (const c of pc.ALL) assert.match(c.photo.url, /^https:\/\/(upload|thumb)\.wikimedia\.org\//, c.id); // licensed photos only
+    assert.strictEqual(pc.roll(() => 0).rarity.key, "common");
+    assert.strictEqual(pc.roll(() => 0.98).rarity.key, "moon");
+    assert.strictEqual(pc.roll(() => 0.99999).member.name, "HyeJu");
+    const sets = (ids) => pc.completedSets(ids).map((s) => s.key);
+    assert.deepStrictEqual(sets(["kimlip-common", "jinsoul-moon", "choerry-rare"]), ["oec"]);
+    assert.deepStrictEqual(sets(["kimlip-common", "jinsoul-moon"]), []);
+    assert.deepStrictEqual(sets(pc.ALL.filter((c) => c.rarity.key === "common").map((c) => c.id)), ["1/3", "oec", "yyxy", "loona"]);
+});
+
+test("photocards: a card still draws when her photo can't be downloaded", async (t) => {
+    const pc = require("../lib/loona/photocards");
+    const http = require("../lib/info/http");
+    t.mock.method(http, "getBuffer", async () => { throw new Error("offline"); });
+    const { loadImage } = require("@napi-rs/canvas");
+    const image = await loadImage(await pc.renderPhotocard(pc.card(loona().findMember("chuu"), pc.RARITIES[3])));
+    assert.deepStrictEqual([image.width, image.height], [560, 860]);
+});
+
+test("pull: free once a day, then costs coins, refuses when broke, and pays a set bonus once", async (t) => {
+    const pc = require("../lib/loona/photocards");
+    const db = require("../lib/db");
+    const pull = require("../commands/loona/pull");
+    t.mock.method(pc, "renderPhotocard", async () => Buffer.from("png"));
+    const replies = [];
+    const message = { guild: { id: "pcg" }, author: { id: "pcu", displayAvatarURL: () => "" }, member: { displayName: "Orbit" },
+        reply: async (p) => replies.push(p) };
+    const desc = () => replies.at(-1).embeds[0].toJSON().description;
+
+    const oec = ["kimlip", "jinsoul", "choerry"].map((k) => pc.card(loona().findMember(k), pc.RARITIES[0]));
+    let next = 0;
+    t.mock.method(pc, "roll", () => oec[next++]);
+    await pull.run({}, message, []);
+    assert.match(desc(), /New card!/);
+    assert.match(desc(), /free pull/);
+    assert.strictEqual(await db.getCoins("pcg", "pcu"), 500);
+    assert.strictEqual(replies.at(-1).components[0].toJSON().components[0].url, "https://www.instagram.com/kimxxlip/");
+
+    await pull.run({}, message, []);
+    assert.match(desc(), /-150 moon coins/);
+    await pull.run({}, message, []); // Choerry completes ODD EYE CIRCLE
+    assert.match(desc(), /ODD EYE CIRCLE\*\* set complete! \+500/);
+    assert.strictEqual(await db.getCoins("pcg", "pcu"), 500 - 150 - 150 + 500);
+
+    t.mock.method(pc, "roll", () => oec[2]); // a duplicate doesn't pay the set again
+    await pull.run({}, message, []);
+    assert.match(desc(), /You now have 2 of this card/);
+    assert.doesNotMatch(desc(), /set complete/);
+    assert.strictEqual(await db.getCoins("pcg", "pcu"), 550);
+
+    await db.betCoins("pcg", "pcu", 500, 0); // down to 50 coins
+    const before = (await db.photocardsOf("pcg", "pcu")).size;
+    await pull.run({}, message, []);
+    assert.match(replies.at(-1), /costs \*\*150\*\* moon coins \(you have \*\*50\*\*\)/);
+    assert.strictEqual((await db.photocardsOf("pcg", "pcu")).size, before);
+
+    const hyeju = pc.card(loona().findMember("hyeju"), pc.RARITIES[0]);
+    await db.betCoins("pcg", "pcu", 0, 1000);
+    t.mock.method(pc, "roll", () => hyeju);
+    await pull.run({}, message, []);
+    assert.deepStrictEqual(replies.at(-1).components, []); // HyeJu: no Instagram button
+});
+
+test("collection: marks owned rarities and completed sets", () => {
+    const { collectionEmbed } = require("../commands/loona/collection");
+    const owned = new Map([["kimlip-common", 1], ["jinsoul-moon", 2], ["choerry-rare", 1]]);
+    const embed = collectionEmbed({ id: "1", displayName: "Orbit_fan" }, owned).toJSON();
+    assert.match(embed.description, /Kim Lip .*● ◇ ☆ 🌑/);
+    assert.match(embed.description, /JinSoul .*○ ◇ ☆ 🌕/);
+    assert.match(embed.description, /✅ ODD EYE CIRCLE/);
+    assert.match(embed.description, /▫️ yyxy/);
+    assert.strictEqual(embed.title, "Orbit\\_fan's photocards");
+    assert.match(embed.footer.text, /^3\/48 cards · 4 pulled/);
+});
+
+test("pullPhotocard: one free pull a day even when pulls race, the day never moves back, and paying is all-or-nothing", async () => {
+    const db = require("../lib/db");
+    const both = await Promise.all([db.pullPhotocard("rg", "ru", "2026-11-14", 150, "chuu-moon"), db.pullPhotocard("rg", "ru", "2026-11-14", 150, "chuu-moon")]);
+    assert.deepStrictEqual(both.map((p) => p.free).sort(), [false, true]);
+    assert.strictEqual(await db.getCoins("rg", "ru"), 350);
+    assert.strictEqual((await db.photocardsOf("rg", "ru")).get("chuu-moon"), 2);
+    assert.strictEqual((await db.pullPhotocard("rg", "ru", "2026-11-13", 150, "yves-rare")).free, false); // late request from yesterday
+    assert.strictEqual((await db.pullPhotocard("rg", "ru", "2026-11-15", 150, "yves-rare")).free, true);
+    assert.strictEqual((await db.pullPhotocard("rg", "ru", "2026-11-15", 150, "yves-rare")).free, false); // 350 - 150 - 150 = 50 left
+    assert.strictEqual(await db.pullPhotocard("rg", "ru", "2026-11-15", 150, "heejin-common"), null); // can't afford
+    assert.strictEqual((await db.photocardsOf("rg", "ru")).has("heejin-common"), false);
+    assert.strictEqual(await db.getCoins("rg", "ru"), 50);
+    const bonus = await Promise.all([db.paySetBonus("rg", "ru", "oec", 500), db.paySetBonus("rg", "ru", "oec", 500)]);
+    assert.deepStrictEqual(bonus.sort(), [false, true]);
+    assert.strictEqual(await db.getCoins("rg", "ru"), 550);
+});
+
+test("pull: today's date is zero-padded so it sorts correctly", (t) => {
+    t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-03-04T03:00:00Z") });
+    assert.strictEqual(require("../commands/loona/pull").today(), "2026-03-04");
+});
