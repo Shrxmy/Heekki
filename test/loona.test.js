@@ -162,24 +162,34 @@ test("Instagram: every member but HyeJu links her personal account, with undersc
     assert.ok(!cmd().memberEmbed(findMember("hyeju")).toJSON().fields.some((f) => f.name === "Instagram"));
 });
 
-test("photocards: 48 cards, rarity odds add up, and sets count any rarity", () => {
+test("photocards: LOONA's 48 scans plus every other group's photos, rarity odds add up, and sets count any rarity", () => {
     const pc = require("../lib/loona/photocards");
-    assert.strictEqual(pc.ALL.length, 48);
-    assert.strictEqual(new Set(pc.ALL.map((c) => c.id)).size, 48);
+    const loonaCards = pc.ALL.filter((c) => c.group.key === "loona");
+    assert.strictEqual(loonaCards.length, 48);
+    assert.strictEqual(new Set(pc.ALL.map((c) => c.id)).size, pc.ALL.length);
+    assert.strictEqual(pc.ALL.length, 4 * [...pc.GROUPS.values()].reduce((n, g) => n + g.members.length, 0));
     assert.strictEqual(pc.RARITIES.reduce((sum, r) => sum + r.weight, 0), 100);
-    for (const c of pc.ALL) { // every card has its scan and a credit naming the scanner
+    for (const c of loonaCards) { // every LOONA card has its scan and a credit naming the scanner
         assert.ok(c.scan?.from && c.scan.drive, c.id);
         assert.match(pc.credit(c), /^Scan: Savvi's LOONA Scans \(@pika_chuuves\) · /);
         assert.strictEqual(pc.scanKey(c.id), `photocards/${c.id}.jpg`);
     }
-    assert.strictEqual(new Set(pc.ALL.map((c) => c.scan.drive)).size, 48, "48 different scans");
+    assert.strictEqual(new Set(loonaCards.map((c) => c.scan.drive)).size, 48, "48 different scans");
+    for (const c of pc.ALL.filter((x) => x.group.key !== "loona")) { // other groups: a photo with its photographer and licence
+        assert.match(c.scan?.url ?? "", /^https:\/\/(upload|thumb)\.wikimedia\.org\//, c.id);
+        assert.match(pc.credit(c), /^Photo: .+, .+, via Wikimedia Commons$/, c.id);
+        assert.match(c.id, /^[a-z]+\.[a-z0-9]+-(common|rare|super|moon)$/, c.id); // no "-" in keys, so selling can read the rarity
+    }
     assert.strictEqual(pc.roll(() => 0).rarity.key, "common");
     assert.strictEqual(pc.roll(() => 0.98).rarity.key, "moon");
-    assert.strictEqual(pc.roll(() => 0.99999).member.name, "HyeJu");
+    assert.strictEqual(pc.roll(() => 0.99999).member.name, "HyeJu"); // LOONA by default
+    assert.strictEqual(pc.roll(() => 0.99999, ["loona", "aespa"]).member.name, "Ningning");
+    assert.strictEqual(pc.roll(() => 0, ["twice"]).group.key, "twice");
     const sets = (ids) => pc.completedSets(ids).map((s) => s.key);
     assert.deepStrictEqual(sets(["kimlip-common", "jinsoul-moon", "choerry-rare"]), ["oec"]);
     assert.deepStrictEqual(sets(["kimlip-common", "jinsoul-moon"]), []);
-    assert.deepStrictEqual(sets(pc.ALL.filter((c) => c.rarity.key === "common").map((c) => c.id)), ["1/3", "oec", "yyxy", "loona"]);
+    assert.deepStrictEqual(sets(pc.ALL.filter((c) => c.rarity.key === "common").map((c) => c.id)), pc.SETS.map((x) => x.key)); // every group's sets
+    assert.deepStrictEqual(sets(pc.ALL.filter((c) => c.rarity.key === "common" && c.group.key === "twice").map((c) => c.id)), ["twice"]);
 });
 
 test("photocards: a card still draws when its scan isn't in storage", async () => {
@@ -235,16 +245,25 @@ test("pull: free once a day, then costs coins, refuses when broke, and pays a se
     assert.deepStrictEqual(replies.at(-1).components, []); // HyeJu: no Instagram button
 });
 
-test("collection: marks owned rarities and completed sets", () => {
-    const { collectionEmbed } = require("../commands/loona/collection");
-    const owned = new Map([["kimlip-common", 1], ["jinsoul-moon", 2], ["choerry-rare", 1]]);
+test("collection: one group's rarities and sets, or a summary of every group", () => {
+    const { collectionEmbed, summaryEmbed } = require("../commands/loona/collection");
+    const owned = new Map([["kimlip-common", 1], ["jinsoul-moon", 2], ["choerry-rare", 1], ["twice.nayeon-rare", 1]]);
     const embed = collectionEmbed({ id: "1", displayName: "Orbit_fan" }, owned).toJSON();
-    assert.match(embed.description, /Kim Lip .*● ◇ ☆ 🌑/);
-    assert.match(embed.description, /JinSoul .*○ ◇ ☆ 🌕/);
+    assert.match(embed.description, /Kim Lip\W.*● ◇ ☆ 🌑/);
+    assert.match(embed.description, /JinSoul\W.*○ ◇ ☆ 🌕/);
     assert.match(embed.description, /✅ ODD EYE CIRCLE/);
     assert.match(embed.description, /▫️ yyxy/);
-    assert.strictEqual(embed.title, "Orbit\\_fan's photocards");
+    assert.doesNotMatch(embed.description, /TWICE/); // only LOONA's sets in LOONA's view
+    assert.strictEqual(embed.title, "Orbit\\_fan's LOONA photocards");
     assert.match(embed.footer.text, /^3\/48 cards · 4 pulled/);
+    const twice = collectionEmbed({ id: "1", displayName: "Orbit" }, owned, "twice").toJSON();
+    assert.match(twice.description, /Nayeon +` ○ ◆ ☆ 🌑/);
+    assert.match(twice.description, /▫️ TWICE \(all 9\) \(\+1350\)/);
+    assert.match(twice.footer.text, /^1\/36 cards/);
+    const all = summaryEmbed({ id: "1", displayName: "Orbit" }, owned, ["loona", "twice", "aespa"]).toJSON();
+    assert.match(all.description, /\*\*LOONA\*\* · 3\/48 cards · 1\/4 sets · 1 with spares/);
+    assert.match(all.description, /\*\*TWICE\*\* · 1\/36 cards · 0\/1 sets/);
+    assert.match(all.description, /\*\*aespa\*\* · 0\/16 cards/);
 });
 
 test("pullPhotocard: one free pull a day even when pulls race, the day never moves back, and paying is all-or-nothing", async () => {

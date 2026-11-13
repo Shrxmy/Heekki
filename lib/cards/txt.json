@@ -1,0 +1,192 @@
+{
+ "key": "txt",
+ "name": "TOMORROW X TOGETHER",
+ "short": "TXT",
+ "korean": "투모로우바이투게더",
+ "color": "#5DADE2",
+ "source": "Members: Wikidata (CC0). Photos: Wikimedia Commons, credited on every card; swap in concept photos per card by changing its url and re-running scripts/upload-photocard-scans.js.",
+ "members": [
+  {
+   "key": "txt.soobin",
+   "name": "Soobin",
+   "korean": "수빈",
+   "aliases": [
+    "수빈"
+   ],
+   "order": 1,
+   "birthday": "2000-12-05",
+   "color": "#2688C9",
+   "qid": "Q62396828"
+  },
+  {
+   "key": "txt.yeonjun",
+   "name": "Yeonjun",
+   "korean": "연준",
+   "aliases": [
+    "연준"
+   ],
+   "order": 2,
+   "birthday": "1999-09-13",
+   "color": "#8826C9",
+   "qid": "Q62396954"
+  },
+  {
+   "key": "txt.beomgyu",
+   "name": "Beomgyu",
+   "korean": "범규",
+   "aliases": [
+    "범규"
+   ],
+   "order": 3,
+   "birthday": "2001-03-13",
+   "color": "#C92647",
+   "qid": "Q62396696"
+  },
+  {
+   "key": "txt.taehyun",
+   "name": "Taehyun",
+   "korean": "태현",
+   "aliases": [
+    "태현"
+   ],
+   "order": 4,
+   "birthday": "2002-02-05",
+   "color": "#C9C926",
+   "qid": "Q61715235"
+  },
+  {
+   "key": "txt.hueningkai",
+   "name": "Huening Kai",
+   "korean": "휴닝카이",
+   "aliases": [
+    "휴닝카이"
+   ],
+   "order": 5,
+   "birthday": "2002-08-14",
+   "color": "#26C947",
+   "qid": "Q61715236"
+  }
+ ],
+ "cards": {
+  "txt.soobin-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Choi_Soo-bin_at_a_Dior_event_in_2025_02.jpg/960px-Choi_Soo-bin_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Soo-bin_at_a_Dior_event_in_2025_02.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.soobin-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Choi_Soo-bin_%28%EC%B5%9C%EC%88%98%EB%B9%88%29_220121.jpg/960px-Choi_Soo-bin_%28%EC%B5%9C%EC%88%98%EB%B9%88%29_220121.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Soo-bin_(%EC%B5%9C%EC%88%98%EB%B9%88)_220121.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.soobin-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TXT-SOOBIN.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:TXT-SOOBIN.png",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.soobin-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Choi_Soo-bin_at_POL%C3%88NE_photocall_in_2026_%283%29.jpg/960px-Choi_Soo-bin_at_POL%C3%88NE_photocall_in_2026_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Soo-bin_at_POL%C3%88NE_photocall_in_2026_(3).jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+  },
+  "txt.yeonjun-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Yeonjun_250625.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Yeonjun_250625.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: 티비텐 TV10, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.yeonjun-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Choi_Yeon-jun_at_Soribada_Awards_on_August_23%2C_2019_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Yeon-jun_at_Soribada_Awards_on_August_23,_2019_02.png",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.yeonjun-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/241014_Yeonjun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:241014_Yeonjun.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.yeonjun-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Choi_Yeon-jun_at_a_Dior_event_in_2025_01.jpg/960px-Choi_Yeon-jun_at_a_Dior_event_in_2025_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Yeon-jun_at_a_Dior_event_in_2025_01.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.beomgyu-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Choi_Beom-gyu_at_a_Dior_event_in_2025_02.jpg/960px-Choi_Beom-gyu_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Beom-gyu_at_a_Dior_event_in_2025_02.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.beomgyu-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Beomgyu1_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Beomgyu1_(cropped).jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Kinocine, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "txt.beomgyu-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Marie_Claire_Korea_Draw_%26_Write_Journal_Beomgyu_%282%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Marie_Claire_Korea_Draw_%26_Write_Journal_Beomgyu_(2).png",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.beomgyu-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Beomgyu_at_Soribada_Awards_on_August_23%2C_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Beomgyu_at_Soribada_Awards_on_August_23,_2019.png",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.taehyun-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Kang_Tae-hyun_at_a_Dior_event_in_2025_02.jpg/960px-Kang_Tae-hyun_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Kang_Tae-hyun_at_a_Dior_event_in_2025_02.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.taehyun-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Kang_Tae-hyun_going_to_a_Music_Bank_recording_on_March_22%2C_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Kang_Tae-hyun_going_to_a_Music_Bank_recording_on_March_22,_2019.png",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.taehyun-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Kang_Tae-hyun_at_Soribada_Awards_on_August_23%2C_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Kang_Tae-hyun_at_Soribada_Awards_on_August_23,_2019.png",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.taehyun-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Taehyun1.jpg/960px-Taehyun1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Taehyun1.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: Kinocine PARKJAEHWAN, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "txt.hueningkai-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/HueningKai_at_a_Dior_event_in_2025_02.jpg/960px-HueningKai_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:HueningKai_at_a_Dior_event_in_2025_02.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.hueningkai-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Huening_Kai_at_the_Seoul_Fashion_Week_2024.jpg/960px-Huening_Kai_at_the_Seoul_Fashion_Week_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Huening_Kai_at_the_Seoul_Fashion_Week_2024.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+  },
+  "txt.hueningkai-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/HueningKai_at_Ferragamo_photocall%2C_August_2026_%283%29.jpg/960px-HueningKai_at_Ferragamo_photocall%2C_August_2026_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:HueningKai_at_Ferragamo_photocall,_August_2026_(3).jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+  },
+  "txt.hueningkai-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/080726_Huening_Kai_at_a_Ferragamo_photocall_03.jpg/960px-080726_Huening_Kai_at_a_Ferragamo_photocall_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:080726_Huening_Kai_at_a_Ferragamo_photocall_03.jpg",
+   "from": "TXT · 투모로우바이투게더",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+  }
+ }
+}

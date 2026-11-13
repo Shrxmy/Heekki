@@ -1,0 +1,193 @@
+{
+ "key": "shinee",
+ "name": "SHINee",
+ "short": "SHINee",
+ "korean": "샤이니",
+ "color": "#54C7B8",
+ "source": "Members: Wikidata (CC0). Photos: Wikimedia Commons, credited on every card; swap in concept photos per card by changing its url and re-running scripts/upload-photocard-scans.js.",
+ "members": [
+  {
+   "key": "shinee.onew",
+   "name": "Onew",
+   "korean": "온유",
+   "aliases": [
+    "온유"
+   ],
+   "order": 1,
+   "birthday": "1989-12-14",
+   "color": "#26C9B4",
+   "qid": "Q494692"
+  },
+  {
+   "key": "shinee.jonghyun",
+   "name": "Jonghyun",
+   "korean": "종현",
+   "aliases": [
+    "Kim Jong-hyun",
+    "종현"
+   ],
+   "order": 2,
+   "birthday": "1990-04-08",
+   "color": "#3226C9",
+   "qid": "Q484484"
+  },
+  {
+   "key": "shinee.key",
+   "name": "Key",
+   "korean": "Key",
+   "aliases": [],
+   "order": 3,
+   "birthday": "1991-09-23",
+   "color": "#C9269D",
+   "qid": "Q483980"
+  },
+  {
+   "key": "shinee.minho",
+   "name": "Minho",
+   "korean": "민호",
+   "aliases": [
+    "Choi Min-ho",
+    "민호"
+   ],
+   "order": 4,
+   "birthday": "1991-12-09",
+   "color": "#C97326",
+   "qid": "Q134575"
+  },
+  {
+   "key": "shinee.taemin",
+   "name": "Taemin",
+   "korean": "태민",
+   "aliases": [
+    "Lee Taemin",
+    "태민"
+   ],
+   "order": 5,
+   "birthday": "1993-07-18",
+   "color": "#5CC926",
+   "qid": "Q153597"
+  }
+ ],
+ "cards": {
+  "shinee.onew-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Onew_for_Marie_Claire_Magazine_August_Issue_2021_03.png/960px-Onew_for_Marie_Claire_Magazine_August_Issue_2021_03.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Onew_for_Marie_Claire_Magazine_August_Issue_2021_03.png",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+  },
+  "shinee.onew-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Onew_at_the_Etude_Pink_Play_Party_in_Singapore_04.jpg/960px-Onew_at_the_Etude_Pink_Play_Party_in_Singapore_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Onew_at_the_Etude_Pink_Play_Party_in_Singapore_04.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Excentrique, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.onew-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Onew_performing_at_SM_Town_Live_%2710_World_Tour_in_Seoul_04.jpg/960px-Onew_performing_at_SM_Town_Live_%2710_World_Tour_in_Seoul_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Onew_performing_at_SM_Town_Live_%2710_World_Tour_in_Seoul_04.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: 85246.tistory, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.onew-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Onew_at_the_2015_Hallyu_Dream_Festival_01.jpg/960px-Onew_at_the_2015_Hallyu_Dream_Festival_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Onew_at_the_2015_Hallyu_Dream_Festival_01.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Onewsama, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "shinee.jonghyun-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Jonghyun_at_a_fansigning_in_Busan%2C_in_June_2016_01.jpg/960px-Jonghyun_at_a_fansigning_in_Busan%2C_in_June_2016_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Jonghyun_at_a_fansigning_in_Busan,_in_June_2016_01.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Anju, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.jonghyun-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Jonghyun_Kim_at_the_SMTown_Week_02.jpg/960px-Jonghyun_Kim_at_the_SMTown_Week_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Jonghyun_Kim_at_the_SMTown_Week_02.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Like a Diamond, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.jonghyun-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Kim_Jong_Hyun_at_the_SMTown_Live_World_Tour_III_in_Seoul_01.jpg/960px-Kim_Jong_Hyun_at_the_SMTown_Live_World_Tour_III_in_Seoul_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Kim_Jong_Hyun_at_the_SMTown_Live_World_Tour_III_in_Seoul_01.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Like a Diamond, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.jonghyun-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Kim_Jong-hyun_performs_at_MBC_%22Turn_Up_the_Radio%22_in_September_2014_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Kim_Jong-hyun_performs_at_MBC_%22Turn_Up_the_Radio%22_in_September_2014_01.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Pabian, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.key-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Key_in_November_2025.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Key_in_November_2025.png",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: TV10, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.key-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/%ED%82%A4%28Key%29_%EB%91%90%EC%8B%9C%ED%83%88%EC%B6%9C_%EC%BB%AC%ED%88%AC%EC%87%BC_02.png/960px-%ED%82%A4%28Key%29_%EB%91%90%EC%8B%9C%ED%83%88%EC%B6%9C_%EC%BB%AC%ED%88%AC%EC%87%BC_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:%ED%82%A4(Key)_%EB%91%90%EC%8B%9C%ED%83%88%EC%B6%9C_%EC%BB%AC%ED%88%AC%EC%87%BC_02.png",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: SBS Radio 에라오, CC BY 3.0, via Wikimedia Commons"
+  },
+  "shinee.key-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Key_at_the_2013_Melon_Music_Awards_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Key_at_the_2013_Melon_Music_Awards_07.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Sweet Candy, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.key-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Key_at_the_SMTown_Coex_Artium_on_January_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Key_at_the_SMTown_Coex_Artium_on_January_2015.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Sweetcandy, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.minho-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Minho_for_Marie_Claire_Magazine_August_Issue_2021_05.png/960px-Minho_for_Marie_Claire_Magazine_August_Issue_2021_05.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Minho_for_Marie_Claire_Magazine_August_Issue_2021_05.png",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+  },
+  "shinee.minho-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Minho_at_the_2013_Melon_Music_Awards_01_%28cropped%29.jpg/960px-Minho_at_the_2013_Melon_Music_Awards_01_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Minho_at_the_2013_Melon_Music_Awards_01_(cropped).jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Sweet Candy, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.minho-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Choi_Min-ho_at_%22Coach%22_event_in_Busan%2C_in_November_2015_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Min-ho_at_%22Coach%22_event_in_Busan,_in_November_2015_02.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: Anju, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.minho-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Choi_Min-ho_at_Derailed_press_conference_in_November_2016_04.jpg/960px-Choi_Min-ho_at_Derailed_press_conference_in_November_2016_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Choi_Min-ho_at_Derailed_press_conference_in_November_2016_04.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: nothing without you., CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.taemin-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/240919_SHINEE_Taemin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:240919_SHINEE_Taemin.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "shinee.taemin-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Taemin_at_the_Suwon_Strides_on_June_2010_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Taemin_at_the_Suwon_Strides_on_June_2010_03.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: 85246.tistory, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.taemin-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Taemin_at_the_SMTown_Week_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Taemin_at_the_SMTown_Week_07.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: 위드태민::WithTaemin随行, CC BY 4.0, via Wikimedia Commons"
+  },
+  "shinee.taemin-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Taemin_Lee_at_the_29th_Golden_Disk_Awards_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Taemin_Lee_at_the_29th_Golden_Disk_Awards_07.jpg",
+   "from": "SHINee · 샤이니",
+   "credit": "Photo: 위드태민::WithTaemin随行, CC BY 4.0, via Wikimedia Commons"
+  }
+ }
+}

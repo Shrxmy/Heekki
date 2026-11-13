@@ -175,10 +175,11 @@ couldn't answer, keeps the current holder).
 
 | Command | What it does | Aliases |
 |---|---|---|
-| `collection [user]` | Shows someone's LOONA photocards, set progress and duplicates. | `cards` `binder` |
+| `card-groups [groups]` | Which groups' photocards this server pulls: `card-groups loona twice aespa`, `all` or `reset` (changing it needs Manage Server). | `set-card-groups` `cardgroups` |
+| `collection [user] [group]` | Shows someone's photocards: one group with `collection twice`, or a summary of all of them. | `cards` `binder` |
 | `guess [action]` | LOONA song quiz in your voice channel: guess the song from a 20-second clip. | `songquiz` `gts` |
 | `loona [member]` | LOONA member profiles with photos and fun facts. | `orbit` `member` |
-| `pull` | Pull a LOONA photocard: free once a day, then 150 moon coins. | `pc` `photocard` |
+| `pull [group]` | Pull a photocard from the server's groups (or `pull twice`): free once a day, then 150 moon coins. | `pc` `photocard` |
 | `sell <cards>` | Sell duplicate photocards for moon coins (you always keep one of each): `sell dupes` or `sell kim lip rare`. | `sellcards` |
 | `showcase <card>` | Show off a photocard you own, like `showcase kim lip moon`. | `show` `card` `view` |
 | `set-drop-channel <channel_or_off>` | Sets where photocards drop during chat ("off" stops them, "test" drops one now). Manage Server. | `dropchannel` |
@@ -311,6 +312,13 @@ The quiz won't start while the bot is in voice for music.
 <details>
 <summary><b>Photocards</b></summary>
 
+**Groups:** LOONA, plus SEVENTEEN, TWICE, SHINee, aespa and TOMORROW X TOGETHER. Each server pulls LOONA only until an
+admin runs `card-groups` (e.g. `card-groups loona twice aespa` or `card-groups all`); `pull twice` pulls one of them.
+Each group is equally likely, then the rarity, then the member. Other groups' members come from Wikidata and their
+photos from Wikimedia Commons (`lib/cards/<group>.json`, photographer and licence on every card); to use a concept photo
+instead, change that card's `url` and run the upload script for it. Every group has a full-group set worth 150 coins
+per member.
+
 48 cards: each member in four rarities (Common 60%, Rare 27%, Super 10%, Moon 3%), each a different real photocard scan
 from [Savvi's LOONA Scans](https://savvi-loonascans.carrd.co) (credited on every card), shown on a solo-album page with
 the rarity in the discography sheet's style. The scans live in the Neon `assets` bucket; to (re)upload them after changing
@@ -369,6 +377,7 @@ test/                  run with `npm test`
 - **이달의 소녀 wordmark:** cropped from [LOONA ODD EYE CIRCLE Logo.png](https://commons.wikimedia.org/wiki/File:LOONA_ODD_EYE_CIRCLE_Logo.png) on Wikimedia Commons (public domain as a text logo; Blockberry Creative's logo), in `assets/images/`.
 - **Photocard scans:** [Savvi's LOONA Scans](https://savvi-loonascans.carrd.co) (@pika_chuuves), credited on every card.
 - **Song pool:** [MusicBrainz](https://musicbrainz.org) (CC0).
+- **Other groups' members:** [Wikidata](https://www.wikidata.org) (CC0); **their photos:** [Wikimedia Commons](https://commons.wikimedia.org), credited per card.
 - **Fonts:** [Noto Sans KR](https://fonts.google.com/noto/specimen/Noto+Sans+KR), Jost, Bodoni Moda, Libre Caslon and Sacramento, all SIL Open Font License (`assets/fonts/OFL*.txt`).
 - **Lookups:** AniList, GitHub, Google News, PokeAPI, Steam, Open-Meteo, Wikipedia and Urban Dictionary.
 

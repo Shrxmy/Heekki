@@ -1,17 +1,22 @@
-// Downloads each photocard's scan from Savvi's LOONA Scans (Google Drive, per lib/loona/photocard-scans.json), trims
-// the scanner margin and the card's rounded corners, shrinks it to 600px wide and uploads it to the Neon "assets" bucket.
-// Run once after changing the manifest:  node --env-file=.env scripts/upload-photocard-scans.js [card-id ...]
+// Uploads every photocard image to the Neon "assets" bucket, shrunk to 600px wide:
+// - LOONA: scans from Savvi's LOONA Scans (Google Drive, lib/loona/photocard-scans.json), with the scanner margin and
+//   the card's rounded corners trimmed off;
+// - other groups: the photo at each card's `url` in lib/cards/<group>.json (Wikimedia Commons, or a concept photo).
+// Run after changing a manifest:  node --env-file=.env scripts/upload-photocard-scans.js [card-id or group ...]
 const { createCanvas, loadImage } = require("@napi-rs/canvas");
 const storage = require("../lib/storage");
-const { scanKey } = require("../lib/loona/photocards");
-const { cards } = require("../lib/loona/photocard-scans.json");
+const { scanKey, GROUPS } = require("../lib/loona/photocards");
+
+// card id -> { group, scan }: LOONA's scans and every other group's photos.
+const cards = Object.fromEntries([...GROUPS.values()].flatMap((g) => Object.entries(g.images).map(([id, scan]) => [id, { group: g.key, scan }])));
 
 const WIDTH = 600, INSET = 0.035; // inset past the rounded corners
 
-async function download(driveId) {
-    const res = await fetch(`https://drive.google.com/uc?export=download&id=${driveId}`, { signal: AbortSignal.timeout(90_000) });
+async function download({ drive, url }) {
+    const res = await fetch(url ?? `https://drive.google.com/uc?export=download&id=${drive}`,
+        { signal: AbortSignal.timeout(90_000), headers: { "User-Agent": "Heekki/2.0 ( https://github.com/Shrxmy/Heekki )" } });
     const type = res.headers.get("content-type") ?? "";
-    if (!res.ok || !type.startsWith("image/")) throw new Error(`Drive returned ${res.status} ${type}`);
+    if (!res.ok || !type.startsWith("image/")) throw new Error(`download returned ${res.status} ${type}`);
     return Buffer.from(await res.arrayBuffer());
 }
 
@@ -33,29 +38,30 @@ function contentBox(img) {
     return { x: left * s + bw * INSET, y: top * s + bh * INSET, w: bw * (1 - 2 * INSET), h: bh * (1 - 2 * INSET) };
 }
 
-async function prepare(scan) {
-    const img = await loadImage(scan);
-    const box = contentBox(img);
+async function prepare(file, trim) {
+    const img = await loadImage(file);
+    const box = trim ? contentBox(img) : { x: 0, y: 0, w: img.width, h: img.height }; // photos have no scanner margin
     const canvas = createCanvas(WIDTH, Math.round((box.h / box.w) * WIDTH));
     canvas.getContext("2d").drawImage(img, box.x, box.y, box.w, box.h, 0, 0, canvas.width, canvas.height);
     return canvas.encode("jpeg", 88);
 }
 
 (async () => {
-    const only = process.argv.slice(2);
-    const ids = only.length ? only : Object.keys(cards);
+    const only = process.argv.slice(2); // card ids, or group keys for all of a group's cards
+    const ids = only.length ? Object.keys(cards).filter((id) => only.includes(id) || only.includes(cards[id].group)) : Object.keys(cards);
     let failed = 0;
     for (const id of ids) {
         try {
             if (!cards[id]) throw new Error("not in the manifest");
-            const jpeg = await prepare(await download(cards[id].drive));
+            const { scan, group } = cards[id];
+            const jpeg = await prepare(await download(scan), group === "loona");
             await storage.put(scanKey(id), jpeg, "image/jpeg");
             console.log(`ok   ${id} (${Math.round(jpeg.length / 1024)} KB)`);
         } catch (err) {
             failed++;
             console.error(`FAIL ${id}: ${err.message}`);
         }
-        await new Promise((r) => setTimeout(r, 1500)); // be gentle with Google Drive
+        await new Promise((r) => setTimeout(r, 1500)); // be gentle with Google Drive and Wikimedia
     }
     console.log(`${ids.length - failed}/${ids.length} uploaded`);
     process.exitCode = failed ? 1 : 0;

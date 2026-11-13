@@ -1,0 +1,344 @@
+{
+ "key": "twice",
+ "name": "TWICE",
+ "short": "TWICE",
+ "korean": "트와이스",
+ "color": "#FF5FA2",
+ "source": "Members: Wikidata (CC0). Photos: Wikimedia Commons, credited on every card; swap in concept photos per card by changing its url and re-running scripts/upload-photocard-scans.js.",
+ "members": [
+  {
+   "key": "twice.nayeon",
+   "name": "Nayeon",
+   "korean": "나연",
+   "aliases": [
+    "Im Nayeon",
+    "나연"
+   ],
+   "order": 1,
+   "birthday": "1995-09-22",
+   "color": "#C9266B",
+   "qid": "Q22804243"
+  },
+  {
+   "key": "twice.jeongyeon",
+   "name": "Jeongyeon",
+   "korean": "정연",
+   "aliases": [
+    "Yoo Jeong-yeon",
+    "정연"
+   ],
+   "order": 2,
+   "birthday": "1996-11-01",
+   "color": "#C94F26",
+   "qid": "Q25374501"
+  },
+  {
+   "key": "twice.momo",
+   "name": "Momo",
+   "korean": "모모",
+   "aliases": [
+    "모모"
+   ],
+   "order": 3,
+   "birthday": "1996-11-09",
+   "color": "#C9BB26",
+   "qid": "Q23779926"
+  },
+  {
+   "key": "twice.sana",
+   "name": "Sana",
+   "korean": "사나",
+   "aliases": [
+    "Minatozaki Sana",
+    "사나"
+   ],
+   "order": 4,
+   "birthday": "1996-12-29",
+   "color": "#6BC926",
+   "qid": "Q23012025"
+  },
+  {
+   "key": "twice.jihyo",
+   "name": "Jihyo",
+   "korean": "지효",
+   "aliases": [
+    "Park Ji-hyo",
+    "지효"
+   ],
+   "order": 5,
+   "birthday": "1997-02-01",
+   "color": "#26C94F",
+   "qid": "Q22774055"
+  },
+  {
+   "key": "twice.mina",
+   "name": "Mina",
+   "korean": "미나",
+   "aliases": [
+    "Mina Myoi",
+    "미나"
+   ],
+   "order": 6,
+   "birthday": "1997-03-24",
+   "color": "#26C9BB",
+   "qid": "Q20688186"
+  },
+  {
+   "key": "twice.dahyun",
+   "name": "Dahyun",
+   "korean": "다현",
+   "aliases": [
+    "Kim Da-hyun",
+    "다현"
+   ],
+   "order": 7,
+   "birthday": "1998-05-28",
+   "color": "#266BC9",
+   "qid": "Q22773838"
+  },
+  {
+   "key": "twice.chaeyoung",
+   "name": "Chaeyoung",
+   "korean": "채영",
+   "aliases": [
+    "Son Chaeyoung",
+    "채영"
+   ],
+   "order": 8,
+   "birthday": "1999-04-23",
+   "color": "#4F26C9",
+   "qid": "Q24043625"
+  },
+  {
+   "key": "twice.tzuyu",
+   "name": "Tzuyu",
+   "korean": "쯔위",
+   "aliases": [
+    "Chou Tzuyu",
+    "쯔위"
+   ],
+   "order": 9,
+   "birthday": "1999-06-14",
+   "color": "#BB26C9",
+   "qid": "Q20688219"
+  }
+ ],
+ "cards": {
+  "twice.nayeon-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Nayeon_in_November_2025.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Nayeon_in_November_2025.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: TV10, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.nayeon-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Im_Na-yeon_at_Golden_Disk_Awards_on_January_5%2C_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Im_Na-yeon_at_Golden_Disk_Awards_on_January_5,_2019.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.nayeon-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/20250417_Im_Nayeon_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:20250417_Im_Nayeon_05.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.nayeon-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/042126_Nayeon_at_a_Grove_Store_brand_event_02.png/960px-042126_Nayeon_at_a_Grove_Store_brand_event_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:042126_Nayeon_at_a_Grove_Store_brand_event_02.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: TV10 / Ten Asia, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.jeongyeon-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/TWICE_Jeongyeon_VETERAN_2_September_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:TWICE_Jeongyeon_VETERAN_2_September_2024.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.jeongyeon-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Jeongyeon_in_2019_1_%28derived%29.jpg/960px-Jeongyeon_in_2019_1_%28derived%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Jeongyeon_in_2019_1_(derived).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.jeongyeon-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Twice_Jeongyeon_in_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Twice_Jeongyeon_in_2023_01.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 파리게이츠, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.jeongyeon-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/260306_Twice_Hamilton_Jeongyeon_%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4_%EC%A0%95%EC%97%B0_%282%29.jpg/960px-260306_Twice_Hamilton_Jeongyeon_%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4_%EC%A0%95%EC%97%B0_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:260306_Twice_Hamilton_Jeongyeon_%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4_%EC%A0%95%EC%97%B0_(2).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: Caroline Charruyer, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "twice.momo-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/TWICE_MOMO_April_2024.jpg/960px-TWICE_MOMO_April_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:TWICE_MOMO_April_2024.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.momo-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Momo_Hirai_2015.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Momo_Hirai_2015.jpeg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: MFDICE의 이것저것, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.momo-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Hirai_Momo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Hirai_Momo.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: Mcjoun, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.momo-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/20230918_Momo_Hirai_%E5%B9%B3%E4%BA%95_%E3%82%82%E3%82%82_2023_08.jpg/960px-20230918_Momo_Hirai_%E5%B9%B3%E4%BA%95_%E3%82%82%E3%82%82_2023_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:20230918_Momo_Hirai_%E5%B9%B3%E4%BA%95_%E3%82%82%E3%82%82_2023_08.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.sana-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sana_Minatozaki_%E6%B9%8A%EF%A8%91_%E7%B4%97%E5%A4%8F_20250118_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Sana_Minatozaki_%E6%B9%8A%EF%A8%91_%E7%B4%97%E5%A4%8F_20250118_03.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.sana-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Sana_Minatozaki_at_Lotte_Family_Concert_on_May_20%2C_2017_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Sana_Minatozaki_at_Lotte_Family_Concert_on_May_20,_2017_(2).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 월아조운's, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.sana-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Sana_Minatozaki_2022_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Sana_Minatozaki_2022_(cropped).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: mang2goon, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.sana-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Sana_-_151213_%EC%88%98%EC%9B%90_%ED%8C%AC%EC%8B%B8%EC%9D%B8%ED%9A%8C_%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4%E2%91%A0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Sana_-_151213_%EC%88%98%EC%9B%90_%ED%8C%AC%EC%8B%B8%EC%9D%B8%ED%9A%8C_%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4%E2%91%A0.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: shaq32, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.jihyo-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Jihyo_-_151213_%EC%88%98%EC%9B%90_%ED%8C%AC%EC%8B%B8%EC%9D%B8%ED%9A%8C_%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4%E2%91%A0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Jihyo_-_151213_%EC%88%98%EC%9B%90_%ED%8C%AC%EC%8B%B8%EC%9D%B8%ED%9A%8C_%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4%E2%91%A0.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: shaq32, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.jihyo-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/20220121%E2%80%94Jihyo_%EC%A7%80%ED%9A%A8_Campaign_Film%2C_Pearlygates_x_Twice_2022.jpg/960px-20220121%E2%80%94Jihyo_%EC%A7%80%ED%9A%A8_Campaign_Film%2C_Pearlygates_x_Twice_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:20220121%E2%80%94Jihyo_%EC%A7%80%ED%9A%A8_Campaign_Film,_Pearlygates_x_Twice_2022.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 파리게이츠, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.jihyo-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/JIHYO_%28%EC%A7%80%ED%9A%A8%29_%E2%80%93_FANCAM_%E2%80%93_2023.08.26_%E2%80%93_P2.png/960px-JIHYO_%28%EC%A7%80%ED%9A%A8%29_%E2%80%93_FANCAM_%E2%80%93_2023.08.26_%E2%80%93_P2.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:JIHYO_(%EC%A7%80%ED%9A%A8)_%E2%80%93_FANCAM_%E2%80%93_2023.08.26_%E2%80%93_P2.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: mang2goon, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.jihyo-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/082726_Jihyo_at_The_Whoo_photocall_04.jpg/960px-082726_Jihyo_at_The_Whoo_photocall_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:082726_Jihyo_at_The_Whoo_photocall_04.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.mina-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Twice_in_Seattle_2026_-_TWICE._Mina_%2855044093787%29.jpg/960px-Twice_in_Seattle_2026_-_TWICE._Mina_%2855044093787%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Twice_in_Seattle_2026_-_TWICE._Mina_(55044093787).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: David Lee from Redmond, WA, USA, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.mina-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Myoui_Mina_at_Lotte_Family_Concert_on_May_20%2C_2017_%281%29.jpg/960px-Myoui_Mina_at_Lotte_Family_Concert_on_May_20%2C_2017_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Myoui_Mina_at_Lotte_Family_Concert_on_May_20,_2017_(1).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 월아조운's, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.mina-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/230415_Mina%27s_final_speech_at_%22Ready_to_Be%22_Tour_07.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:230415_Mina%27s_final_speech_at_%22Ready_to_Be%22_Tour_07.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: On the street, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.mina-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Mina_Sharon_Myoui_%E5%90%8D%E4%BA%95_%E5%8D%97_2024_05.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Mina_Sharon_Myoui_%E5%90%8D%E4%BA%95_%E5%8D%97_2024_05.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.dahyun-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Dahyun_at_press_conference_for_You_Are_the_Apple_of_My_Eye_02_%28cropped%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Dahyun_at_press_conference_for_You_Are_the_Apple_of_My_Eye_02_(cropped).png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: https://www.youtube.com/@_TV10/videos, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.dahyun-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Dahyun_in_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Dahyun_in_2015.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: https://shaq32.tistory.com, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "twice.dahyun-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Twice_Dahyun_Marie_Claire_Korea_2022_2.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Twice_Dahyun_Marie_Claire_Korea_2022_2.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.dahyun-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/DAHYUN_%28%EB%8B%A4%ED%98%84%29_%E2%80%93_2024.02.12_%E2%80%93_P3.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:DAHYUN_(%EB%8B%A4%ED%98%84)_%E2%80%93_2024.02.12_%E2%80%93_P3.png",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.chaeyoung-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Chaeyoung_at_Gaon_Awards_red_carpet_on_January_23%2C_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Chaeyoung_at_Gaon_Awards_red_carpet_on_January_23,_2019.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 시간은금!, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.chaeyoung-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Son_Chae-young_at_Twice_Sudden_Attack_Fan_Meeting_on_March_25%2C_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Son_Chae-young_at_Twice_Sudden_Attack_Fan_Meeting_on_March_25,_2017.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 월아조운's, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.chaeyoung-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Chaeyoung_at_Guam_K-pop_Festival_%27Yes_or_Yes%27_on_December_1%2C_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Chaeyoung_at_Guam_K-pop_Festival_%27Yes_or_Yes%27_on_December_1,_2018.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 시간은금!, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.chaeyoung-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Chaeyoung_at_Asian_Artist_Awards_on_November_28%2C_2018_%282%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Chaeyoung_at_Asian_Artist_Awards_on_November_28,_2018_(2)_(cropped).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 시간은금!, crop by Satsukihuffingtoon40, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.tzuyu-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/20240305_Chou_Tzuyu_%E5%91%A8%E5%AD%90%E7%91%9C_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:20240305_Chou_Tzuyu_%E5%91%A8%E5%AD%90%E7%91%9C_02.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+  },
+  "twice.tzuyu-rare": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Twice_Tzuyu_at_KCON_2016_LA_fan_engagement_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Twice_Tzuyu_at_KCON_2016_LA_fan_engagement_(cropped).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: mduangdara from Midlothian, VA, United States, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "twice.tzuyu-super": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Tzuyu_performing_at_SAC_2016_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Tzuyu_performing_at_SAC_2016_02.jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: Hey day, CC BY 4.0, via Wikimedia Commons"
+  },
+  "twice.tzuyu-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Twice_in_Seattle_2026_-_TWICE._Tzuyu_%2855045325500%29_%28cropped%29.jpg/960px-Twice_in_Seattle_2026_-_TWICE._Tzuyu_%2855045325500%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Twice_in_Seattle_2026_-_TWICE._Tzuyu_(55045325500)_(cropped).jpg",
+   "from": "TWICE · 트와이스",
+   "credit": "Photo: David Lee from Redmond, WA, USA, CC BY 4.0, via Wikimedia Commons"
+  }
+ }
+}

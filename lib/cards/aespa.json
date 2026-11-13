@@ -1,0 +1,156 @@
+{
+ "key": "aespa",
+ "name": "aespa",
+ "short": "aespa",
+ "korean": "에스파",
+ "color": "#8E7CC3",
+ "source": "Members: Wikidata (CC0). Photos: Wikimedia Commons, credited on every card; swap in concept photos per card by changing its url and re-running scripts/upload-photocard-scans.js.",
+ "members": [
+  {
+   "key": "aespa.karina",
+   "name": "Karina",
+   "korean": "카리나",
+   "aliases": [
+    "카리나"
+   ],
+   "order": 1,
+   "birthday": "2000-04-11",
+   "color": "#5026C9",
+   "qid": "Q101161002"
+  },
+  {
+   "key": "aespa.giselle",
+   "name": "Giselle",
+   "korean": "지젤",
+   "aliases": [
+    "지젤"
+   ],
+   "order": 2,
+   "birthday": "2000-10-30",
+   "color": "#C9264F",
+   "qid": "Q101161168"
+  },
+  {
+   "key": "aespa.winter",
+   "name": "Winter",
+   "korean": "윈터",
+   "aliases": [
+    "윈터"
+   ],
+   "order": 3,
+   "birthday": "2001-01-01",
+   "color": "#A0C926",
+   "qid": "Q101161289"
+  },
+  {
+   "key": "aespa.ningning",
+   "name": "Ningning",
+   "korean": "닝닝",
+   "aliases": [
+    "닝닝"
+   ],
+   "order": 4,
+   "birthday": "2002-10-23",
+   "color": "#26C9A1",
+   "qid": "Q101161499"
+  }
+ ],
+ "cards": {
+  "aespa.karina-common": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/KARINA_-_AESPA_-_2025.01.28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:KARINA_-_AESPA_-_2025.01.28.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: David Lee, CC BY 2.0, via Wikimedia Commons"
+  },
+  "aespa.karina-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Aespa%27s_Karina_10.jpg/960px-Aespa%27s_Karina_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Aespa%27s_Karina_10.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+  },
+  "aespa.karina-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/250111_aespa_Karina_01.jpg/960px-250111_aespa_Karina_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:250111_aespa_Karina_01.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: snow plumflower, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "aespa.karina-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/082026_aespa_KARINA_Incheon_Airport_Departure_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:082026_aespa_KARINA_Incheon_Airport_Departure_2.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+  },
+  "aespa.giselle-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Giselle_at_Incheon_Airport_on_March_4%2C_2026.jpg/960px-Giselle_at_Incheon_Airport_on_March_4%2C_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Giselle_at_Incheon_Airport_on_March_4,_2026.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: 티비텐 TV10, CC BY 4.0, via Wikimedia Commons"
+  },
+  "aespa.giselle-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/241005_Giselle_K-Link_Festival.jpg/960px-241005_Giselle_K-Link_Festival.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:241005_Giselle_K-Link_Festival.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: plumflower snow, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "aespa.giselle-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/250315-16_aespa_Giselle_05.jpg/960px-250315-16_aespa_Giselle_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:250315-16_aespa_Giselle_05.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: snow plumflower, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "aespa.giselle-moon": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Giselle_at_Mise-en-Scene_event_on_19022026_%282%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Giselle_at_Mise-en-Scene_event_on_19022026_(2).png",
+   "from": "aespa · 에스파",
+   "credit": "Photo: 티비텐 TV10, CC BY 4.0, via Wikimedia Commons"
+  },
+  "aespa.winter-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/250315-16_aespa_Winter_06.jpg/960px-250315-16_aespa_Winter_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:250315-16_aespa_Winter_06.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: snow plumflower, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "aespa.winter-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Winter_at_2024_Melon_Music_Awards.png/960px-Winter_at_2024_Melon_Music_Awards.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Winter_at_2024_Melon_Music_Awards.png",
+   "from": "aespa · 에스파",
+   "credit": "Photo: 10Asia, CC BY 3.0, via Wikimedia Commons"
+  },
+  "aespa.winter-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/WINTER_%28%EC%9C%88%ED%84%B0%29_%E2%80%93_POLO_RALPH_LAUREN_%E2%80%93_2025.03.26_%E2%80%93_P6.jpg/960px-WINTER_%28%EC%9C%88%ED%84%B0%29_%E2%80%93_POLO_RALPH_LAUREN_%E2%80%93_2025.03.26_%E2%80%93_P6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:WINTER_(%EC%9C%88%ED%84%B0)_%E2%80%93_POLO_RALPH_LAUREN_%E2%80%93_2025.03.26_%E2%80%93_P6.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: 티비텐 (TV10), CC BY 3.0, via Wikimedia Commons"
+  },
+  "aespa.winter-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Winter_at_Incheon_Airport_on_July_10%2C_2026_02.png/960px-Winter_at_Incheon_Airport_on_July_10%2C_2026_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Winter_at_Incheon_Airport_on_July_10,_2026_02.png",
+   "from": "aespa · 에스파",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+  },
+  "aespa.ningning-common": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Ningning_at_Seoul_Discovery_Expedition_event_on_March_11%2C_2026_02.jpg/960px-Ningning_at_Seoul_Discovery_Expedition_event_on_March_11%2C_2026_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Ningning_at_Seoul_Discovery_Expedition_event_on_March_11,_2026_02.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: 티비텐 TV10, CC BY 4.0, via Wikimedia Commons"
+  },
+  "aespa.ningning-rare": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/250315_Ningning_at_SYNK_PARALLEL_LINE_Encore_2.jpg/960px-250315_Ningning_at_SYNK_PARALLEL_LINE_Encore_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:250315_Ningning_at_SYNK_PARALLEL_LINE_Encore_2.jpg",
+   "from": "aespa · 에스파",
+   "credit": "Photo: plumflower snow, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "aespa.ningning-super": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Ningning_at_Incheon_Airport_on_25022026_%283%29.png/960px-Ningning_at_Incheon_Airport_on_25022026_%283%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Ningning_at_Incheon_Airport_on_25022026_(3).png",
+   "from": "aespa · 에스파",
+   "credit": "Photo: 티비텐 TV10, CC BY 4.0, via Wikimedia Commons"
+  },
+  "aespa.ningning-moon": {
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/03112026_Aespa_NingNing_Airport_Departure_6.png/960px-03112026_Aespa_NingNing_Airport_Departure_6.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:03112026_Aespa_NingNing_Airport_Departure_6.png",
+   "from": "aespa · 에스파",
+   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+  }
+ }
+}

@@ -83,7 +83,7 @@ test("drops: a card falls after enough chat in the drop channel, the first catch
     for (let i = 0; i < drops.MAX_MESSAGES * 3; i++) await say(); // lots more chat, but within 10 minutes
     assert.strictEqual(sent.length, 2);
 
-    t.mock.timers.enable({ apis: ["Date"], now: Date.now() + drops.GAP_MS + 1 });
+    drops.servers.get("xg").lastDropAt -= drops.GAP_MS + 1; // 10 minutes later (a frozen clock would stall the test database)
     catcher = "nobody";
     channel.awaitMessages = async () => ({ first: () => undefined });
     for (let i = 0; i < drops.MAX_MESSAGES; i++) await say();
@@ -141,4 +141,37 @@ test("collection lists duplicates with what they'd sell for; showcase shows only
     assert.match(text(replies.at(-1)), /don't have \*\*Chuu · Moon\*\* yet/);
     await showcase.run({}, message, ["nobody"]);
     assert.match(text(replies.at(-1)), /don't know that card/);
+});
+
+test("card-groups: everyone can see them, admins change them; pulls use them and 'pull twice' needs TWICE on", async (t) => {
+    const cmd = require("../commands/loona/card-groups");
+    const pull = require("../commands/loona/pull");
+    t.mock.method(pc(), "renderPhotocard", async () => Buffer.from("png"));
+    assert.deepStrictEqual(cmd.groupsFrom(["loona,", "tomorrow", "x", "together"]).keys, ["loona", "txt"]);
+    assert.deepStrictEqual(cmd.groupsFrom(["twice", "bts"]), { keys: ["twice"], unknown: ["bts"] });
+
+    const { message, replies } = replyMsg("gg", "gu", { member: { displayName: "Orbit", permissions: { has: () => true } } });
+    message.author.displayAvatarURL = () => "";
+    await cmd.run({}, message, []);
+    assert.match(text(replies.at(-1)), /come from \*\*LOONA\*\* \(12\)/);
+    await cmd.run({}, { ...message, member: { permissions: { has: () => false } } }, ["all"]);
+    assert.match(text(replies.at(-1)), /Manage Server/);
+    assert.deepStrictEqual(await db().getCardGroups("gg"), ["loona"]);
+
+    await pull.run({}, message, ["twice"]);
+    assert.match(text(replies.at(-1)), /\*\*TWICE\*\* cards aren't on in this server/);
+    await cmd.run({}, message, ["twice", "aespa"]);
+    assert.deepStrictEqual(await db().getCardGroups("gg"), ["twice", "aespa"]);
+    await pull.run({}, message, ["twice"]);
+    assert.match(replies.at(-1).embeds[0].toJSON().title, /^TWICE \w+ · /);
+    for (let i = 0; i < 6; i++) await pull.run({}, message, []); // free pull used: these cost coins
+    const groups = [...(await db().photocardsOf("gg", "gu")).keys()].map((id) => pc().findCard(id).group.key);
+    assert.ok(groups.every((g) => g === "twice" || g === "aespa"), groups.join());
+    await db().setCardGroups("gg", ["twice", "gone-group"]); // a group removed from the bot later is ignored
+    await cmd.run({}, message, []);
+    assert.match(text(replies.at(-1)), /come from \*\*TWICE\*\* \(9\)\./);
+    await cmd.run({}, message, ["reset"]);
+    assert.deepStrictEqual(await db().getCardGroups("gg"), ["loona"]);
+    await cmd.run({}, message, ["bts"]);
+    assert.match(text(replies.at(-1)), /I don't know "bts"/);
 });

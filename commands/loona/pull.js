@@ -1,4 +1,4 @@
-const { AttachmentBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const { ApplicationCommandOptionType, AttachmentBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 const pc = require("../../lib/loona/photocards");
 const loona = require("../../lib/loona");
 const db = require("../../lib/db");
@@ -18,13 +18,19 @@ async function payNewSets(guildId, userId, owned) {
 
 module.exports = {
     name: "pull",
-    description: `Pull a LOONA photocard: free once a day, then ${pc.PRICE} moon coins.`,
+    description: `Pull a photocard (or "pull twice" for one group): free once a day, then ${pc.PRICE} moon coins.`,
     aliases: ["pc", "photocard"],
+    options: [{ name: "group", description: "Only this group (one of the server's card groups)", type: ApplicationCommandOptionType.String }],
     today,
     run: async (client, message, args) => {
         const guildId = message.guild.id, userId = message.author.id;
         // Paying and saving the card are one database step, done before drawing, so a failed upload never loses a card.
-        const c = pc.roll();
+        // The server's card groups (card-groups), or just the one named: "pull twice".
+        const groups = pc.validGroups(await db.getCardGroups(guildId));
+        const asked = args.length ? pc.findGroup(args.join(" ")) : null;
+        if (args.length && !asked) return message.reply(`I don't know that group. This server pulls from ${groups.map((k) => `**${pc.GROUPS.get(k).short}**`).join(", ")} 🌙`);
+        if (asked && !groups.includes(asked.key)) return message.reply(`**${asked.short}** cards aren't on in this server. An admin can add them with \`card-groups\` 🌙`);
+        const c = pc.roll(Math.random, asked ? [asked.key] : groups);
         // The bot owner (OWNER_ID in .env) pulls for free without using the daily pull, for testing.
         const owner = OWNER_IDS.includes(userId);
         const paid = owner ? { owner, copies: await db.giftPhotocard(guildId, userId, c.id) }
@@ -38,7 +44,7 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setColor(member.color.hex)
             .setAuthor({ name: `${message.member.displayName} pulled a photocard`.slice(0, 256), iconURL: message.author.displayAvatarURL?.() || undefined })
-            .setTitle(`${member.name} · ${rarity.label}`)
+            .setTitle(`${pc.fullName(member)} · ${rarity.label}`)
             .setDescription([
                 copies === 1 ? "✨ New card!" : `You now have ${copies} of this card.`,
                 `${paid.owner ? "Owner pull (free)" : paid.free ? "Today's free pull" : `-${pc.PRICE} moon coins`} · Balance **${await db.getCoins(guildId, userId)}** · Collection **${owned.size}/${pc.ALL.length}**`,

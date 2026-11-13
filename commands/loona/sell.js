@@ -24,7 +24,7 @@ module.exports = {
         }
         const lines = sold.map(({ cardId, copies }) => {
             const c = pc.findCard(cardId);
-            return `${c.member.name} · ${c.rarity.label} ×${copies} → **${copies * pc.SELL_PRICES[c.rarity.key]}**`;
+            return `${pc.fullName(c.member)} · ${c.rarity.label} ×${copies} → **${copies * pc.SELL_PRICES[c.rarity.key]}**`;
         });
         const embed = new EmbedBuilder()
             .setColor("#FFD700")

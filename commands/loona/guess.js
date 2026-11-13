@@ -85,10 +85,10 @@ async function finish(message, scores, complete) {
         return;
     }
     for (const id of game.winners(scores).slice(0, PRIZE_CARDS_MAX)) {
-        const c = pc.roll();
+        const c = pc.roll(Math.random, pc.validGroups(await db.getCardGroups(message.guild.id))); // the server's card groups
         const copies = await db.giftPhotocard(message.guild.id, id, c.id);
         const embed = new EmbedBuilder().setColor(c.member.color.hex)
-            .setTitle(`Prize: ${c.member.name} · ${c.rarity.label}`)
+            .setTitle(`Prize: ${pc.fullName(c.member)} · ${c.rarity.label}`)
             .setDescription(copies === 1 ? "✨ New card!" : `You now have ${copies} of this card.`)
             .setImage("attachment://photocard.png").setFooter({ text: pc.credit(c) });
         await message.channel.send({ content: `🏆 <@${id}> wins a photocard!`, embeds: [embed],
