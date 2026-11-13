@@ -13,3 +13,16 @@ test("a licensed font in the local folder takes over its role; other roles keep 
     assert.strictEqual(design.font("sans", 20), '400 20px "Jost", "Noto Sans KR", "Noto Sans KR"');
     fs.rmSync(dir, { recursive: true });
 });
+
+test("the 이달의 소녀 wordmark is drawn even on the very first card a fresh process renders", async () => {
+    process.env.DATABASE_URL = "memory";
+    const pc = require("../lib/loona/photocards");
+    const { loadImage, createCanvas } = require("@napi-rs/canvas");
+    const image = await loadImage(await pc.renderPhotocard(pc.card(require("../lib/loona").findMember("heejin"), pc.RARITIES[0])));
+    const ctx = createCanvas(image.width, image.height).getContext("2d");
+    ctx.drawImage(image, 0, 0);
+    const { data } = ctx.getImageData(150, 82, 160, 30); // where the wordmark sits, left of her name
+    let dark = 0;
+    for (let i = 0; i < data.length; i += 4) if (data[i] < 80 && data[i + 1] < 80 && data[i + 2] < 80) dark++;
+    assert.ok(dark > 300, `only ${dark} dark pixels: the wordmark is missing`);
+});

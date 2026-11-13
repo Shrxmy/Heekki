@@ -344,7 +344,10 @@ test/                  run with `npm test`
 
 - **LOONA profiles and facts:** [LOONA Wiki](https://loonatheworld.fandom.com), CC BY-SA.
 - **Photos:** freely licensed photos from [Wikimedia Commons](https://commons.wikimedia.org); the photographer and licence are shown under each one.
-- **Font:** [Noto Sans KR](https://fonts.google.com/noto/specimen/Noto+Sans+KR), SIL Open Font License (`assets/fonts/OFL.txt`).
+- **이달의 소녀 wordmark:** cropped from [LOONA ODD EYE CIRCLE Logo.png](https://commons.wikimedia.org/wiki/File:LOONA_ODD_EYE_CIRCLE_Logo.png) on Wikimedia Commons (public domain as a text logo; Blockberry Creative's logo), in `assets/images/`.
+- **Photocard scans:** [Savvi's LOONA Scans](https://savvi-loonascans.carrd.co) (@pika_chuuves), credited on every card.
+- **Song pool:** [MusicBrainz](https://musicbrainz.org) (CC0).
+- **Fonts:** [Noto Sans KR](https://fonts.google.com/noto/specimen/Noto+Sans+KR), Jost, Bodoni Moda, Libre Caslon and Sacramento, all SIL Open Font License (`assets/fonts/OFL*.txt`).
 - **Lookups:** AniList, GitHub, Google News, PokeAPI, Steam, Open-Meteo, Wikipedia and Urban Dictionary.
 
 <div align="center"><sub>Made for Orbits by Orbits.</sub></div>
