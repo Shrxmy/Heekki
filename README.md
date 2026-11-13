@@ -179,6 +179,8 @@ couldn't answer, keeps the current holder).
 | `guess [action]` | LOONA song quiz in your voice channel: guess the song from a 20-second clip. | `songquiz` `gts` |
 | `loona [member]` | LOONA member profiles with photos and fun facts. | `orbit` `member` |
 | `pull` | Pull a LOONA photocard: free once a day, then 150 moon coins. | `pc` `photocard` |
+| `sell <cards>` | Sell duplicate photocards for moon coins (you always keep one of each): `sell dupes` or `sell kim lip rare`. | `sellcards` |
+| `set-drop-channel <channel_or_off>` | Sets where photocards drop during chat ("off" stops them, "test" drops one now). Manage Server. | `dropchannel` |
 
 </details>
 
@@ -189,7 +191,9 @@ couldn't answer, keeps the current holder).
 |---|---|---|
 | `8ball <question>` | Ask the magic 8-ball a yes/no question. | `eightball` |
 | `coinflip` | Flip a coin. | `flip` `coin` |
+| `coins [user]` | Shows someone's moon coins. | `balance` `bal` |
 | `cuterate [user]` | How cute is someone today? (changes daily) | `cute` |
+| `daily` | Daily moon coins: 150, plus 20 for each day in a row (up to 7). Resets at midnight KST. | `dailies` |
 | `decode <text>` | Decodes binary or base64 text. |  |
 | `dumbrate [user]` | How dumb is someone today? (changes daily) | `dumb` |
 | `emojify <text>` | Turns your text into big emoji letters. |  |
@@ -199,6 +203,7 @@ couldn't answer, keeps the current holder).
 | `love-calculator <user> [other]` | How compatible are two members? (changes daily) | `love` `ship` |
 | `meme [source]` | A random meme from r/kpopmemes or r/LOONA. |  |
 | `motivation` | A little encouragement. | `motivate` |
+| `practice` | Practise with a LOONA member once an hour for 20-60 moon coins. | `work` `rehearse` |
 | `roll [dice]` | Roll dice, like 2d6 or d20 (default: one 6-sided die). | `dice` |
 | `rps [opponent]` | Rock paper scissors against the bot, or challenge a member. | `rockpaperscissors` |
 | `slots [spins] [bet]` | LOONA slot machine: up to 10 spins in one go, and combos in a row build a streak. | `slot` |
@@ -311,6 +316,19 @@ the rarity in the discography sheet's style. The scans live in the Neon `assets`
 `lib/loona/photocard-scans.json`, run `node --env-file=.env scripts/upload-photocard-scans.js`. `pull` is free once a day (Korea time), then costs 150 moon
 coins from `slots`. Owning any card of every member in LOONA 1/3, ODD EYE CIRCLE or yyxy pays 500 coins, and all twelve
 pays 2000, once each. Collections are per server, like coins. Every card has her Instagram button (HyeJu has none).
+</details>
+
+<details>
+<summary><b>Moon coins</b></summary>
+
+Coins are per server; everyone starts with 500. Ways to earn them: `daily` (150, +20 per day in a row up to 290),
+`practice` once an hour (20-60), `slots`, the `guess` song quiz (30 per right answer), set bonuses, and `sell dupes`
+(Common 30, Rare 75, Super 200, Moon 750 per extra copy; you always keep one of each). Spend them on `pull` (150).
+A pulled card sells for 81 on average, less than a pull costs, so nothing can be farmed.
+
+**Drops:** after `set-drop-channel #chat`, a photocard falls into that channel after a burst of chat (15-40 messages,
+at most one every 10 minutes); the first person to type `catch` within a minute gets it. `set-drop-channel test`
+drops one right away.
 </details>
 
 <details>

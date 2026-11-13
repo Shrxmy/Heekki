@@ -1,8 +1,10 @@
 const client = require("../index");
 const { getPrefix } = require("../lib/db");
+const drops = require("../lib/loona/drops");
 
 client.on("messageCreate", async (message) => {
     if (message.author.bot || !message.guild) return;
+    drops.onMessage(message); // counts chat for photocard drops; never throws, and doesn't hold up commands
 
     // Per-guild prefix from -setprefix (the old code always used the default one)
     let prefix;

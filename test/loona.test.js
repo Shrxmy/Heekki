@@ -344,7 +344,7 @@ test("guess: plays 10 clips, pays each round's winner, gives the top scorer a ca
         round++;
         const who = answerFor[round];
         const title = current.replace(/ \(Official Audio\)$/, "").split(" ").slice(1).join(" "); // drop the artist word(s)
-        const song = g.songs.find((s) => current.startsWith(`${s.artist} ${s.title}`));
+        const song = g.songs.find((s) => current.replace(/ \(Official Audio\)$/, "") === `${s.artist} ${s.title}`); // exact: "The Carol" isn't "The Carol 2.0"
         const msg = { author: { id: who, bot: false }, content: song.title, react: async () => {} };
         assert.ok(title.length > 0);
         return { first: () => (who && filter(msg) ? msg : undefined) };
@@ -381,7 +381,7 @@ test("guess: stopping early ends without a prize, and never destroys a player th
     const channel = { send: async (p) => sent.push(p), awaitMessages: async ({ filter }) => {
         await new Promise((r) => setImmediate(r)); // answers arrive after the clip has started, as in Discord
         round++;
-        const song = g.songs.find((s) => current.startsWith(`${s.artist} ${s.title}`));
+        const song = g.songs.find((s) => current.replace(/ \(Official Audio\)$/, "") === `${s.artist} ${s.title}`); // exact: "The Carol" isn't "The Carol 2.0"
         const msg = { author: { id: "sa", bot: false }, content: song.title, react: async () => {} };
         if (round === 2) { await guess.run(client, message, ["stop"]); } // stop during round 2
         if (round === 3) active = music; // can't happen after a stop, but if it did, the quiz must leave it alone
