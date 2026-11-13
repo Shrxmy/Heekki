@@ -15,16 +15,23 @@ function collectionEmbed(member, owned) {
     const done = new Set(pc.completedSets(owned.keys()).map((s) => s.key));
     const sets = pc.SETS.map((s) => `${done.has(s.key) ? "✅" : "▫️"} ${s.label} (+${s.bonus})`);
     const total = [...owned.values()].reduce((a, b) => a + b, 0);
+    // Spare copies, in card order, with what they'd sell for.
+    const dupes = pc.ALL.filter((c) => (owned.get(c.id) ?? 0) > 1)
+        .map((c) => `${c.member.name} · ${c.rarity.label} ×${owned.get(c.id)} (${owned.get(c.id) - 1} spare, ${(owned.get(c.id) - 1) * pc.SELL_PRICES[c.rarity.key]} coins)`);
+    const spareCoins = pc.ALL.reduce((s, c) => s + Math.max(0, (owned.get(c.id) ?? 0) - 1) * pc.SELL_PRICES[c.rarity.key], 0);
+    const dupeList = dupes.length
+        ? `\n\n**Duplicates** · worth ${spareCoins} with \`sell dupes\`\n${dupes.slice(0, 15).join("\n")}${dupes.length > 15 ? `\n…and ${dupes.length - 15} more` : ""}`
+        : "";
     return new EmbedBuilder()
         .setColor(loona.memberFor(member.id).color.hex)
         .setTitle(`${escapeMarkdown(member.displayName)}'s photocards`.slice(0, 256))
-        .setDescription(`${rows.join("\n")}\n\n**Sets**\n${sets.join("\n")}`)
+        .setDescription(`${rows.join("\n")}\n\n**Sets**\n${sets.join("\n")}${dupeList}`)
         .setFooter({ text: `${owned.size}/${pc.ALL.length} cards · ${total} pulled · ● Common ◆ Rare ★ Super 🌕 Moon` });
 }
 
 module.exports = {
     name: "collection",
-    description: "Shows someone's LOONA photocards and set progress.",
+    description: "Shows someone's LOONA photocards, set progress and duplicates.",
     aliases: ["cards", "binder"],
     options: [{ name: "user", description: "Whose collection (leave empty for yours)", type: ApplicationCommandOptionType.User }],
     collectionEmbed,

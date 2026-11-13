@@ -116,3 +116,29 @@ test("drops: a second drop while one is running is refused, so one catch can't w
     assert.strictEqual(await first, "w1");
     assert.strictEqual([...(await db().photocardsOf("dd", "w1")).values()].reduce((a, b) => a + b, 0), 1);
 });
+
+test("collection lists duplicates with what they'd sell for; showcase shows only cards you own", async (t) => {
+    const { collectionEmbed } = require("../commands/loona/collection");
+    const owned = new Map([["kimlip-rare", 3], ["chuu-moon", 2], ["yves-common", 1]]);
+    const desc = collectionEmbed({ id: "1", displayName: "Orbit" }, owned).toJSON().description;
+    assert.match(desc, /\*\*Duplicates\*\* · worth 900 with `sell dupes`/); // 2 × 75 + 1 × 750
+    assert.match(desc, /Kim Lip · Rare ×3 \(2 spare, 150 coins\)/);
+    assert.match(desc, /Chuu · Moon ×2 \(1 spare, 750 coins\)/);
+    assert.doesNotMatch(desc, /Yves · Common ×/);
+    assert.doesNotMatch(collectionEmbed({ id: "1", displayName: "Orbit" }, new Map([["yves-common", 1]])).toJSON().description, /Duplicates/);
+
+    t.mock.method(pc(), "renderPhotocard", async () => Buffer.from("png"));
+    const showcase = require("../commands/loona/showcase");
+    await db().giftPhotocard("shg", "shu", "kimlip-moon");
+    await db().giftPhotocard("shg", "shu", "kimlip-moon");
+    const { message, replies } = replyMsg("shg", "shu", { member: { displayName: "Orbit" } });
+    message.author.displayAvatarURL = () => "";
+    await showcase.run({}, message, ["kim", "lip", "moon"]);
+    assert.strictEqual(replies.at(-1).embeds[0].toJSON().title, "Kim Lip · Moon");
+    assert.match(replies.at(-1).embeds[0].toJSON().description, /2 of this card/);
+    assert.strictEqual(replies.at(-1).files[0].name, "photocard.png");
+    await showcase.run({}, message, ["chuu", "moon"]);
+    assert.match(text(replies.at(-1)), /don't have \*\*Chuu · Moon\*\* yet/);
+    await showcase.run({}, message, ["nobody"]);
+    assert.match(text(replies.at(-1)), /don't know that card/);
+});

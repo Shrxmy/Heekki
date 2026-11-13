@@ -175,11 +175,12 @@ couldn't answer, keeps the current holder).
 
 | Command | What it does | Aliases |
 |---|---|---|
-| `collection [user]` | Shows someone's LOONA photocards and set progress. | `cards` `binder` |
+| `collection [user]` | Shows someone's LOONA photocards, set progress and duplicates. | `cards` `binder` |
 | `guess [action]` | LOONA song quiz in your voice channel: guess the song from a 20-second clip. | `songquiz` `gts` |
 | `loona [member]` | LOONA member profiles with photos and fun facts. | `orbit` `member` |
 | `pull` | Pull a LOONA photocard: free once a day, then 150 moon coins. | `pc` `photocard` |
 | `sell <cards>` | Sell duplicate photocards for moon coins (you always keep one of each): `sell dupes` or `sell kim lip rare`. | `sellcards` |
+| `showcase <card>` | Show off a photocard you own, like `showcase kim lip moon`. | `show` `card` `view` |
 | `set-drop-channel <channel_or_off>` | Sets where photocards drop during chat ("off" stops them, "test" drops one now). Manage Server. | `dropchannel` |
 
 </details>
