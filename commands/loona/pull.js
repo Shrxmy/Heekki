@@ -2,6 +2,7 @@ const { AttachmentBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, Button
 const pc = require("../../lib/loona/photocards");
 const loona = require("../../lib/loona");
 const db = require("../../lib/db");
+const { OWNER_IDS } = require("../../config");
 
 // Zero-padded ("2026-11-04"), so days compare correctly as text in the database.
 const today = () => { const { y, m, d } = loona.koreaDate(new Date()); return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`; };
@@ -24,7 +25,10 @@ module.exports = {
         const guildId = message.guild.id, userId = message.author.id;
         // Paying and saving the card are one database step, done before drawing, so a failed upload never loses a card.
         const c = pc.roll();
-        const paid = await db.pullPhotocard(guildId, userId, today(), pc.PRICE, c.id);
+        // The bot owner (OWNER_ID in .env) pulls for free without using the daily pull, for testing.
+        const owner = OWNER_IDS.includes(userId);
+        const paid = owner ? { owner, copies: await db.giftPhotocard(guildId, userId, c.id) }
+            : await db.pullPhotocard(guildId, userId, today(), pc.PRICE, c.id);
         if (!paid) return message.reply(`Your free pull for today is used, and a pull costs **${pc.PRICE}** moon coins (you have **${await db.getCoins(guildId, userId)}**). Win some with \`slots\`, or come back tomorrow 🌙`);
         const { copies } = paid;
         const owned = await db.photocardsOf(guildId, userId);
@@ -37,7 +41,7 @@ module.exports = {
             .setTitle(`${member.name} · ${rarity.label}`)
             .setDescription([
                 copies === 1 ? "✨ New card!" : `You now have ${copies} of this card.`,
-                `${paid.free ? "Today's free pull" : `-${pc.PRICE} moon coins`} · Balance **${await db.getCoins(guildId, userId)}** · Collection **${owned.size}/${pc.ALL.length}**`,
+                `${paid.owner ? "Owner pull (free)" : paid.free ? "Today's free pull" : `-${pc.PRICE} moon coins`} · Balance **${await db.getCoins(guildId, userId)}** · Collection **${owned.size}/${pc.ALL.length}**`,
                 ...bonuses,
             ].join("\n"))
             .setImage("attachment://photocard.png")

@@ -90,6 +90,7 @@ Secrets live only in `.env`; everything else is in `config.js`.
 | `.env` setting | What it's for |
 |---|---|
 | `DISCORD_TOKEN` | Your bot's token |
+| `OWNER_ID` | Optional: your Discord user ID (comma-separate several); those pulls are free and unlimited, for testing |
 | `LAVALINK_PASSWORD` | Shared by the bot and the Lavalink container (change it in this one place) |
 | `YT_CIPHER_PASSWORD` | Between Lavalink and the YouTube cipher helper; any long random string |
 | `YOUTUBE_REFRESH_TOKEN` | The spare account's YouTube sign-in (step 5) |
@@ -315,8 +316,8 @@ pays 2000, once each. Collections are per server, like coins. Every card has her
 <details>
 <summary><b>Slots</b></summary>
 
-Spins the 12 member animals plus the moon jackpot: any pair pays ×3, three of a kind ×40, three moons ×150
-(about 93% paid back over time). Moon coins are per server; everyone starts with 500 and gets 100 back when broke.
+Spins the 12 member animals plus the moon jackpot: a lone 🌙 gives your bet back, a pair of animals pays ×2, a pair of
+moons ×7, three of a kind ×40 and three moons ×150 (97.5% paid back over time; 40% of spins return something). Moon coins are per server; everyone starts with 500 and gets 100 back when broke.
 </details>
 
 <details>

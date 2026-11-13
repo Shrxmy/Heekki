@@ -1,4 +1,5 @@
 process.env.DATABASE_URL = "memory";
+process.env.OWNER_ID = "pc-owner"; // pulls by this test user are the owner's free ones
 const test = require("node:test");
 const assert = require("node:assert");
 const loona = () => require("../lib/loona");
@@ -400,4 +401,19 @@ test("guess: stopping early ends without a prize, and never destroys a player th
     await guess.run(client, message, []);
     assert.ok(!destroyedOurs);
     assert.strictEqual(guess.games.size, 0);
+});
+
+test("pull: the owner pulls for free, as often as they like, without coins or the daily pull", async (t) => {
+    const pc = require("../lib/loona/photocards");
+    const db = require("../lib/db");
+    const pull = require("../commands/loona/pull");
+    t.mock.method(pc, "renderPhotocard", async () => Buffer.from("png"));
+    const replies = [];
+    const message = { guild: { id: "og" }, author: { id: "pc-owner", displayAvatarURL: () => "" }, member: { displayName: "Dev" }, reply: async (p) => replies.push(p) };
+    for (let i = 0; i < 5; i++) await pull.run({}, message, []);
+    assert.ok(replies.every((r) => /Owner pull \(free\)/.test(r.embeds[0].toJSON().description)));
+    assert.strictEqual(await db.getCoins("og", "pc-owner"), 500);
+    const owned = await db.photocardsOf("og", "pc-owner");
+    assert.strictEqual([...owned.values()].reduce((a, b) => a + b, 0), 5);
+    assert.strictEqual((await db.pullPhotocard("og", "pc-owner", "2026-11-14", 150, "chuu-moon")).free, true); // daily pull untouched
 });

@@ -4,6 +4,9 @@ exports.TOKEN = process.env.DISCORD_TOKEN || '';
 
 exports.PREFIX = '-';
 
+// Discord user IDs (comma-separated OWNER_ID in .env) whose photocard pulls are free and unlimited, for testing.
+exports.OWNER_IDS = (process.env.OWNER_ID || '').split(',').map((id) => id.trim()).filter(Boolean);
+
 // The Lavalink music server started by docker-compose.yml; it reads the same LAVALINK_PASSWORD from .env.
 exports.LAVALINK = {
     host: process.env.LAVALINK_HOST || 'localhost',

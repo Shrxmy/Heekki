@@ -28,18 +28,21 @@ test("ratings are stable for the same person, kind and day, and stay within 0-10
     assert.strictEqual(loveScore("1", "2", day), loveScore("2", "1", day)); // order doesn't matter
 });
 
-test("slots: payouts follow the table and the long-run return is a fair-but-house-edge 85-100%", async () => {
+test("slots: payouts follow the table, return 97.5% over time, and pay something on 40% of spins", async () => {
     const { SYMBOLS, payout, JACKPOT } = require("../lib/fun/slots");
-    assert.strictEqual(SYMBOLS.length, 13);
-    const [a, b, c] = SYMBOLS.filter((s) => s !== JACKPOT);
+    const [a, b, c] = SYMBOLS;
     assert.strictEqual(payout([a, b, c], 10), 0);
-    assert.strictEqual(payout([a, a, c], 10), 30);
+    assert.strictEqual(payout([a, JACKPOT, c], 10), 10); // a lone moon: bet back
+    assert.strictEqual(payout([a, a, c], 10), 20);
+    assert.strictEqual(payout([a, a, JACKPOT], 10), 20); // an animal pair beats the lone moon
+    assert.strictEqual(payout([JACKPOT, b, JACKPOT], 10), 70);
     assert.strictEqual(payout([a, a, a], 10), 400);
     assert.strictEqual(payout([JACKPOT, JACKPOT, JACKPOT], 10), 1500);
-    let total = 0;
-    for (const x of SYMBOLS) for (const y of SYMBOLS) for (const z of SYMBOLS) total += payout([x, y, z], 1);
-    const rtp = total / SYMBOLS.length ** 3;
-    assert.ok(rtp > 0.85 && rtp < 1, `return to player ${rtp}`);
+    let total = 0, hits = 0;
+    for (const x of SYMBOLS) for (const y of SYMBOLS) for (const z of SYMBOLS) { const p = payout([x, y, z], 1); total += p; hits += p > 0; }
+    const spins = SYMBOLS.length ** 3;
+    assert.ok(Math.abs(total / spins - 0.975) < 0.001, `return to player ${total / spins}`);
+    assert.ok(hits / spins > 0.39, `hit rate ${hits / spins}`);
 });
 
 test("moon coins: start at 500 per server, save, refuse overspending, and refill a broke player to 100", async () => {

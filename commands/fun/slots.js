@@ -20,12 +20,13 @@ module.exports = {
 
         const jackpot = reels.every((r) => r === slots.JACKPOT);
         const result = jackpot ? `Full moon jackpot! You won **${won}** moon coins.`
+            : won === bet ? "🌙 A moon! You get your bet back."
             : won ? `You won **${won}** moon coins.` : "No luck this time.";
         const embed = new EmbedBuilder()
             .setColor(won ? "#FFD700" : "#7B3FBF")
             .setTitle("LOONA Slots")
             .setDescription(`## ${reels.join("  ")}\n${result}`)
-            .setFooter({ text: `Bet ${bet} · Balance ${after} moon coins · pair ×${slots.PAIR} · three ×${slots.TRIPLE} · three moons ×${slots.MOONS}` });
+            .setFooter({ text: `Bet ${bet} · Balance ${after} · 🌙 bet back · pair ×${slots.PAIR} · 🌙🌙 ×${slots.MOON_PAIR} · three ×${slots.TRIPLE} · 🌙🌙🌙 ×${slots.MOONS}` });
         return message.reply({ embeds: [embed] });
     }
 };
