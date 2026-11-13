@@ -166,7 +166,12 @@ test("photocards: 48 cards, rarity odds add up, and sets count any rarity", () =
     assert.strictEqual(pc.ALL.length, 48);
     assert.strictEqual(new Set(pc.ALL.map((c) => c.id)).size, 48);
     assert.strictEqual(pc.RARITIES.reduce((sum, r) => sum + r.weight, 0), 100);
-    for (const c of pc.ALL) assert.match(c.photo.url, /^https:\/\/(upload|thumb)\.wikimedia\.org\//, c.id); // licensed photos only
+    for (const c of pc.ALL) { // every card has its scan and a credit naming the scanner
+        assert.ok(c.scan?.from && c.scan.drive, c.id);
+        assert.match(pc.credit(c), /^Scan: Savvi's LOONA Scans \(@pika_chuuves\) · /);
+        assert.strictEqual(pc.scanKey(c.id), `photocards/${c.id}.jpg`);
+    }
+    assert.strictEqual(new Set(pc.ALL.map((c) => c.scan.drive)).size, 48, "48 different scans");
     assert.strictEqual(pc.roll(() => 0).rarity.key, "common");
     assert.strictEqual(pc.roll(() => 0.98).rarity.key, "moon");
     assert.strictEqual(pc.roll(() => 0.99999).member.name, "HyeJu");
@@ -176,13 +181,13 @@ test("photocards: 48 cards, rarity odds add up, and sets count any rarity", () =
     assert.deepStrictEqual(sets(pc.ALL.filter((c) => c.rarity.key === "common").map((c) => c.id)), ["1/3", "oec", "yyxy", "loona"]);
 });
 
-test("photocards: a card still draws when her photo can't be downloaded", async (t) => {
+test("photocards: a card still draws when its scan isn't in storage", async () => {
     const pc = require("../lib/loona/photocards");
-    const http = require("../lib/info/http");
-    t.mock.method(http, "getBuffer", async () => { throw new Error("offline"); });
     const { loadImage } = require("@napi-rs/canvas");
-    const image = await loadImage(await pc.renderPhotocard(pc.card(loona().findMember("chuu"), pc.RARITIES[3])));
-    assert.deepStrictEqual([image.width, image.height], [560, 860]);
+    for (const rarity of pc.RARITIES) { // the test storage is empty, so this is the fallback for every label style
+        const image = await loadImage(await pc.renderPhotocard(pc.card(loona().findMember("jinsoul"), rarity)));
+        assert.deepStrictEqual([image.width, image.height], [600, 900]);
+    }
 });
 
 test("pull: free once a day, then costs coins, refuses when broke, and pays a set bonus once", async (t) => {
@@ -261,4 +266,13 @@ test("pullPhotocard: one free pull a day even when pulls race, the day never mov
 test("pull: today's date is zero-padded so it sorts correctly", (t) => {
     t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-03-04T03:00:00Z") });
     assert.strictEqual(require("../commands/loona/pull").today(), "2026-03-04");
+});
+
+test("design: dark colours get white text on a highlight, and light ones are darkened to read on paper", () => {
+    const design = require("../lib/design");
+    assert.strictEqual(design.inkOn("#1313D6"), "#FFFFFF"); // JinSoul blue
+    assert.strictEqual(design.inkOn("#FFCB07"), design.INK); // HyunJin yellow
+    assert.strictEqual(design.onPaper("#1313D6"), "#1313d6"); // already dark: unchanged
+    assert.strictEqual(design.onPaper("#F4028E"), "#f4028e"); // HeeJin pink reads fine as it is
+    assert.ok(design.luminance(design.onPaper("#F4A1B5")) <= 0.23); // ViVi pink, darkened
 });

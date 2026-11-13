@@ -9,9 +9,9 @@
 ![Lavalink](https://img.shields.io/badge/Lavalink-v4-1313D6)
 ![Tests](https://img.shields.io/badge/tests-npm%20test-01954A)
 
-<img src="docs/images/welcome-card.png" alt="A Heekki welcome card: twelve coloured stars orbit the new member's avatar, next to their name, member number and a welcome line" width="720">
+<img src="docs/images/welcome-card.png" alt="A Heekki welcome card in the style of LOONA's Who's Next Girl? teasers: 이달의 소녀 in bold, the new member's name in a white box, the welcome line and member number in a member colour, and their photo on the right" width="720">
 
-<sub>A welcome card, drawn by the bot in LOONA's twelve member colours.</sub>
+<sub>A welcome card, drawn by the bot after LOONA's "Who's Next Girl?" teasers.</sub>
 
 </div>
 
@@ -33,7 +33,7 @@
 |---|---|
 | **Music** | YouTube and Spotify through Lavalink v4, search-and-pick, queue, seek, volume, loop, filters (8D, nightcore, karaoke, bassboost...). Stays in the call until it's been alone for 3 minutes. |
 | **Last.fm** | Now playing, recent scrobbles, top lists, album collages up to 10x10, artist/album info, who knows an artist/track/album, crowns, and taste matches. |
-| **Welcome cards** | The "twelve stars" card for joins and leaves, with your own message, background and star colours. |
+| **Welcome cards** | A "Who's Next Girl?" teaser card for joins and leaves, with your own message, background and member colours. |
 | **LOONA** | Profiles for all 12 members with photos, fun facts, official colours, birthdays and personal Instagram links, collectable photocards, plus a post in your greeting channel on each birthday. |
 | **Fun & games** | LOONA slot machine, tic-tac-toe, rock paper scissors, trivia, memes, ratings, snipe and text toys. |
 | **Info** | Member, server, role and channel info, plus anime, GitHub, news, Pokédex, Steam, weather and Wikipedia lookups. |
@@ -204,7 +204,7 @@ couldn't answer, keeps the current holder).
 | `greet-settings` | Shows the current greeting settings. | `greetsettings` |
 | `set-greet-bg (image) [link_or_reset]` | Sets the greeting card background from an uploaded image (or "reset"). | `greetbg` |
 | `set-greet-channel <channel>` | Sets the channel where welcome and leave greetings are posted. | `greetchannel` |
-| `set-greet-colors <colors>` | Sets the 12 star colours on the greeting card (or "reset" for the LOONA colours). | `greetcolors` |
+| `set-greet-colors <colors>` | Sets the 12 member colours the greeting card cycles through (or "reset" for the LOONA colours). | `greetcolors` |
 | `set-join-message <message>` | Sets the join greeting text. Placeholders: {user} {username} {server} {count} |  |
 | `set-leave-message <message>` | Sets the leave greeting text. Placeholders: {user} {username} {server} {count} |  |
 | `testjoin` | Previews the join greeting here, using you as the member. |  |
@@ -258,7 +258,8 @@ couldn't answer, keeps the current holder).
 <details>
 <summary><b>Welcome cards</b></summary>
 
-New members get the twelve-stars card plus your message. Placeholders: `{user}` (mention), `{username}`, `{server}`, `{count}`.
+New members get a "Who's Next Girl?" teaser card plus your message; each member number takes the next of the 12 colours
+(`set-greet-colors`), the way each teaser had her own. Without a custom background, their avatar, blurred, is the backdrop. Placeholders: `{user}` (mention), `{username}`, `{server}`, `{count}`.
 Join is on and leave is off by default, and nothing posts until `set-greet-channel` is set. `testjoin` / `testleave`
 preview in the current channel and say if anything would stop the real greeting. Backgrounds must be Discord uploads or
 Discord image links (PNG/JPEG/WebP, up to 8 MB); the bot needs **Attach Files** in the greeting channel.
@@ -278,8 +279,10 @@ The data is a snapshot in `lib/loona/members.json`.
 <details>
 <summary><b>Photocards</b></summary>
 
-48 cards: each member in four rarities (Common 60%, Rare 27%, Super 10%, Moon 3%), each around a different licensed photo
-and framed in her colour, silver, gold or all twelve colours. `pull` is free once a day (Korea time), then costs 150 moon
+48 cards: each member in four rarities (Common 60%, Rare 27%, Super 10%, Moon 3%), each a different real photocard scan
+from [Savvi's LOONA Scans](https://savvi-loonascans.carrd.co) (credited on every card), shown on a solo-album page with
+the rarity in the discography sheet's style. The scans live in the Neon `assets` bucket; to (re)upload them after changing
+`lib/loona/photocard-scans.json`, run `node --env-file=.env scripts/upload-photocard-scans.js`. `pull` is free once a day (Korea time), then costs 150 moon
 coins from `slots`. Owning any card of every member in LOONA 1/3, ODD EYE CIRCLE or yyxy pays 500 coins, and all twelve
 pays 2000, once each. Collections are per server, like coins. Every card has her Instagram button (HyeJu has none).
 </details>

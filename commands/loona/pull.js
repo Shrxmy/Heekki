@@ -41,7 +41,7 @@ module.exports = {
                 ...bonuses,
             ].join("\n"))
             .setImage("attachment://photocard.png")
-            .setFooter({ text: loona.photoCredit(c.photo) });
+            .setFooter({ text: pc.credit(c) });
         // HyeJu has no personal Instagram, so her cards have no button.
         const components = member.instagram ? [new ActionRowBuilder().addComponents(new ButtonBuilder()
             .setStyle(ButtonStyle.Link).setLabel(`@${member.instagram} on Instagram`).setURL(`https://www.instagram.com/${member.instagram}/`))] : [];
