@@ -1,5 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder, ComponentType,
-    MessageFlags, ApplicationCommandOptionType } = require("discord.js");
+    MessageFlags, ApplicationCommandOptionType, escapeMarkdown } = require("discord.js");
 const loona = require("../../lib/loona");
 const { quiet } = require("../../lib/fun/target");
 
@@ -47,6 +47,8 @@ function memberEmbed(member, { photo = 0, fact = 0, now = new Date() } = {}) {
             { name: "Position", value: member.position },
             { name: "Now", value: [member.now, member.agency].filter(Boolean).join(" · ") },
             { name: "Nickname", value: member.nickname, inline: true },
+            // HyeJu has no personal account (she deleted hers), so the field only shows for the others.
+            ...(member.instagram ? [{ name: "Instagram", value: `[@${escapeMarkdown(member.instagram)}](https://www.instagram.com/${member.instagram}/)`, inline: true }] : []),
         )
         .setImage(shown.url)
         .setFooter({ text: `${loona.photoCredit(shown)} (${(photo % photos.length) + 1}/${photos.length}) · Info: ${WIKI} (CC BY-SA)` });

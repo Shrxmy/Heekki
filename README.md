@@ -34,7 +34,7 @@
 | **Music** | YouTube and Spotify through Lavalink v4, search-and-pick, queue, seek, volume, loop, filters (8D, nightcore, karaoke, bassboost...). Stays in the call until it's been alone for 3 minutes. |
 | **Last.fm** | Now playing, recent scrobbles, top lists, album collages up to 10x10, artist/album info, who knows an artist/track/album, crowns, and taste matches. |
 | **Welcome cards** | The "twelve stars" card for joins and leaves, with your own message, background and star colours. |
-| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours and birthdays, plus a post in your greeting channel on each birthday. |
+| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours, birthdays and personal Instagram links, plus a post in your greeting channel on each birthday. |
 | **Fun & games** | LOONA slot machine, tic-tac-toe, rock paper scissors, trivia, memes, ratings, snipe and text toys. |
 | **Info** | Member, server, role and channel info, plus anime, GitHub, news, Pokédex, Steam, weather and Wikipedia lookups. |
 | **Prefix or slash** | Every command works as `-play` **and** `/play`. The prefix can be changed per server. |

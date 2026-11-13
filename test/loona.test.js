@@ -74,6 +74,7 @@ test("member page: official colour, facts, photo with credit, and working button
     assert.match(embed.title, /HeeJin.*희진/);
     assert.ok(embed.description.includes(heejin.facts[1]));
     assert.ok(embed.fields.some((f) => f.name === "Birthday" && /October 19, 2000/.test(f.value) && /26/.test(f.value) && /today/i.test(f.value)));
+    assert.ok(embed.fields.some((f) => f.name === "Instagram" && f.value === "[@0ct0ber19](https://www.instagram.com/0ct0ber19/)"));
     assert.ok(embed.image.url.startsWith("https://"));
     assert.match(embed.footer.text, /^Photo: .*· Info: LOONA Wiki/);
     const buttons = cmd().memberButtons(heejin, 0).toJSON().components.map((b) => b.custom_id);
@@ -147,4 +148,15 @@ test("birthday posts: today's members, one post per server per year, retried aft
     await postBirthdays(client, HYEJU_DAY);
     await postBirthdays(client, HYEJU_DAY);
     assert.strictEqual(sent.length, 1); // b1 once; b2 has them switched off
+});
+
+test("Instagram: every member but HyeJu links her personal account, with underscores escaped", () => {
+    const { members, findMember } = loona();
+    for (const m of members) {
+        if (m.name === "HyeJu") assert.strictEqual(m.instagram, undefined);
+        else assert.match(m.instagram, /^[a-z0-9._]{1,30}$/, m.name); // Instagram's username rules
+    }
+    const yeojin = cmd().memberEmbed(findMember("yeojin")).toJSON();
+    assert.strictEqual(yeojin.fields.find((f) => f.name === "Instagram").value, "[@yeojin.\\_.o\\_x](https://www.instagram.com/yeojin._.o_x/)");
+    assert.ok(!cmd().memberEmbed(findMember("hyeju")).toJSON().fields.some((f) => f.name === "Instagram"));
 });
