@@ -28,21 +28,46 @@ test("ratings are stable for the same person, kind and day, and stay within 0-10
     assert.strictEqual(loveScore("1", "2", day), loveScore("2", "1", day)); // order doesn't matter
 });
 
-test("slots: payouts follow the table, return 97.5% over time, and pay something on 40% of spins", async () => {
-    const { SYMBOLS, payout, JACKPOT } = require("../lib/fun/slots");
+test("slots: payouts follow the table, and streaks keep long runs under 100% paid back", async () => {
+    const { SYMBOLS, payout, JACKPOT, isCombo, STREAK_CAP } = require("../lib/fun/slots");
     const [a, b, c] = SYMBOLS;
     assert.strictEqual(payout([a, b, c], 10), 0);
     assert.strictEqual(payout([a, JACKPOT, c], 10), 10); // a lone moon: bet back
     assert.strictEqual(payout([a, a, c], 10), 20);
     assert.strictEqual(payout([a, a, JACKPOT], 10), 20); // an animal pair beats the lone moon
     assert.strictEqual(payout([JACKPOT, b, JACKPOT], 10), 70);
-    assert.strictEqual(payout([a, a, a], 10), 400);
+    assert.strictEqual(payout([a, a, a], 10), 200);
     assert.strictEqual(payout([JACKPOT, JACKPOT, JACKPOT], 10), 1500);
-    let total = 0, hits = 0;
-    for (const x of SYMBOLS) for (const y of SYMBOLS) for (const z of SYMBOLS) { const p = payout([x, y, z], 1); total += p; hits += p > 0; }
-    const spins = SYMBOLS.length ** 3;
-    assert.ok(Math.abs(total / spins - 0.975) < 0.001, `return to player ${total / spins}`);
-    assert.ok(hits / spins > 0.39, `hit rate ${hits / spins}`);
+    assert.ok(isCombo([a, a, c]) && !isCombo([a, JACKPOT, c]));
+    // Exact long-run return for n spins in one go, over every reel combination and streak.
+    const all = [];
+    for (const x of SYMBOLS) for (const y of SYMBOLS) for (const z of SYMBOLS) all.push({ p: payout([x, y, z], 1), combo: isCombo([x, y, z]) });
+    const rtp = (n) => {
+        let dist = new Map([[0, 1]]), total = 0;
+        for (let i = 0; i < n; i++) {
+            const next = new Map();
+            for (const [streak, pr] of dist) for (const { p, combo } of all) {
+                const s = combo ? streak + 1 : 0;
+                total += (pr / all.length) * (s ? 1 + (p - 1) * Math.min(s, STREAK_CAP) : p);
+                next.set(s, (next.get(s) ?? 0) + pr / all.length);
+            }
+            dist = next;
+        }
+        return total / n;
+    };
+    assert.strictEqual(rtp(1).toFixed(3), "0.866");
+    assert.strictEqual(rtp(5).toFixed(3), "0.961");
+    assert.strictEqual(rtp(10).toFixed(3), "0.976");
+});
+
+test("slots: streaks double then triple the winnings of combos in a row, and a miss or lone moon resets them", (t) => {
+    const slots = require("../lib/fun/slots");
+    const [a, b, c] = slots.SYMBOLS, M = slots.JACKPOT;
+    const reels = [[a, a, c], [b, b, c], [c, c, a], [a, a, b], [a, b, c], [a, a, c], [a, M, b], [b, b, c]];
+    t.mock.method(slots, "spin", () => reels.shift());
+    const r = slots.playSpins(8, 10);
+    assert.deepStrictEqual(r.map((x) => x.won), [20, 30, 40, 40, 0, 20, 10, 20]); // pair +10, ×2 +20, ×3 +30, capped, …
+    assert.deepStrictEqual(r.map((x) => x.streak), [1, 2, 3, 4, 0, 1, 0, 1]);
 });
 
 test("moon coins: start at 500 per server, save, refuse overspending, and refill a broke player to 100", async () => {
@@ -87,22 +112,27 @@ function fakeMsg({ guildId = "fg", userId = "u1", members = {} } = {}) {
 }
 const textOf = (p) => (typeof p === "string" ? p : p.content ?? p.embeds?.[0]?.toJSON().description ?? "");
 
-test("slots: refuses bets above the balance, and wins/losses change the saved balance", async (t) => {
+test("slots: N spins in one go, bets settled at once, and refusals for bad counts or too few coins", async (t) => {
     const slots = require("../lib/fun/slots");
     const { getCoins } = require("../lib/db");
     const { message, replies } = fakeMsg({ guildId: "s1" });
-    await funCmd("slots").run({}, message, ["501"]);
-    assert.match(textOf(replies[0]), /only have \*\*500\*\*/);
+    await funCmd("slots").run({}, message, ["5", "101"]); // 505 coins needed, 500 owned
+    assert.match(textOf(replies[0]), /5 spins of 101 cost \*\*505\*\* moon coins, and you have \*\*500\*\*/);
+    await funCmd("slots").run({}, message, ["50"]);
+    assert.match(textOf(replies.at(-1)), /Spin 1 to 10 times/);
+    await funCmd("slots").run({}, message, ["1", "abc"]);
+    assert.match(textOf(replies.at(-1)), /whole number/);
+    assert.strictEqual(await getCoins("s1", "u1"), 500);
 
     t.mock.method(slots, "spin", () => ["🐰", "🐱", "🐸"]); // no match: lose the bet
-    await funCmd("slots").run({}, message, ["100"]);
+    await funCmd("slots").run({}, message, ["1", "100"]);
     assert.strictEqual(await getCoins("s1", "u1"), 400);
-    slots.spin.mock.mockImplementation(() => ["🌙", "🌙", "🌙"]); // jackpot: 150x
-    await funCmd("slots").run({}, message, ["10"]);
-    assert.strictEqual(await getCoins("s1", "u1"), 400 - 10 + 1500);
-    assert.match(textOf(replies.at(-1)), /Full moon jackpot/);
-    await funCmd("slots").run({}, message, ["abc"]);
-    assert.match(textOf(replies.at(-1)), /whole number/);
+    slots.spin.mock.mockImplementation(() => ["🌙", "🌙", "🌙"]); // jackpot every time: x150, then streak x2, x3
+    await funCmd("slots").run({}, message, ["3"]);
+    assert.strictEqual(await getCoins("s1", "u1"), 400 - 30 + 1500 + (10 + 1490 * 2) + (10 + 1490 * 3));
+    assert.match(textOf(replies.at(-1)), /streak ×3/);
+    await funCmd("slots").run({}, message, []); // no args: one spin of 10
+    assert.match(textOf(replies.at(-1)), /^## /);
 });
 
 test("snipe shows the remembered message, or says there's nothing", async () => {

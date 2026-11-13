@@ -201,7 +201,7 @@ couldn't answer, keeps the current holder).
 | `motivation` | A little encouragement. | `motivate` |
 | `roll [dice]` | Roll dice, like 2d6 or d20 (default: one 6-sided die). | `dice` |
 | `rps [opponent]` | Rock paper scissors against the bot, or challenge a member. | `rockpaperscissors` |
-| `slots [bet]` | Spin the LOONA slot machine with moon coins (12 member animals + the moon jackpot). | `slot` |
+| `slots [spins] [bet]` | LOONA slot machine: up to 10 spins in one go, and combos in a row build a streak. | `slot` |
 | `smartrate [user]` | How smart is someone today? (changes daily) | `smart` |
 | `snipe` | Shows the last deleted message in this channel (from the last 15 minutes). |  |
 | `snipeedit` | Shows what the last edited message said before the edit in this channel (from the last 15 minutes). | `esnipe` |
@@ -317,7 +317,9 @@ pays 2000, once each. Collections are per server, like coins. Every card has her
 <summary><b>Slots</b></summary>
 
 Spins the 12 member animals plus the moon jackpot: a lone 🌙 gives your bet back, a pair of animals pays ×2, a pair of
-moons ×7, three of a kind ×40 and three moons ×150 (97.5% paid back over time; 40% of spins return something). Moon coins are per server; everyone starts with 500 and gets 100 back when broke.
+moons ×7, three of a kind ×20 and three moons ×150. `slots 5` spins five times (up to 10; `slots 5 50` bets 50 on each),
+and combos in a row build a streak: the 2nd has its winnings doubled, the 3rd and later tripled. Paid back over time:
+86.6% for one spin, 96.1% for five, 97.6% for ten, so playing on pays better but never prints coins. Moon coins are per server; everyone starts with 500 and gets 100 back when broke.
 </details>
 
 <details>
