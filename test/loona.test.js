@@ -276,3 +276,128 @@ test("design: dark colours get white text on a highlight, and light ones are dar
     assert.strictEqual(design.onPaper("#F4028E"), "#f4028e"); // HeeJin pink reads fine as it is
     assert.ok(design.luminance(design.onPaper("#F4A1B5")) <= 0.23); // ViVi pink, darkened
 });
+
+test("song quiz: pool, answer matching, clip position and winners", () => {
+    const g = require("../lib/loona/guess");
+    assert.ok(g.songs.length >= 200);
+    for (const s of g.songs) assert.ok(s.title && s.artist && s.release && Array.isArray(s.aliases), JSON.stringify(s));
+    const song = (title, ...aliases) => ({ title, aliases, artist: "LOONA", release: "x" });
+    const ohYes = song("Oh (Yes I Am)", "Oh", "Yes I Am");
+    assert.ok(g.isCorrect("oh yes i am", ohYes) && g.isCorrect("Yes I Am!", ohYes) && g.isCorrect("OH", ohYes));
+    assert.ok(g.isCorrect("키스는 다음에", song("Kiss Later", "키스는 다음에")) && g.isCorrect("kiss later", song("Kiss Later", "키스는 다음에")));
+    assert.ok(g.isCorrect("buterfly", song("Butterfly"))); // one typo allowed from 6 letters
+    assert.ok(!g.isCorrect("hi", song("Hi High")) && !g.isCorrect("", song("Hi High")));
+    assert.ok(!g.isCorrect("365!", song("366"))); // short titles must be exact
+    assert.ok(!g.isCorrect("the carol", song("The Carol 2.0")));
+    assert.strictEqual(new Set(g.pickSongs(15).map((s) => s.title + s.artist)).size, 15);
+    for (const r of [0, 0.5, 0.999]) {
+        const start = g.clipStart(200_000, () => r);
+        assert.ok(start >= 30_000 && start + g.CLIP_MS <= 200_000, `start ${start}`);
+    }
+    assert.strictEqual(g.clipStart(25_000, () => 0.999), 5_000); // a short song still fits the whole clip
+    assert.deepStrictEqual(g.winners(new Map([["a", 3], ["b", 3], ["c", 1]])), ["a", "b"]);
+    assert.deepStrictEqual(g.winners(new Map()), []);
+    const butterfly = song("Butterfly");
+    const yt = (title, author) => ({ title, author });
+    assert.ok(g.resultMatches(yt("Butterfly (Official Audio)", "이달의 소녀 LOONA"), butterfly));
+    assert.ok(!g.resultMatches(yt("Butterfly", "Cocomong"), butterfly)); // right title, wrong artist
+    assert.ok(!g.resultMatches(yt("Unf/Air", "ARTMS"), { ...song("Light It Up"), artist: "ARTMS" }));
+    assert.ok(g.resultMatches(yt("rendezvou 18.6y", "LOONA/yyxy"), { ...song("rendezvous 18.6y"), artist: "LOONA yyxy" })); // a typo on YouTube's side
+    const goldfish = { ...song("Goldfish"), artist: "Yves" };
+    assert.ok(g.resultMatches(yt("Goldfish", "Yves"), goldfish));
+    assert.ok(!g.resultMatches(yt("Goldfish", "YVES H"), goldfish) && !g.resultMatches(yt("Goldfish", "tripleS"), goldfish));
+    assert.ok(g.resultMatches(yt("Plastic Candy", "HaSeul (ARTMS)"), { ...song("Plastic Candy"), artist: "HaSeul" }));
+    assert.ok(g.resultMatches(yt("I'll Be Your Spring", "HyeJu"), { ...song("I’LL BE YOUR SPRING"), artist: "Olivia Hye" }));
+});
+
+test("giftPhotocard gives a card without touching coins or the free pull", async () => {
+    const db = require("../lib/db");
+    assert.strictEqual(await db.giftPhotocard("gg", "gu", "yves-moon"), 1);
+    assert.strictEqual(await db.giftPhotocard("gg", "gu", "yves-moon"), 2);
+    assert.strictEqual(await db.getCoins("gg", "gu"), 500);
+    assert.strictEqual((await db.pullPhotocard("gg", "gu", "2026-11-14", 150, "chuu-rare")).free, true);
+});
+
+test("guess: plays 10 clips, pays each round's winner, gives the top scorer a card, and cleans up", async (t) => {
+    const g = require("../lib/loona/guess");
+    const pc = require("../lib/loona/photocards");
+    const db = require("../lib/db");
+    const guess = require("../commands/loona/guess");
+    t.mock.method(pc, "renderPhotocard", async () => Buffer.from("png"));
+    g.BREAK_MS = 0;
+
+    const plays = [], sent = [];
+    let created = false, destroyed = false, current = null;
+    const player = { set: (k, v) => { player[k] = v; }, connect: async () => {}, stopPlaying: async () => {},
+        play: async (o) => { plays.push(o); current = o.clientTrack.info.title; }, destroy: async () => { destroyed = true; } };
+    const client = { lavalink: { useable: true, getPlayer: () => (created && !destroyed ? player : undefined), createPlayer: () => { created = true; return player; },
+        nodeManager: { leastUsedNodes: () => [{ search: async ({ query, source }) => {
+            assert.strictEqual(source, "ytmsearch");
+            return { tracks: [{ info: { title: `${query} (Official Audio)`, author: "이달의 소녀", length: 200_000 } }] };
+        } }] } } };
+    // Rounds 1 and 3: Orbit A guesses right; round 2: B; everything else: nobody.
+    let round = 0;
+    const answerFor = { 1: "qa", 2: "qb", 3: "qa" };
+    const channel = { id: "c", send: async (p) => sent.push(p), awaitMessages: async ({ filter }) => {
+        await new Promise((r) => setImmediate(r)); // answers arrive after the clip has started, as in Discord
+        round++;
+        const who = answerFor[round];
+        const title = current.replace(/ \(Official Audio\)$/, "").split(" ").slice(1).join(" "); // drop the artist word(s)
+        const song = g.songs.find((s) => current.startsWith(`${s.artist} ${s.title}`));
+        const msg = { author: { id: who, bot: false }, content: song.title, react: async () => {} };
+        assert.ok(title.length > 0);
+        return { first: () => (who && filter(msg) ? msg : undefined) };
+    } };
+    const message = { guild: { id: "qg" }, author: { id: "qa" }, member: { voice: { channel: { id: "vc" } } }, channel,
+        reply: async (p) => sent.push(p) };
+
+    await guess.run(client, message, []);
+    assert.strictEqual(plays.length, 10);
+    for (const p of plays) assert.strictEqual(p.endTime - p.position, g.CLIP_MS);
+    assert.strictEqual(player.guessGame, true);
+    assert.strictEqual(await db.getCoins("qg", "qa"), 500 + 2 * g.COINS_PER_ROUND);
+    assert.strictEqual(await db.getCoins("qg", "qb"), 500 + g.COINS_PER_ROUND);
+    assert.strictEqual((await db.photocardsOf("qg", "qa")).size, 1); // the top scorer's prize
+    assert.strictEqual((await db.photocardsOf("qg", "qb")).size, 0);
+    assert.ok(sent.some((p) => p.embeds?.[0]?.toJSON().title === "Final scores"));
+    assert.ok(destroyed);
+    assert.strictEqual(guess.games.size, 0);
+});
+
+test("guess: stopping early ends without a prize, and never destroys a player the quiz doesn't own", async (t) => {
+    const g = require("../lib/loona/guess");
+    const db = require("../lib/db");
+    const guess = require("../commands/loona/guess");
+    g.BREAK_MS = 0;
+    const sent = [];
+    let destroyedOurs = false, current = null, round = 0;
+    const ours = { set() {}, connect: async () => {}, stopPlaying: async () => {}, play: async (o) => { current = o.clientTrack.info.title; },
+        destroy: async () => { destroyedOurs = true; } };
+    const music = { destroy: async () => assert.fail("the quiz destroyed the music player") };
+    let active = null; // which player Lavalink reports for this server
+    const client = { lavalink: { useable: true, getPlayer: () => active, createPlayer: () => (active = ours),
+        nodeManager: { leastUsedNodes: () => [{ search: async ({ query }) => ({ tracks: [{ info: { title: query, author: "LOONA", length: 200_000 } }] }) }] } } };
+    const channel = { send: async (p) => sent.push(p), awaitMessages: async ({ filter }) => {
+        await new Promise((r) => setImmediate(r)); // answers arrive after the clip has started, as in Discord
+        round++;
+        const song = g.songs.find((s) => current.startsWith(`${s.artist} ${s.title}`));
+        const msg = { author: { id: "sa", bot: false }, content: song.title, react: async () => {} };
+        if (round === 2) { await guess.run(client, message, ["stop"]); } // stop during round 2
+        if (round === 3) active = music; // can't happen after a stop, but if it did, the quiz must leave it alone
+        return { first: () => (filter(msg) ? msg : undefined) };
+    } };
+    const message = { guild: { id: "sg" }, author: { id: "sa" }, member: { voice: { channel: { id: "vc" } } }, channel, reply: async (p) => sent.push(p) };
+    await guess.run(client, message, []);
+    assert.strictEqual(round, 2); // round 2 was the last
+    assert.strictEqual(await db.getCoins("sg", "sa"), 500 + 2 * g.COINS_PER_ROUND);
+    assert.strictEqual((await db.photocardsOf("sg", "sa")).size, 0); // no card for a stopped game
+    assert.ok(sent.some((p) => typeof p === "string" && /finishing all 10 rounds/.test(p)));
+    assert.ok(destroyedOurs);
+
+    // Our player replaced by someone else's mid-round: the quiz stops and leaves it alone.
+    round = 0; destroyedOurs = false; active = null;
+    channel.awaitMessages = async () => { active = music; return { first: () => undefined }; };
+    await guess.run(client, message, []);
+    assert.ok(!destroyedOurs);
+    assert.strictEqual(guess.games.size, 0);
+});

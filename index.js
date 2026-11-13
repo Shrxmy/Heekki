@@ -35,7 +35,8 @@ client.lavalink.nodeManager
     .on("connect", node => console.log(`Node "${node.id}" has Connected.`))
     .on("error", (node, error) => console.log(`Node "${node.id}" encountered an error: ${error?.message ?? error}.`));
 
-const sendTo = (player, embed) =>
+// The song guessing game runs its own player: "now playing" posts would give the answer away.
+const sendTo = (player, embed) => player.get("guessGame") ? undefined :
     client.channels.cache.get(player.textChannelId)?.send({ embeds: [embed] }).catch(console.error);
 
 client.lavalink

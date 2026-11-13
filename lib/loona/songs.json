@@ -1,0 +1,1461 @@
+{
+ "source": "MusicBrainz (CC0): official releases by LOONA, its units and members, and their current groups. Built once; OSTs, covers and remakes left out. Korean and English titles of the same song are aliases.",
+ "songs": [
+  {
+   "title": "Around You",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HyunJin"
+  },
+  {
+   "title": "I’ll Be There",
+   "aliases": [
+    "다녀가요"
+   ],
+   "artist": "LOONA",
+   "release": "HyunJin"
+  },
+  {
+   "title": "Let Me In",
+   "aliases": [
+    "소년, 소녀"
+   ],
+   "artist": "LOONA",
+   "release": "HaSeul"
+  },
+  {
+   "title": "The Carol",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HaSeul"
+  },
+  {
+   "title": "ViViD",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HeeJin"
+  },
+  {
+   "title": "D-1",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Yves"
+  },
+  {
+   "title": "Eclipse",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Kim Lip"
+  },
+  {
+   "title": "Everyday I Love You",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HaSeul&ViVi"
+  },
+  {
+   "title": "Everyday I Need You",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HaSeul&ViVi"
+  },
+  {
+   "title": "Girl’s Talk",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Chuu"
+  },
+  {
+   "title": "Heart Attack",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Chuu"
+  },
+  {
+   "title": "Kiss Later",
+   "aliases": [
+    "키스는 다음에"
+   ],
+   "artist": "LOONA",
+   "release": "YeoJin"
+  },
+  {
+   "title": "Love Cherry Motion",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Choerry"
+  },
+  {
+   "title": "Love Letter",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Kim Lip&JinSoul"
+  },
+  {
+   "title": "My Melody",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HaSeul&YeoJin"
+  },
+  {
+   "title": "My Sunday",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HaSeul&YeoJin"
+  },
+  {
+   "title": "Puzzle",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Choerry"
+  },
+  {
+   "title": "Singing in the Rain",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Kim Lip&JinSoul"
+  },
+  {
+   "title": "The Carol 2.0",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "The Carol 2.0"
+  },
+  {
+   "title": "Twilight",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Kim Lip"
+  },
+  {
+   "title": "new",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Yves"
+  },
+  {
+   "title": "3월을 기다려",
+   "aliases": [],
+   "artist": "LOONA 1/3",
+   "release": "Love&Live"
+  },
+  {
+   "title": "Fairy Tale",
+   "aliases": [],
+   "artist": "LOONA 1/3",
+   "release": "Love&Live"
+  },
+  {
+   "title": "Into the New Heart",
+   "aliases": [],
+   "artist": "LOONA 1/3",
+   "release": "Love&Live"
+  },
+  {
+   "title": "Love & Evil",
+   "aliases": [],
+   "artist": "LOONA 1/3",
+   "release": "Love & Evil"
+  },
+  {
+   "title": "Rain 51Db",
+   "aliases": [
+    "비의 목소리 51db"
+   ],
+   "artist": "LOONA 1/3",
+   "release": "Love & Evil"
+  },
+  {
+   "title": "Sonatine",
+   "aliases": [
+    "알 수 없는 비밀"
+   ],
+   "artist": "LOONA 1/3",
+   "release": "Love & Evil"
+  },
+  {
+   "title": "Valentine Girl",
+   "aliases": [],
+   "artist": "LOONA 1/3",
+   "release": "Love & Live"
+  },
+  {
+   "title": "You and Me Together",
+   "aliases": [
+    "지금, 좋아해"
+   ],
+   "artist": "LOONA 1/3",
+   "release": "Love&Live"
+  },
+  {
+   "title": "ADD",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Max&Match"
+  },
+  {
+   "title": "Chaotic",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Mix&Match"
+  },
+  {
+   "title": "Girl Front",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Mix&Match"
+  },
+  {
+   "title": "LOONATIC",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Mix&Match"
+  },
+  {
+   "title": "ODD",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Mix&Match"
+  },
+  {
+   "title": "ODD Front",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Max&Match"
+  },
+  {
+   "title": "Starlight",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Mix&Match"
+  },
+  {
+   "title": "Sweet Crazy Love",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Max&Match"
+  },
+  {
+   "title": "Uncover",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "Max&Match"
+  },
+  {
+   "title": "Egoist",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Olivia Hye"
+  },
+  {
+   "title": "Hi High",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[+ +]"
+  },
+  {
+   "title": "One & Only",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Chuu&Go Won"
+  },
+  {
+   "title": "Perfect Love",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[+ +]"
+  },
+  {
+   "title": "Rosy",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Olivia Hye"
+  },
+  {
+   "title": "See Saw",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "Chuu&Go Won"
+  },
+  {
+   "title": "Stylish",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[+ +]"
+  },
+  {
+   "title": "favOriTe",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "favOriTe"
+  },
+  {
+   "title": "Heat",
+   "aliases": [
+    "열기"
+   ],
+   "artist": "LOONA",
+   "release": "[+ +]"
+  },
+  {
+   "title": "dal segno",
+   "aliases": [],
+   "artist": "LOONA yyxy",
+   "release": "beauty&thebeat"
+  },
+  {
+   "title": "frozen",
+   "aliases": [],
+   "artist": "LOONA yyxy",
+   "release": "beauty&thebeat"
+  },
+  {
+   "title": "love4eva",
+   "aliases": [],
+   "artist": "LOONA yyxy",
+   "release": "beauty&thebeat"
+  },
+  {
+   "title": "one way",
+   "aliases": [],
+   "artist": "LOONA yyxy",
+   "release": "beauty&thebeat"
+  },
+  {
+   "title": "rendezvous 18.6y",
+   "aliases": [],
+   "artist": "LOONA yyxy",
+   "release": "beauty&thebeat"
+  },
+  {
+   "title": "365",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "365"
+  },
+  {
+   "title": "Butterfly",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[× ×]"
+  },
+  {
+   "title": "Colors",
+   "aliases": [
+    "색깔"
+   ],
+   "artist": "LOONA",
+   "release": "[× ×]"
+  },
+  {
+   "title": "Curiosity",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[× ×]"
+  },
+  {
+   "title": "Satellite",
+   "aliases": [
+    "위성"
+   ],
+   "artist": "LOONA",
+   "release": "[× ×]"
+  },
+  {
+   "title": "Where you at",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[× ×]"
+  },
+  {
+   "title": "12:00",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "Day & Night",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[#]"
+  },
+  {
+   "title": "Ding Ding Dong",
+   "aliases": [
+    "땡땡땡"
+   ],
+   "artist": "LOONA",
+   "release": "[#]"
+  },
+  {
+   "title": "Number 1",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[#]"
+  },
+  {
+   "title": "OOPS!",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "Oh (Yes I Am)",
+   "aliases": [
+    "Oh",
+    "Yes I Am"
+   ],
+   "artist": "LOONA",
+   "release": "[#]"
+  },
+  {
+   "title": "So What",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[#]"
+  },
+  {
+   "title": "Universe",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "Why Not?",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "Fall Again",
+   "aliases": [
+    "기억해"
+   ],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "Voice",
+   "aliases": [
+    "목소리"
+   ],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "Hide & Seek",
+   "aliases": [
+    "숨바꼭질"
+   ],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "A Different Night",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[&]"
+  },
+  {
+   "title": "Be Honest",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[&]"
+  },
+  {
+   "title": "Dance on My Own",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[&]"
+  },
+  {
+   "title": "HULA HOOP",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "HULA HOOP / StarSeed 〜カクセイ〜"
+  },
+  {
+   "title": "Not Friends",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "MAXIS BY RYAN JHUN PT.2"
+  },
+  {
+   "title": "PTT (Paint the Town)",
+   "aliases": [
+    "PTT",
+    "Paint the Town"
+   ],
+   "artist": "LOONA",
+   "release": "[&]"
+  },
+  {
+   "title": "StarSeed",
+   "aliases": [
+    "StarSeed 〜カクセイ〜"
+   ],
+   "artist": "LOONA",
+   "release": "HULA HOOP / StarSeed 〜カクセイ〜"
+  },
+  {
+   "title": "U R",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[&]"
+  },
+  {
+   "title": "WOW",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[&]"
+  },
+  {
+   "title": "Yummy-Yummy",
+   "aliases": [
+    "더주세요"
+   ],
+   "artist": "LOONA",
+   "release": "더주세요 (Yummy-Yummy)"
+  },
+  {
+   "title": "Yum-Yum",
+   "aliases": [
+    "얌얌"
+   ],
+   "artist": "LOONA",
+   "release": "Yum-Yum"
+  },
+  {
+   "title": "Yummy-Yummy",
+   "aliases": [],
+   "artist": "YeoJin",
+   "release": "Yummy‐Yummy"
+  },
+  {
+   "title": "ONE AND A HALF",
+   "aliases": [
+    "일과 이분의 일"
+   ],
+   "artist": "Chuu",
+   "release": "ONE AND A HALF"
+  },
+  {
+   "title": "lullaby",
+   "aliases": [
+    "자장가"
+   ],
+   "artist": "Chuu",
+   "release": "lullaby"
+  },
+  {
+   "title": "Honestly",
+   "aliases": [],
+   "artist": "HeeJin",
+   "release": "Honestly"
+  },
+  {
+   "title": "Flip That",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[Flip That]"
+  },
+  {
+   "title": "LUMINOUS",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "LUMINOUS"
+  },
+  {
+   "title": "Need U",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[Flip That]"
+  },
+  {
+   "title": "POSE",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[Flip That]"
+  },
+  {
+   "title": "Pale Blue Dot",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[Flip That]"
+  },
+  {
+   "title": "Playback",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[Flip That]"
+  },
+  {
+   "title": "SICK LOVE",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "SICK LOVE"
+  },
+  {
+   "title": "The Journey",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[Flip That]"
+  },
+  {
+   "title": "I’LL BE YOUR SPRING",
+   "aliases": [
+    "봄이 되어줄게"
+   ],
+   "artist": "Olivia Hye",
+   "release": "I’LL BE YOUR SPRING"
+  },
+  {
+   "title": "The Carol 3.0",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "The Carol 3.0"
+  },
+  {
+   "title": "Aliens",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Howl"
+  },
+  {
+   "title": "Hitchhiker",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Howl"
+  },
+  {
+   "title": "Howl",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Howl"
+  },
+  {
+   "title": "Let’s Love",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Let’s Love"
+  },
+  {
+   "title": "My Palace",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Howl"
+  },
+  {
+   "title": "Our Night is more beautiful than your Day",
+   "aliases": [
+    "우리의 밤은 당신의 낮보다 아름답다"
+   ],
+   "artist": "Chuu",
+   "release": "Our Night is more beautiful than your Day"
+  },
+  {
+   "title": "Underwater",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Howl"
+  },
+  {
+   "title": "썸밍아웃",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "썸밍아웃"
+  },
+  {
+   "title": "좋아 좋아",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "좋아 좋아"
+  },
+  {
+   "title": "Plastic Candy",
+   "aliases": [],
+   "artist": "HaSeul",
+   "release": "Plastic Candy"
+  },
+  {
+   "title": "Addiction",
+   "aliases": [],
+   "artist": "HeeJin",
+   "release": "K"
+  },
+  {
+   "title": "Algorithm",
+   "aliases": [],
+   "artist": "HeeJin",
+   "release": "K"
+  },
+  {
+   "title": "Kehwa",
+   "aliases": [
+    "개화"
+   ],
+   "artist": "HeeJin",
+   "release": "<K>"
+  },
+  {
+   "title": "Nokia",
+   "aliases": [],
+   "artist": "HeeJin",
+   "release": "K"
+  },
+  {
+   "title": "Sad Girls Club",
+   "aliases": [],
+   "artist": "HeeJin",
+   "release": "K"
+  },
+  {
+   "title": "Video Game",
+   "aliases": [],
+   "artist": "HeeJin",
+   "release": "K"
+  },
+  {
+   "title": "Colouring",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "Loossemble"
+  },
+  {
+   "title": "Day by day",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "Loossemble"
+  },
+  {
+   "title": "Newtopia",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "Loossemble"
+  },
+  {
+   "title": "Real world",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "Loossemble"
+  },
+  {
+   "title": "Sensitive",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "Loossemble"
+  },
+  {
+   "title": "Strawberry soda",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "Loossemble"
+  },
+  {
+   "title": "Air Force One",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "ODD EYE CIRCLE <Version Up>"
+  },
+  {
+   "title": "Did You Wait?",
+   "aliases": [
+    "기다렸어?"
+   ],
+   "artist": "ODD EYE CIRCLE",
+   "release": "ODD EYE CIRCLE <Version Up>"
+  },
+  {
+   "title": "Je ne sais quoi",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "ODD EYE CIRCLE <Version Up>"
+  },
+  {
+   "title": "Love Me Like",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "ODD EYE CIRCLE <Version Up>"
+  },
+  {
+   "title": "Lucid",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "ODD EYE CIRCLE <Version Up>"
+  },
+  {
+   "title": "My Secret Playlist",
+   "aliases": [],
+   "artist": "ODD EYE CIRCLE",
+   "release": "ODD EYE CIRCLE <Version Up>"
+  },
+  {
+   "title": "Air",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Pre4 : Air>"
+  },
+  {
+   "title": "Birth",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "Birth"
+  },
+  {
+   "title": "Butterfly Effect",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Dall>"
+  },
+  {
+   "title": "Candy Crush",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Pre3 : Candy Crush>"
+  },
+  {
+   "title": "Distress",
+   "aliases": [
+    "조난"
+   ],
+   "artist": "ARTMS",
+   "release": "<Dall>"
+  },
+  {
+   "title": "Flower Rhythm",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Pre2 : Flower Rhythm>"
+  },
+  {
+   "title": "Sparkle",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Dall>"
+  },
+  {
+   "title": "The Hitchhiker’s Guide to the Galaxy",
+   "aliases": [
+    "은하수를 여행하는 히치하이커를 위한 안내서"
+   ],
+   "artist": "ARTMS",
+   "release": "<Dall>"
+  },
+  {
+   "title": "Unf/Air",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Dall>"
+  },
+  {
+   "title": "Virtual Angel",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Dall>"
+  },
+  {
+   "title": "url",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Dall>"
+  },
+  {
+   "title": "Chocolate",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Chocolate"
+  },
+  {
+   "title": "Daydreamer",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Strawberry Rush"
+  },
+  {
+   "title": "Honeybee",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Strawberry Rush"
+  },
+  {
+   "title": "Lucid Dream",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Strawberry Rush"
+  },
+  {
+   "title": "PINK CLOUD",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "nrv"
+  },
+  {
+   "title": "Second love",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Second love"
+  },
+  {
+   "title": "Strawberry Rush",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Strawberry Rush"
+  },
+  {
+   "title": "Fragile Eyes",
+   "aliases": [],
+   "artist": "HaSeul",
+   "release": "<Fragile Eyes>"
+  },
+  {
+   "title": "Thank You",
+   "aliases": [],
+   "artist": "HyunJin",
+   "release": "Thank You"
+  },
+  {
+   "title": "Boomerang",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "One of a Kind"
+  },
+  {
+   "title": "Confessions",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "TTYL"
+  },
+  {
+   "title": "Cotton Candy",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "TTYL"
+  },
+  {
+   "title": "FANATICISM",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "TTYL"
+  },
+  {
+   "title": "Girls’ Night",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "One of a Kind"
+  },
+  {
+   "title": "He Said I Said",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "One of a Kind"
+  },
+  {
+   "title": "Hocus Pocus",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "TTYL"
+  },
+  {
+   "title": "Moonlight",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "One of a Kind"
+  },
+  {
+   "title": "Secret Diary",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "TTYL"
+  },
+  {
+   "title": "TTYL",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "TTYL"
+  },
+  {
+   "title": "Truman Show",
+   "aliases": [],
+   "artist": "Loossemble",
+   "release": "One of a Kind"
+  },
+  {
+   "title": "Afterglow",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "LOOP"
+  },
+  {
+   "title": "DIM",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "I Did"
+  },
+  {
+   "title": "DIORAMA",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "LOOP"
+  },
+  {
+   "title": "Goldfish",
+   "aliases": [
+    "금붕어"
+   ],
+   "artist": "Yves",
+   "release": "LOOP"
+  },
+  {
+   "title": "Gone Girl",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "I Did"
+  },
+  {
+   "title": "Hashtag",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "I Did"
+  },
+  {
+   "title": "LOOP",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "LOOP"
+  },
+  {
+   "title": "Tik Tok",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Tik Tok"
+  },
+  {
+   "title": "Viola",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "I Did"
+  },
+  {
+   "title": "BURN",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<BURN>"
+  },
+  {
+   "title": "Club for the Broken",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Club Icarus>"
+  },
+  {
+   "title": "Goddess",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Club Icarus>"
+  },
+  {
+   "title": "Icarus",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Club Icarus>"
+  },
+  {
+   "title": "Light It Up",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<BURN>"
+  },
+  {
+   "title": "Obsessed",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Club Icarus>"
+  },
+  {
+   "title": "Verified Beauty",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Club Icarus>"
+  },
+  {
+   "title": "Pressure",
+   "aliases": [],
+   "artist": "Choerry",
+   "release": "<Pressure>"
+  },
+  {
+   "title": "Back in town",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Only cry in the rain"
+  },
+  {
+   "title": "Je t’aime",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Only cry in the rain"
+  },
+  {
+   "title": "Kiss a kitty",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Only cry in the rain"
+  },
+  {
+   "title": "No more",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Only cry in the rain"
+  },
+  {
+   "title": "Only cry in the rain",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "Only cry in the rain"
+  },
+  {
+   "title": "because I’m stupid?",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "because I’m stupid?"
+  },
+  {
+   "title": "Love Poison",
+   "aliases": [],
+   "artist": "HaSeul",
+   "release": "<Love Poison>"
+  },
+  {
+   "title": "sAvioR",
+   "aliases": [],
+   "artist": "HeeJin",
+   "release": "<sAvioR>"
+  },
+  {
+   "title": "Ring of Chaos",
+   "aliases": [],
+   "artist": "JinSoul",
+   "release": "<Ring of Chaos>"
+  },
+  {
+   "title": "Can You Entertain?",
+   "aliases": [],
+   "artist": "Kim Lip",
+   "release": "<Can You Entertain?>"
+  },
+  {
+   "title": "Star",
+   "aliases": [],
+   "artist": "LOONA",
+   "release": "[12:00]"
+  },
+  {
+   "title": "Dancing in the dark",
+   "aliases": [],
+   "artist": "YeoJin",
+   "release": "Dancing in the dark"
+  },
+  {
+   "title": "Aibo",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Soft Error"
+  },
+  {
+   "title": "BIRD",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "I Did: Bloom"
+  },
+  {
+   "title": "Do you feel it like i touch",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Soft Error"
+  },
+  {
+   "title": "Ex Machina",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Soft Error : X"
+  },
+  {
+   "title": "Falling for You",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Falling for You"
+  },
+  {
+   "title": "See you in hell",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "I Did: Bloom"
+  },
+  {
+   "title": "Soap",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Soft Error"
+  },
+  {
+   "title": "Study",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Soft Error"
+  },
+  {
+   "title": "White Cat",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Soft Error"
+  },
+  {
+   "title": "mom",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Soft Error"
+  },
+  {
+   "title": "Blue Blood",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Hyper-Ego>"
+  },
+  {
+   "title": "Born Stunner",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Born Stunner>"
+  },
+  {
+   "title": "From Wings to Soul",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Hyper-Ego>"
+  },
+  {
+   "title": "Hyper Crush",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Hyper-Ego>"
+  },
+  {
+   "title": "Icarus Gang",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Hyper-Ego>"
+  },
+  {
+   "title": "Pixel Memory",
+   "aliases": [],
+   "artist": "ARTMS",
+   "release": "<Hyper-Ego>"
+  },
+  {
+   "title": "Canary",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "Cocktail Dress",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "Heart Tea Bag",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "I Love You",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "I Love You"
+  },
+  {
+   "title": "Limoncello",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "Love Potion",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "Loving You!",
+   "aliases": [
+    "첫눈이 오면 그때 거기서 만나"
+   ],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "RULE",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "RULE"
+  },
+  {
+   "title": "Teeny Tiny Heart",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "XO, My Cyberlove",
+   "aliases": [],
+   "artist": "Chuu",
+   "release": "XO, My Cyberlove"
+  },
+  {
+   "title": "Again",
+   "aliases": [],
+   "artist": "HaSeul",
+   "release": "Again"
+  },
+  {
+   "title": "Afterglow",
+   "aliases": [
+    "잔광"
+   ],
+   "artist": "HaSeul",
+   "release": "<Afterglow>"
+  },
+  {
+   "title": "It Was Love",
+   "aliases": [
+    "사랑이었는데"
+   ],
+   "artist": "LATENCY",
+   "release": "It Was Love"
+  },
+  {
+   "title": "LATENCY",
+   "aliases": [],
+   "artist": "LATENCY",
+   "release": "LATE O’ CLOCK"
+  },
+  {
+   "title": "MALIBU",
+   "aliases": [],
+   "artist": "LATENCY",
+   "release": "LATE O’ CLOCK"
+  },
+  {
+   "title": "SAY LOVE",
+   "aliases": [],
+   "artist": "LATENCY",
+   "release": "LATE O’ CLOCK"
+  },
+  {
+   "title": "STARRY NIGHT",
+   "aliases": [],
+   "artist": "LATENCY",
+   "release": "LATE O’ CLOCK"
+  },
+  {
+   "title": "WE JUST",
+   "aliases": [],
+   "artist": "LATENCY",
+   "release": "WE JUST"
+  },
+  {
+   "title": "BTW",
+   "aliases": [],
+   "artist": "YeoJin",
+   "release": "Lv1"
+  },
+  {
+   "title": "My Valentine",
+   "aliases": [],
+   "artist": "YeoJin",
+   "release": "Lv1"
+  },
+  {
+   "title": "Quiet Yes",
+   "aliases": [],
+   "artist": "YeoJin",
+   "release": "Lv2"
+  },
+  {
+   "title": "Red Hot Chili Summer",
+   "aliases": [],
+   "artist": "YeoJin",
+   "release": "Lv2"
+  },
+  {
+   "title": "Sugar talk",
+   "aliases": [],
+   "artist": "YeoJin",
+   "release": "Lv1"
+  },
+  {
+   "title": "Two Halves",
+   "aliases": [
+    "반,짝"
+   ],
+   "artist": "YeoJin",
+   "release": "Lv2"
+  },
+  {
+   "title": "Adam",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Hysteric / Adam"
+  },
+  {
+   "title": "Bat",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Cute & Anxiety"
+  },
+  {
+   "title": "Break it",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "NAIL"
+  },
+  {
+   "title": "HALO",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "NAIL"
+  },
+  {
+   "title": "Hysteric",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Hysteric / Adam"
+  },
+  {
+   "title": "It",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "NAIL"
+  },
+  {
+   "title": "NAIL",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "NAIL"
+  },
+  {
+   "title": "Polaroid",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Cute & Anxiety"
+  },
+  {
+   "title": "Too Much",
+   "aliases": [],
+   "artist": "Yves",
+   "release": "Cute & Anxiety"
+  }
+ ]
+}

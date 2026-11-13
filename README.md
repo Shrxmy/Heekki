@@ -34,7 +34,7 @@
 | **Music** | YouTube and Spotify through Lavalink v4, search-and-pick, queue, seek, volume, loop, filters (8D, nightcore, karaoke, bassboost...). Stays in the call until it's been alone for 3 minutes. |
 | **Last.fm** | Now playing, recent scrobbles, top lists, album collages up to 10x10, artist/album info, who knows an artist/track/album, crowns, and taste matches. |
 | **Welcome cards** | A "Who's Next Girl?" teaser card for joins and leaves, with your own message, background and member colours. |
-| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours, birthdays and personal Instagram links, collectable photocards, plus a post in your greeting channel on each birthday. |
+| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours, birthdays and personal Instagram links, collectable photocards, a song quiz, plus a post in your greeting channel on each birthday. |
 | **Fun & games** | LOONA slot machine, tic-tac-toe, rock paper scissors, trivia, memes, ratings, snipe and text toys. |
 | **Info** | Member, server, role and channel info, plus anime, GitHub, news, Pokédex, Steam, weather and Wikipedia lookups. |
 | **Prefix or slash** | Every command works as `-play` **and** `/play`. The prefix can be changed per server. |
@@ -170,11 +170,12 @@ couldn't answer, keeps the current holder).
 </details>
 
 <details>
-<summary><b>LOONA</b>: member profiles and photocards</summary>
+<summary><b>LOONA</b>: member profiles, photocards and the song quiz</summary>
 
 | Command | What it does | Aliases |
 |---|---|---|
 | `collection [user]` | Shows someone's LOONA photocards and set progress. | `cards` `binder` |
+| `guess [action]` | LOONA song quiz in your voice channel: guess the song from a 20-second clip. | `songquiz` `gts` |
 | `loona [member]` | LOONA member profiles with photos and fun facts. | `orbit` `member` |
 | `pull` | Pull a LOONA photocard: free once a day, then 150 moon coins. | `pc` `photocard` |
 
@@ -287,6 +288,17 @@ birthday line. It's on by default and posts once per member per year; `toggle-bi
 `loona` shows the group page (including whose birthday is next) and a menu of all 12 members. `loona <name>` opens a profile;
 names, Korean names and nicknames all work (`heekki`, `희진`, `olivia hye`). Buttons flip through photos and facts.
 The data is a snapshot in `lib/loona/members.json`.
+</details>
+
+<details>
+<summary><b>Song quiz</b></summary>
+
+`guess` plays 10 rounds in your voice channel: a 20-second clip from somewhere in the middle of a song, and the first
+person to type its title in the channel wins 30 moon coins (case, spaces and punctuation don't matter, a small typo is
+fine in longer titles, and Korean or English titles both count). The top scorer gets a free photocard. `guess stop` makes
+the current round the last. The pool (`lib/loona/songs.json`, from MusicBrainz) is 232 songs by LOONA, its units and
+members, and their current groups; each clip comes from YouTube Music and is only played if its title matches the song.
+The quiz won't start while the bot is in voice for music.
 </details>
 
 <details>

@@ -12,6 +12,7 @@ module.exports = {
         if (!channel) return message.reply("Hop into a voice channel first, Orbit 🎧");
         if (!args.length) return message.reply("What should we listen to, Orbit? Try `play Butterfly` 🦋");
         if (!client.lavalink.useable) return message.reply("The music server is taking a nap 💤 Try again in a moment.");
+        if (require("../loona/guess").games.has(message.guild.id)) return message.reply("A song quiz is running here. Wait for it to end, or use `guess stop` 🌙");
 
         // Get (or re-create) the player right before queueing: queueEnd destroys it,
         // which can happen while we wait on the search or the user's pick.
