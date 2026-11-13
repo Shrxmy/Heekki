@@ -99,6 +99,19 @@ Secrets live only in `.env`; everything else is in `config.js`.
 | `LAVALINK_HOST`, `LAVALINK_PORT` | Optional: where Lavalink runs, if not `localhost:2333` |
 | `LASTFM_API_KEY` | Optional: the Last.fm commands ([free key](https://www.last.fm/api/account/create)) |
 
+### Album fonts (optional)
+
+The cards ship with free stand-ins for LOONA's album fonts. If you own licences for the real ones, put them in
+`assets/fonts/local/` (git-ignored, so they're never committed), named after the role they take over, as `.otf` or `.ttf`:
+
+| File | Real font | Used for |
+|---|---|---|
+| `korean.otf` | 210 맨발의청춘 ([Sandoll Cloud](https://www.sandollcloud.com/font/20004/210-Manbalchungchun)) | 이달의 소녀 and all Korean text (stand-in: Noto Sans KR) |
+| `light.otf` | ITC Avant Garde Gothic Extra Light (Monotype) | The thin capitals on photocards (stand-in: Jost Light) |
+| `sans.otf`, `didot.otf`, `serif.otf`, `serifItalic.otf`, `script.otf` | AGFatumC, Didot, Adobe Caslon, Ting Tong | Same idea for the other stand-ins |
+
+Restart the bot after adding one.
+
 ## Commands
 
 The default prefix is `-` (change it per server with `-setprefix`). `<x>` is required, `[x]` is optional.
