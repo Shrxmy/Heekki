@@ -103,7 +103,7 @@ module.exports = {
     usage, homeEmbed, categoryEmbed, commandEmbed, menu,
     run: async (client, message, args) => {
         const commands = [...client.commands.values()];
-        const prefix = getPrefix(message.guild.id);
+        const prefix = await getPrefix(message.guild.id);
 
         if (args.length) {
             const embed = commandEmbed(commands, args[0], prefix);

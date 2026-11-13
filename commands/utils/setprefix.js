@@ -11,7 +11,7 @@ module.exports = {
         if (!message.member.permissions.has(PermissionFlagsBits.ManageGuild)) return message.channel.send("**You Do Not Have Sufficient Permissions! - [MANAGE_GUILD]**")
 
         if (!args[0]) {
-          let b = getCustomPrefix(message.guild.id);
+          let b = await getCustomPrefix(message.guild.id);
           if (b) {
         return message.channel.send(
           `**Prefix Of This Server is \`${b}\`**`
@@ -21,12 +21,12 @@ module.exports = {
       
         let a = args.join(' ');
         if (a.length > 10) return message.channel.send('**The prefix can be at most 10 characters long!**')
-        let b = getCustomPrefix(message.guild.id)
+        let b = await getCustomPrefix(message.guild.id)
 
         if (a === b) {
             return message.channel.send('**This is Already The Server Prefix!**')
         } else {
-            setPrefix(message.guild.id, a)
+            await setPrefix(message.guild.id, a)
 
             return message.channel.send(`**Successfuly Set Server Prefix To \`${a}\`**`)
         }

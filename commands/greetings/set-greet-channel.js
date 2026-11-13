@@ -14,7 +14,7 @@ module.exports = greetCommand({
         const channel = id && message.guild.channels.cache.get(id);
         if (!channel || !TEXT_TYPES.includes(channel.type))
             return message.reply("Pick a text channel in this server, like `set-greet-channel #welcome`.");
-        updateGreetSettings(message.guild.id, { channelId: channel.id });
+        await updateGreetSettings(message.guild.id, { channelId: channel.id });
         return message.reply(`Greetings will be posted in <#${channel.id}>.`);
     }
 });

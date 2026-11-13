@@ -14,7 +14,7 @@ module.exports = greetCommand({
     ],
     run: async (client, message, args) => {
         if (isReset(args)) {
-            updateGreetSettings(message.guild.id, { background: null });
+            await updateGreetSettings(message.guild.id, { background: null });
             return message.reply("Background is back to the night sky.");
         }
         const url = message.attachments?.first()?.url ?? args[0];
@@ -26,9 +26,9 @@ module.exports = greetCommand({
         } catch (err) {
             return message.reply(err.message);
         }
-        updateGreetSettings(message.guild.id, { background });
+        await updateGreetSettings(message.guild.id, { background });
         try {
-            const preview = await buildGreeting(message.member, "join", getGreetSettings(message.guild.id));
+            const preview = await buildGreeting(message.member, "join", await getGreetSettings(message.guild.id));
             return await message.reply({ ...preview, content: "Background saved. Here's how it looks:", allowedMentions: { parse: [] } });
         } catch (err) {
             return message.reply(`Background saved, but I couldn't show a preview here: ${err.message}`);

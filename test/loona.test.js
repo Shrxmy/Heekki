@@ -1,9 +1,9 @@
-process.env.DB_PATH = ":memory:";
+process.env.DATABASE_URL = "memory";
 const test = require("node:test");
 const assert = require("node:assert");
 const loona = () => require("../lib/loona");
 
-test("member data: 12 members in reveal order, each complete and credited", () => {
+test("member data: 12 members in reveal order, each complete and credited", async () => {
     const { members, group } = loona();
     assert.strictEqual(members.length, 12);
     assert.deepStrictEqual(members.map((m) => m.name), ["HeeJin", "HyunJin", "HaSeul", "YeoJin", "ViVi", "Kim Lip",
@@ -23,7 +23,7 @@ test("member data: 12 members in reveal order, each complete and credited", () =
     assert.strictEqual(group.name, "LOONA");
 });
 
-test("findMember matches names, Korean names and nicknames, ignoring case, spaces and punctuation", () => {
+test("findMember matches names, Korean names and nicknames, ignoring case, spaces and punctuation", async () => {
     const { findMember } = loona();
     assert.strictEqual(findMember("heejin").name, "HeeJin");
     assert.strictEqual(findMember("Hee Jin").name, "HeeJin");
@@ -36,7 +36,7 @@ test("findMember matches names, Korean names and nicknames, ignoring case, space
     assert.strictEqual(findMember(""), null);
 });
 
-test("age and next birthday are computed from the birthday", () => {
+test("age and next birthday are computed from the birthday", async () => {
     const { age, daysUntilBirthday, nextBirthdays } = loona();
     const heejin = { birthday: "2000-10-19" };
     assert.strictEqual(age(heejin, new Date("2026-10-18T12:00:00Z")), 25);
@@ -48,7 +48,7 @@ test("age and next birthday are computed from the birthday", () => {
     assert.strictEqual(next[0].days, 3);
 });
 
-test("photoCredit names the source for every kind of photo", () => {
+test("photoCredit names the source for every kind of photo", async () => {
     const { photoCredit } = loona();
     assert.strictEqual(photoCredit({ source: "commons", artist: "TV10", license: "CC BY 3.0" }), "Photo: TV10, CC BY 3.0, via Wikimedia Commons");
 });
@@ -56,7 +56,7 @@ test("photoCredit names the source for every kind of photo", () => {
 const cmd = () => require("../commands/loona/loona");
 const NOV8 = new Date("2026-11-08T12:00:00Z");
 
-test("group page: intro, members in order, next birthday, and a menu with all 12 members", () => {
+test("group page: intro, members in order, next birthday, and a menu with all 12 members", async () => {
     const embed = cmd().groupEmbed(NOV8).toJSON();
     assert.match(embed.title, /LOONA/);
     assert.ok(embed.fields.some((f) => f.name === "Next birthday" && /YeoJin.*3 days/.test(f.value)));
@@ -66,7 +66,7 @@ test("group page: intro, members in order, next birthday, and a menu with all 12
     assert.strictEqual(menu.components[0].options.length, 12);
 });
 
-test("member page: official colour, facts, photo with credit, and working buttons", () => {
+test("member page: official colour, facts, photo with credit, and working buttons", async () => {
     const { findMember } = require("../lib/loona");
     const heejin = findMember("heejin");
     const embed = cmd().memberEmbed(heejin, { photo: 0, fact: 1, now: new Date("2026-10-19T03:00:00Z") }).toJSON();
@@ -80,7 +80,7 @@ test("member page: official colour, facts, photo with credit, and working button
     assert.deepStrictEqual(buttons, ["loona-prev", "loona-fact", "loona-photo", "loona-next"]);
 });
 
-test("member page steps: next/previous wrap around, photo and fact indexes cycle", () => {
+test("member page steps: next/previous wrap around, photo and fact indexes cycle", async () => {
     const { step } = cmd();
     const { members } = require("../lib/loona");
     const last = members.length - 1;
@@ -118,4 +118,33 @@ test("review fix: unknown-member replies can't ping, and fast clicks are shown i
     click("loona-next", 0);  // fast update right after
     await new Promise((r) => setTimeout(r, 80));
     assert.deepStrictEqual(shown, ["HyunJin (현진)", "HaSeul (하슬)"]);
+});
+
+test("birthday posts: today's members, one post per server per year, retried after a failure", async () => {
+    const { birthdaysToday, birthdayMessage, postBirthdays } = require("../lib/loona/birthdays");
+    const { updateGreetSettings } = require("../lib/db");
+    const HYEJU_DAY = new Date("2026-11-12T16:00:00Z"); // 01:00 on Nov 13 in Korea, still Nov 12 in UTC
+    assert.deepStrictEqual(birthdaysToday(HYEJU_DAY).map((m) => m.name), ["HyeJu"]);
+    assert.deepStrictEqual(birthdaysToday(NOV8), []);
+
+    const msg = birthdayMessage(birthdaysToday(HYEJU_DAY)[0], HYEJU_DAY);
+    assert.match(msg.content, /HyeJu.*turns 25/);
+    assert.strictEqual(msg.embeds[0].toJSON().title, "HyeJu (혜주)");
+    assert.deepStrictEqual(msg.allowedMentions, { parse: [] });
+
+    const sent = [];
+    let fail = true;
+    const channel = { permissionsFor: () => ({ has: () => true }),
+        send: async (m) => { if (fail) { fail = false; throw new Error("down"); } sent.push(m); } };
+    const guild = (id) => ({ id, members: { me: {} }, channels: { cache: new Map([["c", channel]]) } });
+    const client = { guilds: { cache: new Map([["b1", guild("b1")], ["b2", guild("b2")]]) } };
+    await updateGreetSettings("b1", { channelId: "c" });
+    await updateGreetSettings("b2", { channelId: "c", birthdayEnabled: false });
+
+    const log = console.error; console.error = () => {};
+    try { await postBirthdays(client, HYEJU_DAY); } finally { console.error = log; }
+    assert.strictEqual(sent.length, 0); // the first send failed, so the claim was given back
+    await postBirthdays(client, HYEJU_DAY);
+    await postBirthdays(client, HYEJU_DAY);
+    assert.strictEqual(sent.length, 1); // b1 once; b2 has them switched off
 });

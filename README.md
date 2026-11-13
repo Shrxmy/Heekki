@@ -34,14 +34,14 @@
 | **Music** | YouTube and Spotify through Lavalink v4, search-and-pick, queue, seek, volume, loop, filters (8D, nightcore, karaoke, bassboost...). Stays in the call until it's been alone for 3 minutes. |
 | **Last.fm** | Now playing, recent scrobbles, top lists, album collages up to 10x10, artist/album info, who knows an artist/track/album, crowns, and taste matches. |
 | **Welcome cards** | The "twelve stars" card for joins and leaves, with your own message, background and star colours. |
-| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours and birthdays. |
+| **LOONA** | Profiles for all 12 members with photos, fun facts, official colours and birthdays, plus a post in your greeting channel on each birthday. |
 | **Fun & games** | LOONA slot machine, tic-tac-toe, rock paper scissors, trivia, memes, ratings, snipe and text toys. |
 | **Info** | Member, server, role and channel info, plus anime, GitHub, news, Pokédex, Steam, weather and Wikipedia lookups. |
 | **Prefix or slash** | Every command works as `-play` **and** `/play`. The prefix can be changed per server. |
 
 ## Getting started
 
-**You need:** Node.js 22.13+ and Docker (for the Lavalink music server).
+**You need:** Node.js 22.13+, Docker (for the Lavalink music server) and a [Neon](https://neon.com) project (database and file storage).
 
 **1. Set up the bot in the [Discord Developer Portal](https://discord.com/developers/applications)**
 - Under **Bot**, turn on **Message Content Intent** and **Server Members Intent**. Discord refuses the login without them.
@@ -53,12 +53,22 @@
 cp .env.example .env    # then fill in DISCORD_TOKEN, YT_CIPHER_PASSWORD (any long random string) and optionally Spotify
 ```
 
-**3. Start the music server**
+**3. Connect the database**
+
+Settings, Last.fm links, crowns and coins live in Neon Postgres; greeting backgrounds live in Neon Object Storage
+(the `assets` bucket in `neon.ts`).
+```bash
+npm i -g neon@latest
+neon deploy             # signs you in, creates the bucket, and adds DATABASE_URL and the AWS_* storage keys to .env
+```
+The bot creates its tables itself on first start.
+
+**4. Start the music server**
 ```bash
 docker compose up -d    # Lavalink + the YouTube cipher helper; the first start takes ~30 s
 ```
 
-**4. Sign Lavalink in to YouTube (one time)**
+**5. Sign Lavalink in to YouTube (one time)**
 
 YouTube blocks most playback for signed-out servers. Use a **spare Google account**, never your main one.
 ```bash
@@ -67,7 +77,7 @@ docker compose logs lavalink | grep "Token retrieved"    # copy the 1//... value
 docker compose up -d --force-recreate                     # now it stays signed in
 ```
 
-**5. Run the bot**
+**6. Run the bot**
 ```bash
 npm install
 npm start
@@ -82,7 +92,9 @@ Secrets live only in `.env`; everything else is in `config.js`.
 | `DISCORD_TOKEN` | Your bot's token |
 | `LAVALINK_PASSWORD` | Shared by the bot and the Lavalink container (change it in this one place) |
 | `YT_CIPHER_PASSWORD` | Between Lavalink and the YouTube cipher helper; any long random string |
-| `YOUTUBE_REFRESH_TOKEN` | The spare account's YouTube sign-in (step 4) |
+| `YOUTUBE_REFRESH_TOKEN` | The spare account's YouTube sign-in (step 5) |
+| `DATABASE_URL` | Neon Postgres connection string (added by `neon deploy`) |
+| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL_S3`, `AWS_REGION` | Neon Object Storage keys for greeting backgrounds (added by `neon deploy`) |
 | `SPOTIFY_ENABLED`, `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` | Optional: Spotify links and search |
 | `LASTFM_API_KEY` | Optional: the Last.fm commands ([free key](https://www.last.fm/api/account/create)) |
 
@@ -194,6 +206,7 @@ couldn't answer, keeps the current holder).
 | `set-leave-message <message>` | Sets the leave greeting text. Placeholders: {user} {username} {server} {count} |  |
 | `testjoin` | Previews the join greeting here, using you as the member. |  |
 | `testleave` | Previews the leave greeting here, using you as the member. |  |
+| `toggle-birthday-posts` | Switches LOONA member birthday posts in the greeting channel on or off. | `togglebirthdays` |
 | `toggle-join-greet` | Switches the join greeting on or off. |  |
 | `toggle-leave-greet` | Switches the leave greeting on or off. |  |
 
@@ -246,6 +259,9 @@ New members get the twelve-stars card plus your message. Placeholders: `{user}` 
 Join is on and leave is off by default, and nothing posts until `set-greet-channel` is set. `testjoin` / `testleave`
 preview in the current channel and say if anything would stop the real greeting. Backgrounds must be Discord uploads or
 Discord image links (PNG/JPEG/WebP, up to 8 MB); the bot needs **Attach Files** in the greeting channel.
+
+On each member's birthday (midnight Korea time, checked hourly) the greeting channel also gets her profile with a
+birthday line. It's on by default and posts once per member per year; `toggle-birthday-posts` switches it off.
 </details>
 
 <details>
@@ -277,7 +293,7 @@ Spins the 12 member animals plus the moon jackpot: any pair pays ×3, three of a
 commands/<category>/   one file per command (the folder name is its help category)
 events/                Discord event handlers: messages, slash commands, joins/leaves, voice
 handler/               loads commands and runs slash commands through the same code as prefix ones
-lib/                   shared code: db.js (SQLite), fun/, greetings/, info/, loona/
+lib/                   shared code: db.js (Neon Postgres), storage.js (Neon Object Storage), fun/, greetings/, info/, loona/
 lavalink/              music server config, started by docker-compose.yml
 assets/fonts/          the font used on welcome cards
 docs/                  design notes and images

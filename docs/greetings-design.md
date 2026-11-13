@@ -2,7 +2,7 @@
 
 ## Intent
 Rebuild the lost bot's Greetings feature inside this bot (discord.js v14, `commands/<category>/` layout,
-prefix + slash via `handler/slashAdapter.js`, settings in `json.sqlite` via `db.js`).
+prefix + slash via `handler/slashAdapter.js`, settings in Neon Postgres via `db.js`, backgrounds in Neon Object Storage via `storage.js`).
 Greetings and Fun were what the server actually used. The server is a LOONA fan server, so the
 card has a LOONA look: the **"twelve stars"** design the owner picked from mockups. Twelve coloured stars orbit the
 new member's round avatar, with their name, member number and a welcome line on the right, on a night-sky background.
@@ -37,7 +37,7 @@ new member's round avatar, with their name, member number and a welcome line on 
 ## Constraints
 - Rendering: **`@napi-rs/canvas`**, pinned to **1.0.13** (MIT, ~51M weekly downloads, no install scripts, ships prebuilt
   binaries; 1.1.0 is too new). The owner asked for "secure and clean"; approaches below.
-- Storage: the existing `node:sqlite` database (`db.js`). No new database.
+- Storage: Neon Postgres (`db.js`); background images in the Neon `assets` bucket (`storage.js`). (Originally `node:sqlite`.)
 - Commands follow the existing module shape `{ name, description, aliases, options?, defaultMemberPermissions?, run }`.
   Settings are separate commands (like the old bot's separate files), not one command with subcommands.
 - *(My call, after the builder check:)* the slash adapter's "at most one option" shortcut is removed. `toArgs` builds args

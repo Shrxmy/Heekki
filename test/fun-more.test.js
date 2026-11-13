@@ -1,8 +1,8 @@
-process.env.DB_PATH = ":memory:";
+process.env.DATABASE_URL = "memory";
 const test = require("node:test");
 const assert = require("node:assert");
 
-test("text tricks: emojify, fliptext, enchant, zalgo", () => {
+test("text tricks: emojify, fliptext, enchant, zalgo", async () => {
     const { emojify, flipText, enchant, zalgo } = require("../lib/fun/text");
     assert.strictEqual(emojify("Hi 1!"), "🇭 🇮   1️⃣ !");
     assert.strictEqual(flipText("hello"), "ollǝɥ");
@@ -13,14 +13,14 @@ test("text tricks: emojify, fliptext, enchant, zalgo", () => {
     assert.ok(emojify("a".repeat(5000)).length <= 1900);
 });
 
-test("decode understands binary and base64, and says when it can't", () => {
+test("decode understands binary and base64, and says when it can't", async () => {
     const { decode } = require("../lib/fun/text");
     assert.strictEqual(decode("01001100 01001111 01001111 01001110 01000001"), "LOONA");
     assert.strictEqual(decode("T3JiaXQ="), "Orbit");
     assert.strictEqual(decode("%%% definitely not encoded %%%"), null);
 });
 
-test("ratings are stable for the same person, kind and day, and stay within 0-100", () => {
+test("ratings are stable for the same person, kind and day, and stay within 0-100", async () => {
     const { rating, loveScore } = require("../lib/fun/rate");
     const day = new Date("2026-11-08T12:00:00Z");
     assert.strictEqual(rating("cute", "111", day), rating("cute", "111", day));
@@ -28,7 +28,7 @@ test("ratings are stable for the same person, kind and day, and stay within 0-10
     assert.strictEqual(loveScore("1", "2", day), loveScore("2", "1", day)); // order doesn't matter
 });
 
-test("slots: payouts follow the table and the long-run return is a fair-but-house-edge 85-100%", () => {
+test("slots: payouts follow the table and the long-run return is a fair-but-house-edge 85-100%", async () => {
     const { SYMBOLS, payout, JACKPOT } = require("../lib/fun/slots");
     assert.strictEqual(SYMBOLS.length, 13);
     const [a, b, c] = SYMBOLS.filter((s) => s !== JACKPOT);
@@ -42,17 +42,22 @@ test("slots: payouts follow the table and the long-run return is a fair-but-hous
     assert.ok(rtp > 0.85 && rtp < 1, `return to player ${rtp}`);
 });
 
-test("moon coins: start at 500 per server, save, and refill a broke player to 100", () => {
-    const { getCoins, setCoins } = require("../lib/db");
-    assert.strictEqual(getCoins("g", "u"), 500);
-    setCoins("g", "u", 42);
-    assert.strictEqual(getCoins("g", "u"), 42);
-    assert.strictEqual(getCoins("other", "u"), 500);
-    setCoins("g", "u", 0);
-    assert.strictEqual(getCoins("g", "u"), 100);
+test("moon coins: start at 500 per server, save, refuse overspending, and refill a broke player to 100", async () => {
+    const { getCoins, betCoins } = require("../lib/db");
+    assert.strictEqual(await getCoins("g", "u"), 500);
+    assert.strictEqual(await betCoins("g", "u", 458, 0), 42);
+    assert.strictEqual(await getCoins("g", "u"), 42);
+    assert.strictEqual(await getCoins("other", "u"), 500);
+    assert.strictEqual(await betCoins("g", "u", 43, 0), null); // can't bet more than you have
+    assert.strictEqual(await betCoins("g", "u", 42, 0), 0);
+    assert.strictEqual(await getCoins("g", "u"), 100);
+    assert.strictEqual(await betCoins("g", "u", 100, 30), 30); // the bailout counts as the balance
+    // Two spins at once can't both spend the same coins.
+    const both = await Promise.all([betCoins("g", "u", 20, 0), betCoins("g", "u", 20, 0)]);
+    assert.deepStrictEqual(both.sort(), [10, null]);
 });
 
-test("snipes keep only the latest message per channel, skip bots and empty text, and expire after 15 minutes", (t) => {
+test("snipes keep only the latest message per channel, skip bots and empty text, and expire after 15 minutes", async (t) => {
     t.mock.timers.enable({ apis: ["Date"], now: 1_000_000 });
     const { remember, recall } = require("../lib/fun/snipes");
     const msg = (content, bot = false) => ({ channelId: "c", content, author: { bot, tag: "heekki", displayAvatarURL: () => "" }, createdTimestamp: Date.now() });
@@ -88,10 +93,10 @@ test("slots: refuses bets above the balance, and wins/losses change the saved ba
 
     t.mock.method(slots, "spin", () => ["🐰", "🐱", "🐸"]); // no match: lose the bet
     await funCmd("slots").run({}, message, ["100"]);
-    assert.strictEqual(getCoins("s1", "u1"), 400);
+    assert.strictEqual(await getCoins("s1", "u1"), 400);
     slots.spin.mock.mockImplementation(() => ["🌙", "🌙", "🌙"]); // jackpot: 150x
     await funCmd("slots").run({}, message, ["10"]);
-    assert.strictEqual(getCoins("s1", "u1"), 400 - 10 + 1500);
+    assert.strictEqual(await getCoins("s1", "u1"), 400 - 10 + 1500);
     assert.match(textOf(replies.at(-1)), /Full moon jackpot/);
     await funCmd("slots").run({}, message, ["abc"]);
     assert.match(textOf(replies.at(-1)), /whole number/);
@@ -158,7 +163,7 @@ test("meme skips NSFW, spoiler and non-image posts", async () => {
     assert.strictEqual(await fetchMeme("kpopmemes", async () => { throw new Error("down"); }), null);
 });
 
-test("review fix: expired snipes are actually dropped from memory, not just hidden", (t) => {
+test("review fix: expired snipes are actually dropped from memory, not just hidden", async (t) => {
     t.mock.timers.enable({ apis: ["Date"], now: Date.now() }); // real "now", so earlier tests' snipes are in the past
     const { remember, count } = require("../lib/fun/snipes");
     const before = count();

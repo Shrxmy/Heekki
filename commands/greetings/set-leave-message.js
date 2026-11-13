@@ -12,8 +12,8 @@ module.exports = greetCommand({
         const text = args.join(" ").trim();
         if (!text) return message.reply("Write the message, like `set-leave-message Welcome to the Orbit, {user}!`");
         if (text.length > MAX_MESSAGE_LENGTH) return message.reply(`That's too long: keep it under ${MAX_MESSAGE_LENGTH} characters.`);
-        updateGreetSettings(message.guild.id, { leaveMessage: isReset(args) ? null : text });
-        const saved = getGreetSettings(message.guild.id).leaveMessage;
+        await updateGreetSettings(message.guild.id, { leaveMessage: isReset(args) ? null : text });
+        const saved = (await getGreetSettings(message.guild.id)).leaveMessage;
         return message.reply(quiet(`Saved the leave message:\n> ${saved}\nPlaceholders: \`{user}\` \`{username}\` \`{server}\` \`{count}\`. Try it with \`testleave\`.`));
     }
 });

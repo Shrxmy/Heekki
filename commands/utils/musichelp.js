@@ -6,7 +6,7 @@ module.exports = {
     description: 'Provides a guide for music settings.',
     aliases: ['musich'],
     run: async (client, message, args) => {
-        const p = getPrefix(message.guild.id);
+        const p = await getPrefix(message.guild.id);
         const embed = musicEmbed()
             .setTitle("🌙 Music guide for Orbit")
             .setDescription("Join a voice channel first, then:")

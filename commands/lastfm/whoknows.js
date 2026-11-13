@@ -25,7 +25,7 @@ module.exports = {
         if (!ranking.linked.size) return message.reply("Nobody here has linked their Last.fm yet. Be the first with `fmset <username>` 🌙");
         if (ranking.failed === ranking.counts.length) return message.reply("Last.fm didn't answer, try again in a bit 🌙");
 
-        const crown = server.updateCrown(message.guild.id, artist.name, ranking);
+        const crown = await server.updateCrown(message.guild.id, artist.name, ranking);
         const note = crown?.takenFrom
             ? `👑 **${server.displayName(message.guild, crown.userId)}** took the ${lastfm.clean(artist.name)} crown from ${server.displayName(message.guild, crown.takenFrom)}!`
             : null;

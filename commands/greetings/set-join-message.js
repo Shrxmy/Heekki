@@ -12,8 +12,8 @@ module.exports = greetCommand({
         const text = args.join(" ").trim();
         if (!text) return message.reply("Write the message, like `set-join-message Welcome to the Orbit, {user}!`");
         if (text.length > MAX_MESSAGE_LENGTH) return message.reply(`That's too long: keep it under ${MAX_MESSAGE_LENGTH} characters.`);
-        updateGreetSettings(message.guild.id, { joinMessage: isReset(args) ? null : text });
-        const saved = getGreetSettings(message.guild.id).joinMessage;
+        await updateGreetSettings(message.guild.id, { joinMessage: isReset(args) ? null : text });
+        const saved = (await getGreetSettings(message.guild.id)).joinMessage;
         return message.reply(quiet(`Saved the join message:\n> ${saved}\nPlaceholders: \`{user}\` \`{username}\` \`{server}\` \`{count}\`. Try it with \`testjoin\`.`));
     }
 });

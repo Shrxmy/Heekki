@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
 const slots = require("../../lib/fun/slots");
-const { getCoins, setCoins } = require("../../lib/db");
+const { getCoins, betCoins } = require("../../lib/db");
 
 const DEFAULT_BET = 10, MAX_BET = 1000;
 
@@ -13,13 +13,10 @@ module.exports = {
         const bet = args.length ? Number(args[0]) : DEFAULT_BET;
         if (!Number.isInteger(bet) || bet < 1 || bet > MAX_BET) return message.reply(`Bet a whole number of moon coins from 1 to ${MAX_BET}.`);
 
-        // No await between reading and saving the balance, so two quick spins can't both spend the same coins.
-        const balance = getCoins(message.guild.id, message.author.id);
-        if (bet > balance) return message.reply(`You only have **${balance}** moon coins.`);
         const reels = slots.spin();
         const won = slots.payout(reels, bet);
-        const after = balance - bet + won;
-        setCoins(message.guild.id, message.author.id, after);
+        const after = await betCoins(message.guild.id, message.author.id, bet, won);
+        if (after === null) return message.reply(`You only have **${await getCoins(message.guild.id, message.author.id)}** moon coins.`);
 
         const jackpot = reels.every((r) => r === slots.JACKPOT);
         const result = jackpot ? `Full moon jackpot! You won **${won}** moon coins.`

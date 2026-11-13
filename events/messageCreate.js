@@ -5,7 +5,12 @@ client.on("messageCreate", async (message) => {
     if (message.author.bot || !message.guild) return;
 
     // Per-guild prefix from -setprefix (the old code always used the default one)
-    const prefix = getPrefix(message.guild.id);
+    let prefix;
+    try {
+        prefix = await getPrefix(message.guild.id);
+    } catch (err) {
+        return console.error(`Couldn't load the prefix for guild ${message.guild.id}: ${err.message}`);
+    }
     if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
 
     const [cmd, ...args] = message.content

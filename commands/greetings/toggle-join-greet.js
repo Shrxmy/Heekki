@@ -6,8 +6,8 @@ module.exports = greetCommand({
     description: 'Switches the join greeting on or off.',
     aliases: [],
     run: async (client, message, args) => {
-        const on = !getGreetSettings(message.guild.id).joinEnabled;
-        updateGreetSettings(message.guild.id, { joinEnabled: on });
+        const on = !(await getGreetSettings(message.guild.id)).joinEnabled;
+        await updateGreetSettings(message.guild.id, { joinEnabled: on });
         return message.reply(`The join greeting is now **${on ? "on" : "off"}**.`);
     }
 });

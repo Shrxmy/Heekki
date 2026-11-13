@@ -17,7 +17,7 @@ module.exports = {
         } catch (err) {
             return message.reply(err.notFound ? `I couldn't find a Last.fm user called \`${name}\` 🌙` : "Last.fm didn't answer, try again in a bit 🌙");
         }
-        setLastfm(message.author.id, user.name); // Last.fm's own spelling of the name
+        await setLastfm(message.author.id, user.name); // Last.fm's own spelling of the name
         return message.reply(`🌙 Linked you to **${lastfm.clean(user.name)}** on Last.fm (${lastfm.plural(user.playcount ?? 0, "scrobble")}). Try \`fm\`, Orbit!`);
     }
 };

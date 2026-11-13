@@ -15,7 +15,7 @@ module.exports = {
     run: async (client, message, args) => {
         const member = await targetMember(message, args[0]);
         if (!member) return message.reply("I couldn't find that member 🌙");
-        const crowns = crownsOf(message.guild.id, member.id);
+        const crowns = await crownsOf(message.guild.id, member.id);
         const self = member.id === message.author.id;
         if (!crowns.length) {
             return message.reply(lastfm.quiet(self

@@ -32,7 +32,7 @@ module.exports = {
     compare, moons,
     run: async (client, message, args) => {
         if (!lastfm.hasKey()) return message.reply(lastfm.NO_KEY);
-        const mine = getLastfm(message.author.id);
+        const mine = await getLastfm(message.author.id);
         if (!mine) return message.reply("I don't know your Last.fm yet, Orbit. Link it with `fmset <username>` 🌙");
         if (!args.some((a) => /\d{17,20}/.test(a))) return message.reply("Who should I compare you with? Try `taste @someone` 🌙");
         const { member, username, problem } = await lastfm.whoFrom(message, args);

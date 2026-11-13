@@ -6,8 +6,8 @@ module.exports = greetCommand({
     description: 'Switches the leave greeting on or off.',
     aliases: [],
     run: async (client, message, args) => {
-        const on = !getGreetSettings(message.guild.id).leaveEnabled;
-        updateGreetSettings(message.guild.id, { leaveEnabled: on });
+        const on = !(await getGreetSettings(message.guild.id)).leaveEnabled;
+        await updateGreetSettings(message.guild.id, { leaveEnabled: on });
         return message.reply(`The leave greeting is now **${on ? "on" : "off"}**.`);
     }
 });

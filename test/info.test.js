@@ -1,4 +1,4 @@
-process.env.DB_PATH = ":memory:";
+process.env.DATABASE_URL = "memory";
 const test = require("node:test");
 const assert = require("node:assert");
 

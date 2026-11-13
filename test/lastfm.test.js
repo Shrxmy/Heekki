@@ -1,4 +1,4 @@
-process.env.DB_PATH = ":memory:";
+process.env.DATABASE_URL = "memory";
 process.env.LASTFM_API_KEY = "test-key";
 const test = require("node:test");
 const assert = require("node:assert");
@@ -44,7 +44,7 @@ test("fmset: checks the name, links with Last.fm's spelling, and says when the u
     const b = fakeMsg();
     await cmd("fmset").run({}, b.message, ["orbit12"]);
     assert.deepStrictEqual({ method: params(get.mock.calls[0]).method, user: params(get.mock.calls[0]).user }, { method: "user.getInfo", user: "orbit12" });
-    assert.strictEqual(db.getLastfm(ME), "Orbit12");
+    assert.strictEqual(await db.getLastfm(ME), "Orbit12");
     assert.match(text(b.replies[0]), /Orbit12.*1,234 scrobbles/);
 
     get.mock.mockImplementation(async () => { throw new Error("HTTP 404"); });
@@ -55,11 +55,11 @@ test("fmset: checks the name, links with Last.fm's spelling, and says when the u
     const d = fakeMsg();
     await cmd("fmset").run({}, d.message, ["nobody99"]);
     assert.match(text(d.replies[0]), /couldn't find/);
-    assert.strictEqual(db.getLastfm(ME), "Orbit12", "a failed link keeps the old one");
+    assert.strictEqual(await db.getLastfm(ME), "Orbit12", "a failed link keeps the old one");
 });
 
 test("fm: asks unlinked people to link, shows the current song with plays for linked ones", async (t) => {
-    db.removeLastfm(ME);
+    await db.removeLastfm(ME);
     const get = t.mock.method(http, "getJson", async (url) => (params({ arguments: [url] }).method === "user.getRecentTracks"
         ? { recenttracks: { "@attr": { total: "12034" }, track: [{ name: "Butterfly [Remix]", url: "https://www.last.fm/music/LOONA/_/Butterfly", "@attr": { nowplaying: "true" },
             artist: { "#text": "LOONA" }, album: { "#text": "[X X]" }, image: [{ "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/abc.png" }] }] } }
@@ -69,7 +69,7 @@ test("fm: asks unlinked people to link, shows the current song with plays for li
     assert.match(text(a.replies[0]), /fmset/);
     assert.strictEqual(get.mock.callCount(), 0);
 
-    db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(ME, "Orbit12");
     const b = fakeMsg();
     await cmd("fm").run({}, b.message, []);
     const e = embedOf(b.replies[0]);
@@ -86,7 +86,7 @@ test("fm: asks unlinked people to link, shows the current song with plays for li
 });
 
 test("fmtop: reads type and period from the args, lists the top 10", async (t) => {
-    db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(ME, "Orbit12");
     const get = t.mock.method(http, "getJson", async () => ({ topalbums: { album: [
         { name: "[12:00]", artist: { name: "LOONA" }, playcount: "40", url: "https://www.last.fm/music/LOONA/12:00" },
         { name: "Flip That", artist: { name: "LOONA" }, playcount: "1", url: "javascript:alert(1)" }] } }));
@@ -101,9 +101,9 @@ test("fmtop: reads type and period from the args, lists the top 10", async (t) =
 });
 
 test("whoknows: ranks linked members of this server, skips everyone else", async (t) => {
-    db.setLastfm(ME, "Orbit12");
-    db.setLastfm(FRIEND, "YvesFan");
-    db.setLastfm(STRANGER, "NotHere"); // linked, but not in this server
+    await db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(FRIEND, "YvesFan");
+    await db.setLastfm(STRANGER, "NotHere"); // linked, but not in this server
     const PLAYS = { Orbit12: "40", YvesFan: "900" };
     const get = t.mock.method(http, "getJson", async (url) => {
         const p = params({ arguments: [url] });
@@ -120,7 +120,7 @@ test("whoknows: ranks linked members of this server, skips everyone else", async
 });
 
 test("collage: draws a picture, only downloads covers from Last.fm's image server", async (t) => {
-    db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(ME, "Orbit12");
     t.mock.method(http, "getJson", async () => ({ topalbums: { album: [
         { name: "[+ +]", artist: { name: "LOONA" }, image: [{ "#text": "https://lastfm.freetls.fastly.net/i/u/300x300/a.png" }] },
         { name: "Elsewhere", artist: { name: "LOONA" }, image: [{ "#text": "https://evil.example/a.png" }] },
@@ -139,18 +139,18 @@ test("collage: draws a picture, only downloads covers from Last.fm's image serve
     assert.deepStrictEqual([...jpeg.subarray(0, 2)], [0xff, 0xd8], "a JPEG");
 });
 
-test("fmunset removes the link once", () => {
-    db.setLastfm(ME, "Orbit12");
+test("fmunset removes the link once", async () => {
+    await db.setLastfm(ME, "Orbit12");
     const replies = [];
     const message = { author: { id: ME }, reply: async (p) => replies.push(p) };
-    cmd("fmunset").run({}, message, []);
-    cmd("fmunset").run({}, message, []);
+    await cmd("fmunset").run({}, message, []);
+    await cmd("fmunset").run({}, message, []);
     assert.match(replies[0], /Unlinked/);
     assert.match(replies[1], /haven't linked/);
-    assert.strictEqual(db.getLastfm(ME), null);
+    assert.strictEqual(await db.getLastfm(ME), null);
 });
 
-test("review fixes: links stay on last.fm, odd args fall back to defaults", () => {
+test("review fixes: links stay on last.fm, odd args fall back to defaults", async () => {
     assert.strictEqual(lastfm.link("x", "https://www.last.fm/) [external](https://example.org/)"),
         "[x](https://www.last.fm/%29%20%5Bexternal%5D%28https://example.org/%29)");
     assert.strictEqual(lastfm.link("Song (Remix)", "https://www.last.fm/music/A/_/Song+(Remix)"), "[Song (Remix)](https://www.last.fm/music/A/_/Song+%28Remix%29)");
@@ -161,8 +161,8 @@ test("review fixes: links stay on last.fm, odd args fall back to defaults", () =
 });
 
 test("review fix: whoknows treats failed lookups as unknown, not zero plays", async (t) => {
-    db.setLastfm(ME, "Orbit12");
-    db.setLastfm(FRIEND, "YvesFan");
+    await db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(FRIEND, "YvesFan");
     t.mock.method(http, "getJson", async (url) => {
         const p = params({ arguments: [url] });
         if (p.username === "YvesFan") throw new Error("HTTP 500");
@@ -183,7 +183,7 @@ test("review fix: whoknows treats failed lookups as unknown, not zero plays", as
 
 const server = () => require("../lib/lastfm/server");
 
-test("crowns: only a confirmed higher play count takes a crown", () => {
+test("crowns: only a confirmed higher play count takes a crown", async () => {
     const { decideCrown } = server();
     const ranking = (counts, linked = counts.map((c) => c.id)) => ({ linked: new Set(linked), counts,
         listeners: counts.filter((c) => !c.failed && c.plays > 0).sort((a, b) => b.plays - a.plays) });
@@ -199,8 +199,8 @@ test("crowns: only a confirmed higher play count takes a crown", () => {
 });
 
 test("whoknows hands the crown over and crowns lists it", async (t) => {
-    db.setLastfm(ME, "Orbit12");
-    db.setLastfm(FRIEND, "YvesFan");
+    await db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(FRIEND, "YvesFan");
     const plays = { Orbit12: "40", YvesFan: "10" };
     t.mock.method(http, "getJson", async (url) => {
         const p = params({ arguments: [url] });
@@ -208,7 +208,7 @@ test("whoknows hands the crown over and crowns lists it", async (t) => {
     });
     const a = fakeMsg();
     await cmd("whoknows").run({}, a.message, ["artms"]);
-    assert.deepStrictEqual({ ...db.getCrown("g1", "artms") }, { artist: "ARTMS", user_id: ME, plays: 40 });
+    assert.deepStrictEqual({ ...(await db.getCrown("g1", "artms")) }, { artist: "ARTMS", user_id: ME, plays: 40 });
     assert.ok(embedOf(a.replies[0]).description.startsWith("👑 **Orbit** · 40 plays"));
 
     plays.YvesFan = "41";
@@ -225,8 +225,8 @@ test("whoknows hands the crown over and crowns lists it", async (t) => {
 });
 
 test("wkt and wka: Artist - Title, or what you're playing", async (t) => {
-    db.setLastfm(ME, "Orbit12");
-    db.removeLastfm(FRIEND);
+    await db.setLastfm(ME, "Orbit12");
+    await db.removeLastfm(FRIEND);
     const get = t.mock.method(http, "getJson", async (url) => {
         const p = params({ arguments: [url] });
         if (p.method === "user.getRecentTracks") return { recenttracks: { track: [{ name: "Butterfly", artist: { "#text": "LOONA" }, album: { "#text": "[X X]" } }] } };
@@ -255,7 +255,7 @@ test("collage sizes: 3x3 by default, up to 10x10, titles and plays are optional"
     const big = await loadImage(await drawCollage(Array.from({ length: 100 }, (_, i) => ({ name: `A${i}`, artist: "X", plays: i })), { cols: 10, rows: 10, plays: true }));
     assert.deepStrictEqual([big.width, big.height], [1500, 1500]);
 
-    db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(ME, "Orbit12");
     const get = t.mock.method(http, "getJson", async () => ({ topalbums: { album: [{ name: "A", artist: { name: "B" }, playcount: "4", image: [] }] } }));
     const a = fakeMsg();
     await cmd("collage").run({}, a.message, ["5x5", "notitles", "plays"]);
@@ -273,8 +273,8 @@ test("taste: shared artists, a moon match bar, and sensible refusals", async (t)
     assert.strictEqual(r.score, 1);
     assert.strictEqual(moons(0.34), "🌕🌕🌕🌑🌑🌑🌑🌑🌑🌑");
 
-    db.setLastfm(ME, "Orbit12");
-    db.setLastfm(FRIEND, "YvesFan");
+    await db.setLastfm(ME, "Orbit12");
+    await db.setLastfm(FRIEND, "YvesFan");
     t.mock.method(http, "getJson", async (url) => ({ topartists: { artist: params({ arguments: [url] }).user === "Orbit12"
         ? [{ name: "LOONA", playcount: "100" }, { name: "IU", playcount: "9" }] : [{ name: "LOONA", playcount: "30" }, { name: "TWICE", playcount: "8" }] } }));
     const a = fakeMsg();
@@ -291,8 +291,8 @@ test("taste: shared artists, a moon match bar, and sensible refusals", async (t)
 });
 
 test("recent and artist: scrobble times, now playing, bio without the Last.fm link", async (t) => {
-    db.setLastfm(ME, "Orbit12");
-    db.removeLastfm(FRIEND);
+    await db.setLastfm(ME, "Orbit12");
+    await db.removeLastfm(FRIEND);
     t.mock.method(http, "getJson", async (url) => {
         const p = params({ arguments: [url] });
         if (p.method === "user.getRecentTracks") return { recenttracks: { "@attr": { total: "5" }, track: [

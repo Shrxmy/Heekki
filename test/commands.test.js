@@ -1,4 +1,4 @@
-process.env.DB_PATH = ":memory:";
+process.env.DATABASE_URL = "memory";
 const test = require("node:test");
 const assert = require("node:assert");
 const fs = require("node:fs");
@@ -10,7 +10,7 @@ const commands = fs.readdirSync(dir, { recursive: true })
     .map((f) => require(path.join(dir, f)))
     .filter((c) => c.name);
 
-test("no two commands share a name or alias (otherwise one silently shadows the other)", () => {
+test("no two commands share a name or alias (otherwise one silently shadows the other)", async () => {
     const seen = new Map();
     for (const c of commands) for (const key of [c.name, ...(c.aliases ?? [])].map((k) => k.toLowerCase())) {
         assert.ok(!seen.has(key) || seen.get(key) === c.name, `"${key}" is used by both ${seen.get(key)} and ${c.name}`);
@@ -18,23 +18,23 @@ test("no two commands share a name or alias (otherwise one silently shadows the 
     }
 });
 
-test("command names are unique and volume no longer overrides seek", () => {
+test("command names are unique and volume no longer overrides seek", async () => {
     const names = commands.map((c) => c.name);
     assert.deepStrictEqual(names, [...new Set(names)]);
     assert.ok(names.includes("volume") && names.includes("seek"));
 });
 
-test("per-guild prefix falls back to the default", () => {
+test("per-guild prefix falls back to the default", async () => {
     const { getPrefix, setPrefix, getCustomPrefix } = require("../lib/db");
-    assert.strictEqual(getPrefix("g1"), "-");
-    assert.strictEqual(getCustomPrefix("g1"), null);
-    setPrefix("g1", "!");
-    setPrefix("g1", "?");
-    assert.strictEqual(getPrefix("g1"), "?");
-    assert.strictEqual(getPrefix("g2"), "-");
+    assert.strictEqual(await getPrefix("g1"), "-");
+    assert.strictEqual(await getCustomPrefix("g1"), null);
+    await setPrefix("g1", "!");
+    await setPrefix("g1", "?");
+    assert.strictEqual(await getPrefix("g1"), "?");
+    assert.strictEqual(await getPrefix("g2"), "-");
 });
 
-test("music clock/createBar", () => {
+test("music clock/createBar", async () => {
     const { clock, createBar } = require("../lib/music/embed");
     assert.strictEqual(clock(59_999), "0:59");
     assert.strictEqual(clock(3_725_000), "1:02:05");
@@ -45,7 +45,7 @@ test("music clock/createBar", () => {
     assert.match(createBar(player(0, null)), /`0:00` 🔘▬+ `0:00`/u);
 });
 
-test("music cards are hosted by one LOONA member per song, in her colour", () => {
+test("music cards are hosted by one LOONA member per song, in her colour", async () => {
     const { djFor, trackEmbed } = require("../lib/music/embed");
     const { members } = require("../lib/loona");
     const track = (identifier) => ({ info: { identifier, title: "Butterfly", uri: "https://youtu.be/x", author: "LOONA", duration: 223_000 },

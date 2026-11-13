@@ -33,13 +33,13 @@ module.exports = {
             server.rankServer(message.guild, (username) =>
                 lastfm.call("artist.getInfo", { artist: artist.name, username, autocorrect: "1" }).then((d) => d.artist?.stats?.userplaycount)),
         ]);
-        const crown = ranking.failed < ranking.counts.length ? server.updateCrown(message.guild.id, artist.name, ranking) : null;
+        const crown = ranking.failed < ranking.counts.length ? await server.updateCrown(message.guild.id, artist.name, ranking) : null;
 
         const me = message.author.id;
         const mine = ranking.counts.find((c) => c.id === me);
         const rank = ranking.listeners.findIndex((c) => c.id === me);
         const fields = [];
-        if (getLastfm(me)) {
+        if (await getLastfm(me)) {
             fields.push({ name: "Your plays", value: mine?.failed || !mine ? "Couldn't load" : lastfm.plural(mine.plays, "play"), inline: true });
             fields.push({ name: "Server rank", value: rank >= 0 ? `#${rank + 1} of ${ranking.listeners.length}` : "Not ranked yet", inline: true });
         }
