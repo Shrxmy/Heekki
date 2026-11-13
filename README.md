@@ -80,7 +80,7 @@ docker compose up -d --force-recreate                     # now it stays signed 
 **6. Run the bot**
 ```bash
 npm install
-npm start
+npm start               # `npm run build` syntax-checks every file first, if you like
 ```
 
 ## Configuration
