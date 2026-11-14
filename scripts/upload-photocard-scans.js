@@ -1,4 +1,4 @@
-// Uploads every photocard image to the Neon "assets" bucket, shrunk to 600px wide:
+// Uploads every photocard image to the Neon "assets" bucket as WebP, shrunk to 600px wide:
 // - LOONA: scans from Savvi's LOONA Scans (Google Drive, lib/loona/photocard-scans.json), with the scanner margin and
 //   the card's rounded corners trimmed off;
 // - other groups: the photo at each card's `url` in lib/cards/<group>.json (Wikimedia Commons, or a concept photo).
@@ -43,7 +43,7 @@ async function prepare(file, trim) {
     const box = trim ? contentBox(img) : { x: 0, y: 0, w: img.width, h: img.height }; // photos have no scanner margin
     const canvas = createCanvas(WIDTH, Math.round((box.h / box.w) * WIDTH));
     canvas.getContext("2d").drawImage(img, box.x, box.y, box.w, box.h, 0, 0, canvas.width, canvas.height);
-    return canvas.encode("jpeg", 88);
+    return canvas.encode("webp", 80); // about half the size of JPEG 88, no visible difference at card size
 }
 
 (async () => {
@@ -54,9 +54,9 @@ async function prepare(file, trim) {
         try {
             if (!cards[id]) throw new Error("not in the manifest");
             const { scan, group } = cards[id];
-            const jpeg = await prepare(await download(scan), group === "loona");
-            await storage.put(scanKey(id), jpeg, "image/jpeg");
-            console.log(`ok   ${id} (${Math.round(jpeg.length / 1024)} KB)`);
+            const webp = await prepare(await download(scan), group === "loona");
+            await storage.put(scanKey(id), webp, "image/webp");
+            console.log(`ok   ${id} (${Math.round(webp.length / 1024)} KB)`);
         } catch (err) {
             failed++;
             console.error(`FAIL ${id}: ${err.message}`);

@@ -172,7 +172,7 @@ test("photocards: LOONA's 48 scans plus every other group's photos, rarity odds 
     for (const c of loonaCards) { // every LOONA card has its scan and a credit naming the scanner
         assert.ok(c.scan?.from && c.scan.drive, c.id);
         assert.match(pc.credit(c), /^Scan: Savvi's LOONA Scans \(@pika_chuuves\) · /);
-        assert.strictEqual(pc.scanKey(c.id), `photocards/${c.id}.jpg`);
+        assert.strictEqual(pc.scanKey(c.id), `photocards/${c.id}.webp`);
     }
     assert.strictEqual(new Set(loonaCards.map((c) => c.scan.drive)).size, 48, "48 different scans");
     for (const c of pc.ALL.filter((x) => x.group.key !== "loona")) { // other groups: a photo with its photographer and licence
