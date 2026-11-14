@@ -3,6 +3,9 @@
 //   the card's rounded corners trimmed off;
 // - other groups: the photo at each card's `url` in lib/cards/<group>.json (Wikimedia Commons, or a concept photo).
 // Run after changing a manifest:  node --env-file=.env scripts/upload-photocard-scans.js [card-id or group ...]
+// With --bundle <file.json> ({ "<card id>": "<base64 image>" }, fetched through a browser for sites that turn scripts
+// away, like Fandom's image server), each card in the bundle uses that image instead of downloading its url.
+const fs = require("node:fs");
 const { createCanvas, loadImage } = require("@napi-rs/canvas");
 const storage = require("../lib/storage");
 const { scanKey, GROUPS } = require("../lib/loona/photocards");
@@ -47,21 +50,23 @@ async function prepare(file, trim) {
 }
 
 (async () => {
-    const only = process.argv.slice(2); // card ids, or group keys for all of a group's cards
-    const ids = only.length ? Object.keys(cards).filter((id) => only.includes(id) || only.includes(cards[id].group)) : Object.keys(cards);
+    const only = process.argv.slice(2), at = only.indexOf("--bundle"); // card ids, or group keys for all of a group's cards
+    const bundle = new Map(at >= 0 ? Object.entries(JSON.parse(fs.readFileSync(only.splice(at, 2)[1], "utf8"))) : []);
+    const pool = at >= 0 ? [...bundle.keys()] : Object.keys(cards); // --bundle: only the cards in the bundle
+    const ids = only.length ? pool.filter((id) => only.includes(id) || only.includes(cards[id]?.group)) : pool;
     let failed = 0;
     for (const id of ids) {
         try {
             if (!cards[id]) throw new Error("not in the manifest");
             const { scan, group } = cards[id];
-            const webp = await prepare(await download(scan), group === "loona");
+            const webp = await prepare(bundle.has(id) ? Buffer.from(bundle.get(id), "base64") : await download(scan), group === "loona");
             await storage.put(scanKey(id), webp, "image/webp");
             console.log(`ok   ${id} (${Math.round(webp.length / 1024)} KB)`);
         } catch (err) {
             failed++;
             console.error(`FAIL ${id}: ${err.message}`);
         }
-        await new Promise((r) => setTimeout(r, 1500)); // be gentle with Google Drive and Wikimedia
+        if (!bundle.has(id)) await new Promise((r) => setTimeout(r, 1500)); // be gentle with Google Drive and Wikimedia
     }
     console.log(`${ids.length - failed}/${ids.length} uploaded`);
     process.exitCode = failed ? 1 : 0;

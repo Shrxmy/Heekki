@@ -4,7 +4,7 @@
  "short": "SHINee",
  "korean": "샤이니",
  "color": "#54C7B8",
- "source": "Members: Wikidata (CC0). Photos: Wikimedia Commons, credited on every card; swap in concept photos per card by changing its url and re-running scripts/upload-photocard-scans.js.",
+ "source": "Members: Wikidata (CC0). Photos: official concept photos via the K-pop Wiki (kpop.fandom.com), chosen by scripts/fandom-concept-photos.js; re-run that script to swap them, then upload with scripts/upload-photocard-scans.js --bundle (Fandom only serves images to browsers).",
  "members": [
   {
    "key": "shinee.onew",
@@ -70,124 +70,124 @@
  ],
  "cards": {
   "shinee.onew-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Onew_for_Marie_Claire_Magazine_August_Issue_2021_03.png/960px-Onew_for_Marie_Claire_Magazine_August_Issue_2021_03.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Onew_for_Marie_Claire_Magazine_August_Issue_2021_03.png",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/8/86/SHINee_Onew_Odd_concept_photo_3.png/revision/latest?cb=20200712002626",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Onew_Odd_concept_photo_3.png",
+   "from": "Odd",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.onew-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Onew_at_the_Etude_Pink_Play_Party_in_Singapore_04.jpg/960px-Onew_at_the_Etude_Pink_Play_Party_in_Singapore_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Onew_at_the_Etude_Pink_Play_Party_in_Singapore_04.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Excentrique, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/a/a1/SHINee_Onew_Atlantis_teaser_photo_2.png/revision/latest/scale-to-width-down/900?cb=20210405151243",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Onew_Atlantis_teaser_photo_2.png",
+   "from": "Atlantis",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.onew-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Onew_performing_at_SM_Town_Live_%2710_World_Tour_in_Seoul_04.jpg/960px-Onew_performing_at_SM_Town_Live_%2710_World_Tour_in_Seoul_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Onew_performing_at_SM_Town_Live_%2710_World_Tour_in_Seoul_04.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: 85246.tistory, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/2/2e/SHINee_Onew_2025_SMTOWN_The_Culture%2C_The_Future_concept_photo_2.png/revision/latest/scale-to-width-down/900?cb=20250115162237",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Onew_2025_SMTOWN_The_Culture,_The_Future_concept_photo_2.png",
+   "from": "2025 SMTOWN : The Culture, The Future",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.onew-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Onew_at_the_2015_Hallyu_Dream_Festival_01.jpg/960px-Onew_at_the_2015_Hallyu_Dream_Festival_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Onew_at_the_2015_Hallyu_Dream_Festival_01.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Onewsama, CC BY-SA 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/35/Onew_Chaggag_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20261014232442",
+   "page": "https://kpop.fandom.com/wiki/File:Onew_Chaggag_concept_photo_1.png",
+   "from": "Illusion",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.jonghyun-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Jonghyun_at_a_fansigning_in_Busan%2C_in_June_2016_01.jpg/960px-Jonghyun_at_a_fansigning_in_Busan%2C_in_June_2016_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Jonghyun_at_a_fansigning_in_Busan,_in_June_2016_01.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Anju, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/a/a8/SHINee_Jonghyun_2009%2C_Year_of_Us_concept_photo_3.png/revision/latest?cb=20241014144335",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Jonghyun_2009,_Year_of_Us_concept_photo_3.png",
+   "from": "2009, Year of Us",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.jonghyun-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Jonghyun_Kim_at_the_SMTown_Week_02.jpg/960px-Jonghyun_Kim_at_the_SMTown_Week_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Jonghyun_Kim_at_the_SMTown_Week_02.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Like a Diamond, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/1/13/SHINee_Jonghyun_Everybody_concept_photo_3.png/revision/latest/scale-to-width-down/900?cb=20191023065515",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Jonghyun_Everybody_concept_photo_3.png",
+   "from": "Everybody",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.jonghyun-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Kim_Jong_Hyun_at_the_SMTown_Live_World_Tour_III_in_Seoul_01.jpg/960px-Kim_Jong_Hyun_at_the_SMTown_Live_World_Tour_III_in_Seoul_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Kim_Jong_Hyun_at_the_SMTown_Live_World_Tour_III_in_Seoul_01.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Like a Diamond, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/8/8d/Jonghyun_She_is_teaser_image_2.png/revision/latest?cb=20160523210842",
+   "page": "https://kpop.fandom.com/wiki/File:Jonghyun_She_is_teaser_image_2.png",
+   "from": "She is",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.jonghyun-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Kim_Jong-hyun_performs_at_MBC_%22Turn_Up_the_Radio%22_in_September_2014_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Kim_Jong-hyun_performs_at_MBC_%22Turn_Up_the_Radio%22_in_September_2014_01.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Pabian, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/4/44/Jonghyun_Poet_Artist_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20180123060639",
+   "page": "https://kpop.fandom.com/wiki/File:Jonghyun_Poet_Artist_promo_photo.png",
+   "from": "Poet | Artist",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.key-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Key_in_November_2025.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Key_in_November_2025.png",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: TV10, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/4/4d/SHINee_Key_Odd_concept_photo_1.png/revision/latest?cb=20200715005650",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Key_Odd_concept_photo_1.png",
+   "from": "Odd",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.key-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/%ED%82%A4%28Key%29_%EB%91%90%EC%8B%9C%ED%83%88%EC%B6%9C_%EC%BB%AC%ED%88%AC%EC%87%BC_02.png/960px-%ED%82%A4%28Key%29_%EB%91%90%EC%8B%9C%ED%83%88%EC%B6%9C_%EC%BB%AC%ED%88%AC%EC%87%BC_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:%ED%82%A4(Key)_%EB%91%90%EC%8B%9C%ED%83%88%EC%B6%9C_%EC%BB%AC%ED%88%AC%EC%87%BC_02.png",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: SBS Radio 에라오, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/c/c9/Key_Cold_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20240111080955",
+   "page": "https://kpop.fandom.com/wiki/File:Key_Cold_concept_photo_1.png",
+   "from": "Cold",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.key-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Key_at_the_2013_Melon_Music_Awards_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Key_at_the_2013_Melon_Music_Awards_07.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Sweet Candy, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/c/c6/SHINee_Key_2022_Winter_SMTOWN_SMCU_Palace_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20221215152847",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Key_2022_Winter_SMTOWN_SMCU_Palace_concept_photo_1.png",
+   "from": "2022 Winter SMTOWN : SMCU Palace",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.key-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Key_at_the_SMTown_Coex_Artium_on_January_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Key_at_the_SMTown_Coex_Artium_on_January_2015.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Sweetcandy, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/9/9a/SHINee_Key_Atmos_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20260524150731",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Key_Atmos_concept_photo_1.png",
+   "from": "Atmos",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.minho-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Minho_for_Marie_Claire_Magazine_August_Issue_2021_05.png/960px-Minho_for_Marie_Claire_Magazine_August_Issue_2021_05.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Minho_for_Marie_Claire_Magazine_August_Issue_2021_05.png",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/f/fb/SHINee_Minho_Sherlock_concept_photo_%281%29.png/revision/latest?cb=20200710234713",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Minho_Sherlock_concept_photo_(1).png",
+   "from": "Sherlock",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.minho-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Minho_at_the_2013_Melon_Music_Awards_01_%28cropped%29.jpg/960px-Minho_at_the_2013_Melon_Music_Awards_01_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Minho_at_the_2013_Melon_Music_Awards_01_(cropped).jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Sweet Candy, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/1/13/SHINee_Minho_The_Story_of_Light_EP.3_concept_photo_1.png/revision/latest?cb=20180622230840",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Minho_The_Story_of_Light_EP.3_concept_photo_1.png",
+   "from": "The Story of Light EP.3",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.minho-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Choi_Min-ho_at_%22Coach%22_event_in_Busan%2C_in_November_2015_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Min-ho_at_%22Coach%22_event_in_Busan,_in_November_2015_02.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: Anju, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/e/e3/SHINee_Minho_2022_Winter_SMTOWN_SMCU_Palace_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20221216152310",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Minho_2022_Winter_SMTOWN_SMCU_Palace_concept_photo_1.png",
+   "from": "2022 Winter SMTOWN : SMCU Palace",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.minho-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Choi_Min-ho_at_Derailed_press_conference_in_November_2016_04.jpg/960px-Choi_Min-ho_at_Derailed_press_conference_in_November_2016_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Min-ho_at_Derailed_press_conference_in_November_2016_04.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: nothing without you., CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/6d/Minho_Make_It_Hot_concept_photo_3.png/revision/latest/scale-to-width-down/900?cb=20260823160739",
+   "page": "https://kpop.fandom.com/wiki/File:Minho_Make_It_Hot_concept_photo_3.png",
+   "from": "Make It Hot",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.taemin-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/240919_SHINEE_Taemin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:240919_SHINEE_Taemin.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/4/4e/SHINee_Taemin_Sherlock_concept_photo_%281%29.png/revision/latest?cb=20200710210324",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Taemin_Sherlock_concept_photo_(1).png",
+   "from": "Sherlock",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.taemin-rare": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Taemin_at_the_Suwon_Strides_on_June_2010_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Taemin_at_the_Suwon_Strides_on_June_2010_03.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: 85246.tistory, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/5/50/SHINee_Taemin_The_Story_of_Light_EP.3_concept_photo_1.png/revision/latest?cb=20180622230927",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Taemin_The_Story_of_Light_EP.3_concept_photo_1.png",
+   "from": "The Story of Light EP.3",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.taemin-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Taemin_at_the_SMTown_Week_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Taemin_at_the_SMTown_Week_07.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: 위드태민::WithTaemin随行, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/b/b8/SHINee_Taemin_Atlantis_teaser_photo_1.png/revision/latest/scale-to-width-down/900?cb=20210408081736",
+   "page": "https://kpop.fandom.com/wiki/File:SHINee_Taemin_Atlantis_teaser_photo_1.png",
+   "from": "Atlantis",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "shinee.taemin-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Taemin_Lee_at_the_29th_Golden_Disk_Awards_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Taemin_Lee_at_the_29th_Golden_Disk_Awards_07.jpg",
-   "from": "SHINee · 샤이니",
-   "credit": "Photo: 위드태민::WithTaemin随行, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/0/0b/Taemin_Phase_1_-_Soft_Violence_concept_photo_10.png/revision/latest/scale-to-width-down/900?cb=20260813160501",
+   "page": "https://kpop.fandom.com/wiki/File:Taemin_Phase_1_-_Soft_Violence_concept_photo_10.png",
+   "from": "Phase 1 : Soft Violence",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   }
  }
 }

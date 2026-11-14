@@ -175,9 +175,13 @@ test("photocards: LOONA's 48 scans plus every other group's photos, rarity odds 
         assert.strictEqual(pc.scanKey(c.id), `photocards/${c.id}.webp`);
     }
     assert.strictEqual(new Set(loonaCards.map((c) => c.scan.drive)).size, 48, "48 different scans");
-    for (const c of pc.ALL.filter((x) => x.group.key !== "loona")) { // other groups: a photo with its photographer and licence
-        assert.match(c.scan?.url ?? "", /^https:\/\/(upload|thumb)\.wikimedia\.org\//, c.id);
-        assert.match(pc.credit(c), /^Photo: .+, .+, via Wikimedia Commons$/, c.id);
+    for (const c of pc.ALL.filter((x) => x.group.key !== "loona")) { // other groups: a credited Commons or K-pop Wiki photo
+        assert.ok(c.scan?.from, c.id);
+        if (/^https:\/\/static\.wikia\.nocookie\.net\/kpop\//.test(c.scan.url)) assert.strictEqual(pc.credit(c), "Official photo via K-pop Wiki (kpop.fandom.com)", c.id);
+        else {
+            assert.match(c.scan?.url ?? "", /^https:\/\/(upload|thumb)\.wikimedia\.org\//, c.id);
+            assert.match(pc.credit(c), /^Photo: .+, .+, via Wikimedia Commons$/, c.id);
+        }
         assert.match(c.id, /^[a-z]+\.[a-z0-9]+-(common|rare|super|moon)$/, c.id); // no "-" in keys, so selling can read the rarity
     }
     assert.strictEqual(pc.roll(() => 0).rarity.key, "common");

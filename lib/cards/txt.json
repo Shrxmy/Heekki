@@ -4,7 +4,7 @@
  "short": "TXT",
  "korean": "투모로우바이투게더",
  "color": "#5DADE2",
- "source": "Members: Wikidata (CC0). Photos: Wikimedia Commons, credited on every card; swap in concept photos per card by changing its url and re-running scripts/upload-photocard-scans.js.",
+ "source": "Members: Wikidata (CC0). Photos: official concept photos via the K-pop Wiki (kpop.fandom.com), chosen by scripts/fandom-concept-photos.js; re-run that script to swap them, then upload with scripts/upload-photocard-scans.js --bundle (Fandom only serves images to browsers).",
  "members": [
   {
    "key": "txt.soobin",
@@ -69,124 +69,124 @@
  ],
  "cards": {
   "txt.soobin-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Choi_Soo-bin_at_a_Dior_event_in_2025_02.jpg/960px-Choi_Soo-bin_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Soo-bin_at_a_Dior_event_in_2025_02.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/b/b5/TXT_Soobin_reveal_photo_2.png/revision/latest?cb=20190113161536",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Soobin_reveal_photo_2.png",
+   "from": "Reveal photo",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.soobin-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Choi_Soo-bin_%28%EC%B5%9C%EC%88%98%EB%B9%88%29_220121.jpg/960px-Choi_Soo-bin_%28%EC%B5%9C%EC%88%98%EB%B9%88%29_220121.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Soo-bin_(%EC%B5%9C%EC%88%98%EB%B9%88)_220121.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/a/ac/TXT_Soobin_The_Chaos_Chapter_-_Fight_or_Escape_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20230911075253",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Soobin_The_Chaos_Chapter_-_Fight_or_Escape_concept_photo_1.png",
+   "from": "The Chaos Chapter: Fight or Escape",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.soobin-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TXT-SOOBIN.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:TXT-SOOBIN.png",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/8/8e/TXT_Soobin_Minisode_3_Tomorrow_concept_photo_7.webp/revision/latest/scale-to-width-down/900?cb=20240317154921",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Soobin_Minisode_3_Tomorrow_concept_photo_7.webp",
+   "from": "Minisode 3: Tomorrow",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.soobin-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Choi_Soo-bin_at_POL%C3%88NE_photocall_in_2026_%283%29.jpg/960px-Choi_Soo-bin_at_POL%C3%88NE_photocall_in_2026_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Soo-bin_at_POL%C3%88NE_photocall_in_2026_(3).jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/9/91/TXT_Soobin_Perfect_Storm_concept_photo_1.webp/revision/latest/scale-to-width-down/900?cb=20261021211518",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Soobin_Perfect_Storm_concept_photo_1.webp",
+   "from": "Perfect Storm",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.yeonjun-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Yeonjun_250625.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Yeonjun_250625.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: 티비텐 TV10, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/b/bb/TXT_Yeonjun_reveal_photo_2.png/revision/latest?cb=20190110160211",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Yeonjun_reveal_photo_2.png",
+   "from": "Reveal photo",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.yeonjun-rare": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Choi_Yeon-jun_at_Soribada_Awards_on_August_23%2C_2019_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Yeon-jun_at_Soribada_Awards_on_August_23,_2019_02.png",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/5/51/TXT_Yeonjun_Frost_teaser_photo.png/revision/latest/scale-to-width-down/900?cb=20240613092740",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Yeonjun_Frost_teaser_photo.png",
+   "from": "Frost",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.yeonjun-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/241014_Yeonjun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:241014_Yeonjun.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/1/18/TXT_Yeonjun_Chikai_concept_photo_1.webp/revision/latest/scale-to-width-down/900?cb=20240514121151",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Yeonjun_Chikai_concept_photo_1.webp",
+   "from": "Chikai",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.yeonjun-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Choi_Yeon-jun_at_a_Dior_event_in_2025_01.jpg/960px-Choi_Yeon-jun_at_a_Dior_event_in_2025_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Yeon-jun_at_a_Dior_event_in_2025_01.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/4/42/TXT_Yeonjun_Perfect_Storm_concept_photo_1.webp/revision/latest/scale-to-width-down/900?cb=20261021211337",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Yeonjun_Perfect_Storm_concept_photo_1.webp",
+   "from": "Perfect Storm",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.beomgyu-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Choi_Beom-gyu_at_a_Dior_event_in_2025_02.jpg/960px-Choi_Beom-gyu_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Choi_Beom-gyu_at_a_Dior_event_in_2025_02.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/5/5f/TXT_Beomgyu_reveal_photo_1.png/revision/latest/scale-to-width-down/900?cb=20190120202632",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Beomgyu_reveal_photo_1.png",
+   "from": "Reveal photo",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.beomgyu-rare": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Beomgyu1_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Beomgyu1_(cropped).jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Kinocine, CC BY-SA 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/e/ec/TXT_Beomgyu_Frost_teaser_photo.png/revision/latest/scale-to-width-down/900?cb=20240613092015",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Beomgyu_Frost_teaser_photo.png",
+   "from": "Frost",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.beomgyu-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Marie_Claire_Korea_Draw_%26_Write_Journal_Beomgyu_%282%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Marie_Claire_Korea_Draw_%26_Write_Journal_Beomgyu_(2).png",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/e/e9/TXT_Beomgyu_Minisode_3_Tomorrow_concept_photo_8.webp/revision/latest/scale-to-width-down/900?cb=20240317155544",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Beomgyu_Minisode_3_Tomorrow_concept_photo_8.webp",
+   "from": "Minisode 3: Tomorrow",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.beomgyu-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Beomgyu_at_Soribada_Awards_on_August_23%2C_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Beomgyu_at_Soribada_Awards_on_August_23,_2019.png",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/a/a2/TXT_Beomgyu_Perfect_Storm_concept_photo_3.webp/revision/latest/scale-to-width-down/900?cb=20261021211722",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Beomgyu_Perfect_Storm_concept_photo_3.webp",
+   "from": "Perfect Storm",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.taehyun-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Kang_Tae-hyun_at_a_Dior_event_in_2025_02.jpg/960px-Kang_Tae-hyun_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Kang_Tae-hyun_at_a_Dior_event_in_2025_02.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/5/5f/TXT_Taehyun_reveal_photo_1.png/revision/latest?cb=20190117152250",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Taehyun_reveal_photo_1.png",
+   "from": "Reveal photo",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.taehyun-rare": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Kang_Tae-hyun_going_to_a_Music_Bank_recording_on_March_22%2C_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Kang_Tae-hyun_going_to_a_Music_Bank_recording_on_March_22,_2019.png",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/e/e4/TXT_Taehyun_The_Chaos_Chapter_-_Fight_or_Escape_concept_photo_2.png/revision/latest/scale-to-width-down/900?cb=20230917032117",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Taehyun_The_Chaos_Chapter_-_Fight_or_Escape_concept_photo_2.png",
+   "from": "The Chaos Chapter: Fight or Escape",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.taehyun-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Kang_Tae-hyun_at_Soribada_Awards_on_August_23%2C_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Kang_Tae-hyun_at_Soribada_Awards_on_August_23,_2019.png",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/1/16/TXT_Taehyun_Minisode_3_Tomorrow_concept_photo_5.webp/revision/latest/scale-to-width-down/900?cb=20240317154952",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Taehyun_Minisode_3_Tomorrow_concept_photo_5.webp",
+   "from": "Minisode 3: Tomorrow",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.taehyun-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Taehyun1.jpg/960px-Taehyun1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Taehyun1.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: Kinocine PARKJAEHWAN, CC BY-SA 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/9/9f/TXT_Taehyun_Perfect_Storm_concept_photo_2.webp/revision/latest/scale-to-width-down/900?cb=20261021211907",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Taehyun_Perfect_Storm_concept_photo_2.webp",
+   "from": "Perfect Storm",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.hueningkai-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/HueningKai_at_a_Dior_event_in_2025_02.jpg/960px-HueningKai_at_a_Dior_event_in_2025_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:HueningKai_at_a_Dior_event_in_2025_02.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/38/TXT_Huening_Kai_reveal_photo_1.png/revision/latest/scale-to-width-down/900?cb=20190115232439",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Huening_Kai_reveal_photo_1.png",
+   "from": "Reveal photo",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.hueningkai-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Huening_Kai_at_the_Seoul_Fashion_Week_2024.jpg/960px-Huening_Kai_at_the_Seoul_Fashion_Week_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Huening_Kai_at_the_Seoul_Fashion_Week_2024.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/7/71/TXT_Hueningkai_The_Chaos_Chapter_-_Fight_or_Escape_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20230916002042",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Hueningkai_The_Chaos_Chapter_-_Fight_or_Escape_concept_photo_1.png",
+   "from": "The Chaos Chapter: Fight or Escape",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.hueningkai-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/HueningKai_at_Ferragamo_photocall%2C_August_2026_%283%29.jpg/960px-HueningKai_at_Ferragamo_photocall%2C_August_2026_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:HueningKai_at_Ferragamo_photocall,_August_2026_(3).jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/f/ff/TXT_Hueningkai_The_Name_Chapter_Freefall_concept_photo_1.webp/revision/latest/scale-to-width-down/900?cb=20230927053945",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Hueningkai_The_Name_Chapter_Freefall_concept_photo_1.webp",
+   "from": "The Name Chapter: Freefall",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "txt.hueningkai-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/080726_Huening_Kai_at_a_Ferragamo_photocall_03.jpg/960px-080726_Huening_Kai_at_a_Ferragamo_photocall_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:080726_Huening_Kai_at_a_Ferragamo_photocall_03.jpg",
-   "from": "TXT · 투모로우바이투게더",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/d/d3/TXT_Hueningkai_Perfect_Storm_concept_photo_1.webp/revision/latest/scale-to-width-down/900?cb=20261021212044",
+   "page": "https://kpop.fandom.com/wiki/File:TXT_Hueningkai_Perfect_Storm_concept_photo_1.webp",
+   "from": "Perfect Storm",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   }
  }
 }

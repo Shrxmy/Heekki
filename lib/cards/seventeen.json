@@ -4,7 +4,7 @@
  "short": "SEVENTEEN",
  "korean": "세븐틴",
  "color": "#F7A1A8",
- "source": "Members: Wikidata (CC0). Photos: Wikimedia Commons, credited on every card; swap in concept photos per card by changing its url and re-running scripts/upload-photocard-scans.js.",
+ "source": "Members: Wikidata (CC0). Photos: official concept photos via the K-pop Wiki (kpop.fandom.com), chosen by scripts/fandom-concept-photos.js; re-run that script to swap them, then upload with scripts/upload-photocard-scans.js --bundle (Fandom only serves images to browsers).",
  "members": [
   {
    "key": "seventeen.scoups",
@@ -175,316 +175,316 @@
  ],
  "cards": {
   "seventeen.scoups-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Glasto24_28_300624_%2872_of_545%29_%2853838093145%29_%28cropped%29.jpg/960px-Glasto24_28_300624_%2872_of_545%29_%2853838093145%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Glasto24_28_300624_(72_of_545)_(53838093145)_(cropped).jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Raph_PH, CC BY 2.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/38/SEVENTEEN_S.Coups_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20170418154204",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_S.Coups_Boys_Be_promo_photo.png",
+   "from": "Boys Be",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.scoups-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/220315_S.COUPS.jpg/960px-220315_S.COUPS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:220315_S.COUPS.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SEVENTEEN, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/1/12/SEVENTEEN_S.Coups_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085415",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_S.Coups_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.scoups-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/S.Coups_Rimowa_240415.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:S.Coups_Rimowa_240415.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: TENASIA, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/8/8d/SEVENTEEN_S.Coups_FML_concept_photo_%281%29.png/revision/latest?cb=20230416041159",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_S.Coups_FML_concept_photo_(1).png",
+   "from": "FML",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.scoups-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/S.Coups_Follow_240330.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:S.Coups_Follow_240330.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/d/d2/S.Coups_x_Mingu_S.Coups_Hype_Vibes_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20250908171807",
+   "page": "https://kpop.fandom.com/wiki/File:S.Coups_x_Mingu_S.Coups_Hype_Vibes_concept_photo_1.png",
+   "from": "Hype Vibes",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jeonghan-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Jeonghan_Follow_240330.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Jeonghan_Follow_240330.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/b/b8/SEVENTEEN_Jeonghan_Love_%26_Letter_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20160425135445",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jeonghan_Love_%26_Letter_concept_photo.png",
+   "from": "First 'Love & Letter'",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jeonghan-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/171115_%EC%9C%A4%EC%A0%95%ED%95%9C%28Yoon_Jeong-han%29_%272018_Asia_Artist_Awards%28AAA%29%27_%EC%8B%9C%EC%83%81%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_01.png/960px-171115_%EC%9C%A4%EC%A0%95%ED%95%9C%28Yoon_Jeong-han%29_%272018_Asia_Artist_Awards%28AAA%29%27_%EC%8B%9C%EC%83%81%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_01.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:171115_%EC%9C%A4%EC%A0%95%ED%95%9C(Yoon_Jeong-han)_%272018_Asia_Artist_Awards(AAA)%27_%EC%8B%9C%EC%83%81%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_01.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: BuddyHani, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/39/SEVENTEEN_Jeonghan_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085343",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jeonghan_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jeonghan-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Yoon_Jeong-han_during_a_fan_signing_event_in_June_2017_05.png/960px-Yoon_Jeong-han_during_a_fan_signing_event_in_June_2017_05.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Yoon_Jeong-han_during_a_fan_signing_event_in_June_2017_05.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: AFFECTION, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/b/b1/SEVENTEEN_Jeonghan_FML_concept_photo_%281%29.png/revision/latest?cb=20230416042915",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jeonghan_FML_concept_photo_(1).png",
+   "from": "FML",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jeonghan-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Yoon_Jeong-han_at_25th_Dream_Concert_05.png/960px-Yoon_Jeong-han_at_25th_Dream_Concert_05.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Yoon_Jeong-han_at_25th_Dream_Concert_05.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: AFFECTION, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/7/7f/Jeonghan_X_Joshua_Jeonghan_Dreamscape_concept_photo_11.png/revision/latest/scale-to-width-down/900?cb=20260929000741",
+   "page": "https://kpop.fandom.com/wiki/File:Jeonghan_X_Joshua_Jeonghan_Dreamscape_concept_photo_11.png",
+   "from": "Dreamscape",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.joshua-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Joshua_Hong_during_the_Love_%26_Letter_Showcase.jpg/960px-Joshua_Hong_during_the_Love_%26_Letter_Showcase.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Joshua_Hong_during_the_Love_%26_Letter_Showcase.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: HONEYCHIPS, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/3c/SEVENTEEN_Joshua_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614003254",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Joshua_Boys_Be_promo_photo.png",
+   "from": "Boys Be",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.joshua-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/171110_900%EC%9D%BC_%EB%AF%B8%EB%8B%88%ED%8C%AC%EB%AF%B8%ED%8C%85_-_Joshua.png/960px-171110_900%EC%9D%BC_%EB%AF%B8%EB%8B%88%ED%8C%AC%EB%AF%B8%ED%8C%85_-_Joshua.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:171110_900%EC%9D%BC_%EB%AF%B8%EB%8B%88%ED%8C%AC%EB%AF%B8%ED%8C%85_-_Joshua.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: BuddyHani, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/5/55/SEVENTEEN_Joshua_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085357",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Joshua_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.joshua-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Joshua_210925.jpg/960px-Joshua_210925.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Joshua_210925.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SEVENTEEN, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/67/SEVENTEEN_Joshua_FML_concept_photo_%281%29.png/revision/latest?cb=20230416054133",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Joshua_FML_concept_photo_(1).png",
+   "from": "FML",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.joshua-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Joshua_240612.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Joshua_240612.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: TV Ten, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/d/d6/Jeonghan_X_Joshua_Joshua_Dreamscape_concept_photo_8.png/revision/latest/scale-to-width-down/900?cb=20260929000738",
+   "page": "https://kpop.fandom.com/wiki/File:Jeonghan_X_Joshua_Joshua_Dreamscape_concept_photo_8.png",
+   "from": "Dreamspace",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jun-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Jun_Follow_240330_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Jun_Follow_240330_2.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/6d/SEVENTEEN_Jun_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614003844",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jun_Boys_Be_promo_photo.png",
+   "from": "Boys Be",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jun-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Wen_Junhui_at_an_fansign_on_January_21%2C_2017.png/960px-Wen_Junhui_at_an_fansign_on_January_21%2C_2017.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Wen_Junhui_at_an_fansign_on_January_21,_2017.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: BuddyHani, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/62/SEVENTEEN_Jun_Hitorijanai_concept_photo.png/revision/latest?cb=20210327145223",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jun_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jun-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/KCon_2017_LA_Seventeen_%28Jun%29.jpg/960px-KCon_2017_LA_Seventeen_%28Jun%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:KCon_2017_LA_Seventeen_(Jun).jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Han Cinema, CC BY-SA 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/0/0a/SEVENTEEN_Jun_Dream_concept_photo_%281%29.png/revision/latest?cb=20221013094956",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jun_Dream_concept_photo_(1).png",
+   "from": "Dream",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.jun-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Seventeen_Jun_Acqua_Di_Parma_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Seventeen_Jun_Acqua_Di_Parma_2.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: K-POPIT 케이팝잇 TV10, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/c/cf/SEVENTEEN_Jun_Happy_Burstday_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20250501151347",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jun_Happy_Burstday_concept_photo_1.png",
+   "from": "Happy Burstday",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.hoshi-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/240415_Hoshi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:240415_Hoshi.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: K-POPIT 케이팝잇, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/d/d7/SEVENTEEN_Hoshi_Going_Seventeen_promo_photo_1.png/revision/latest/scale-to-width-down/900?cb=20170418152913",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Hoshi_Going_Seventeen_promo_photo_1.png",
+   "from": "Going Seventeen",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.hoshi-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Hoshi_at_a_fansign_in_October_2015_01.jpg/960px-Hoshi_at_a_fansign_in_October_2015_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Hoshi_at_a_fansign_in_October_2015_01.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: HONEYCHIPS, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/8/81/SEVENTEEN_Hoshi_Attacca_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20211004185830",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Hoshi_Attacca_concept_photo_1.png",
+   "from": "Attacca",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.hoshi-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Hoshi_at_Incheon_International_Airport_in_December_2019.png/960px-Hoshi_at_Incheon_International_Airport_in_December_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Hoshi_at_Incheon_International_Airport_in_December_2019.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/4/4c/SEVENTEEN_Hoshi_Always_Yours_concept_photo_%281%29.png/revision/latest/scale-to-width-down/900?cb=20230628083157",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Hoshi_Always_Yours_concept_photo_(1).png",
+   "from": "Always Yours",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.hoshi-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Hoshi_of_Seventeen%2C_July_19%2C_2024.png/960px-Hoshi_of_Seventeen%2C_July_19%2C_2024.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Hoshi_of_Seventeen,_July_19,_2024.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/b/b3/SEVENTEEN_Hoshi_Happy_Burstday_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20250501151226",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Hoshi_Happy_Burstday_concept_photo_1.png",
+   "from": "Happy Burstday",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.wonwoo-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Wonwoo_Follow_240330.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Wonwoo_Follow_240330.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/32/SEVENTEEN_Wonwoo_Love_%26_Letter_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20160425144141",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Wonwoo_Love_%26_Letter_concept_photo.png",
+   "from": "First 'Love & Letter'",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.wonwoo-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Jeon_Won-woo_for_10asia_Magazine_February_2016_04.png/960px-Jeon_Won-woo_for_10asia_Magazine_February_2016_04.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Jeon_Won-woo_for_10asia_Magazine_February_2016_04.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/5/56/SEVENTEEN_Wonwoo_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085505",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Wonwoo_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.wonwoo-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/KCon_2017_LA_Seventeen_%28Wonwoo%29.jpg/960px-KCon_2017_LA_Seventeen_%28Wonwoo%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:KCon_2017_LA_Seventeen_(Wonwoo).jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Han Cinema, CC BY-SA 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/8/8e/SEVENTEEN_Wonwoo_Dream_concept_photo_%281%29.png/revision/latest?cb=20221013113330",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Wonwoo_Dream_concept_photo_(1).png",
+   "from": "Dream",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.wonwoo-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/SEVENTEEN_Wonwoo_Acqua_Di_Parma.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:SEVENTEEN_Wonwoo_Acqua_Di_Parma.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: K-POPIT 케이팝잇 TV10, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/e/e3/SEVENTEEN_Wonwoo_Happy_Burstday_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20250501151300",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Wonwoo_Happy_Burstday_concept_photo_1.png",
+   "from": "Happy Burstday",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.woozi-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/WOOZI_220112.png/960px-WOOZI_220112.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:WOOZI_220112.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Marie Claire Korea, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/1/12/SEVENTEEN_Woozi_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614012311",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Woozi_Boys_Be_promo_photo.png",
+   "from": "Boys Be",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.woozi-rare": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Woozi_at_a_fansign_in_October_2015_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Woozi_at_a_fansign_in_October_2015_03.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: HONEYCHIPS, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/a/a7/SEVENTEEN_Woozi_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085520",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Woozi_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.woozi-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Ruby_Woozi.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Ruby_Woozi.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/a/a2/SEVENTEEN_Woozi_Dream_concept_photo_%281%29.png/revision/latest/scale-to-width-down/900?cb=20221013115330",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Woozi_Dream_concept_photo_(1).png",
+   "from": "Dream",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.woozi-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/KCon_2017_LA_Seventeen_%28Woozi%29.jpg/960px-KCon_2017_LA_Seventeen_%28Woozi%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:KCon_2017_LA_Seventeen_(Woozi).jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Han Cinema, CC BY-SA 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/5/59/SEVENTEEN_Woozi_Happy_Burstday_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20250501151159",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Woozi_Happy_Burstday_concept_photo_1.png",
+   "from": "Happy Burstday",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dk-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/DK_Follow_240330.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:DK_Follow_240330.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/64/SEVENTEEN_DK_Love_%26_Letter_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20160425145022",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_DK_Love_%26_Letter_concept_photo.png",
+   "from": "First 'Love & Letter'",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dk-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/DK_for_10asia_Magazine_February_2016_04.png/960px-DK_for_10asia_Magazine_February_2016_04.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:DK_for_10asia_Magazine_February_2016_04.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: 티비텐, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/f/fb/SEVENTEEN_DK_Your_Choice_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20210609160939",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_DK_Your_Choice_concept_photo_1.png",
+   "from": "Your Choice",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dk-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/DK_going_to_a_Music_Bank_recording_in_March_2018_02.png/960px-DK_going_to_a_Music_Bank_recording_in_March_2018_02.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:DK_going_to_a_Music_Bank_recording_in_March_2018_02.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: 뉴스인스타 (News In Star), CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/68/SEVENTEEN_DK_FML_concept_photo_%281%29.png/revision/latest?cb=20230417153938",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_DK_FML_concept_photo_(1).png",
+   "from": "FML",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dk-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/DK_210925.jpg/960px-DK_210925.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:DK_210925.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SEVENTEEN, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/a/a3/DK_X_Seungkwan_DK_Serenade_concept_photo_10.png/revision/latest/scale-to-width-down/900?cb=20251223141040",
+   "page": "https://kpop.fandom.com/wiki/File:DK_X_Seungkwan_DK_Serenade_concept_photo_10.png",
+   "from": "Serenade",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.mingyu-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Kim_Min-gyu_-_2016_Gaon_Chart_K-pop_Awards_red_carpet.jpg/960px-Kim_Min-gyu_-_2016_Gaon_Chart_K-pop_Awards_red_carpet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Kim_Min-gyu_-_2016_Gaon_Chart_K-pop_Awards_red_carpet.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SHAQ Photo, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/9/9f/SEVENTEEN_Mingyu_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614004852",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Mingyu_Boys_Be_promo_photo.png",
+   "from": "Boys Be",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.mingyu-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Kim_Min-gyu_going_to_a_Music_Bank_recording_in_January_2017.jpg/960px-Kim_Min-gyu_going_to_a_Music_Bank_recording_in_January_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Kim_Min-gyu_going_to_a_Music_Bank_recording_in_January_2017.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: 147 Company, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/4/47/SEVENTEEN_Mingyu_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085318",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Mingyu_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.mingyu-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/181128_%EA%B9%80%EB%AF%BC%EA%B7%9C%28Kim_Min-gyu%29_%272018_Asia_Artist_Awards%28AAA%29%27_%EC%8B%9C%EC%83%81%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_03.png/960px-181128_%EA%B9%80%EB%AF%BC%EA%B7%9C%28Kim_Min-gyu%29_%272018_Asia_Artist_Awards%28AAA%29%27_%EC%8B%9C%EC%83%81%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_03.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:181128_%EA%B9%80%EB%AF%BC%EA%B7%9C(Kim_Min-gyu)_%272018_Asia_Artist_Awards(AAA)%27_%EC%8B%9C%EC%83%81%EC%8B%9D_%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB_03.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: 뉴스인스타 (News In Star), CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/65/SEVENTEEN_Mingyu_FML_concept_photo_%282%29.png/revision/latest?cb=20230417145444",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Mingyu_FML_concept_photo_(2).png",
+   "from": "FML",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.mingyu-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Min_Gyu_210925.png/960px-Min_Gyu_210925.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Min_Gyu_210925.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SEVENTEEN, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/6c/S.Coups_x_Mingu_Mingyu_Hype_Vibes_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20250908171405",
+   "page": "https://kpop.fandom.com/wiki/File:S.Coups_x_Mingu_Mingyu_Hype_Vibes_concept_photo_1.png",
+   "from": "Hype Vibes",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.the8-common": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/The8_-_2016_Gaon_Chart_K-pop_Awards_red_carpet.jpg/960px-The8_-_2016_Gaon_Chart_K-pop_Awards_red_carpet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:The8_-_2016_Gaon_Chart_K-pop_Awards_red_carpet.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SHAQ Photo, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/e/e9/SEVENTEEN_The8_Love_%26_Letter_Repackage_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20160718024446",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_The8_Love_%26_Letter_Repackage_promo_photo.png",
+   "from": "Love & Letter Repackage Album",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.the8-rare": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/170604_The8.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:170604_The8.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: AFFECTION, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/6e/SEVENTEEN_The8_Power_of_Love_concept_photo_%281%29.png/revision/latest/scale-to-width-down/900?cb=20211116034147",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_The8_Power_of_Love_concept_photo_(1).png",
+   "from": "Power of Love",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.the8-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/The8_leaving_a_Music_Bank_recording_in_December_2016_%28cropped%29.jpg/960px-The8_leaving_a_Music_Bank_recording_in_December_2016_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:The8_leaving_a_Music_Bank_recording_in_December_2016_(cropped).jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SHAQ Photo, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/2/2b/SEVENTEEN_The8_Always_Yours_concept_photo_%281%29.png/revision/latest/scale-to-width-down/900?cb=20230628083810",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_The8_Always_Yours_concept_photo_(1).png",
+   "from": "Always Yours",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.the8-moon": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/THE_8_210925.png/960px-THE_8_210925.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:THE_8_210925.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SEVENTEEN, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/0/0b/V8_The8_V8_concept_photo_5.png/revision/latest/scale-to-width-down/900?cb=20260611223433",
+   "page": "https://kpop.fandom.com/wiki/File:V8_The8_V8_concept_photo_5.png",
+   "from": "V8",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.seungkwan-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Seungkwan_Caratland_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Seungkwan_Caratland_2025.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/7/73/SEVENTEEN_Seungkwan_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614010323",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Seungkwan_Boys_Be_promo_photo.png",
+   "from": "Boys Be",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.seungkwan-rare": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Boo_Seung-kwan_at_Sukira_in_February_2016_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Boo_Seung-kwan_at_Sukira_in_February_2016_02.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Yellow Hyacinth, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/0/09/SEVENTEEN_Seungkwan_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085436",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Seungkwan_Hitorijanai_concept_photo.png",
+   "from": "Not Alone",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.seungkwan-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Boo_Seung-kwan_at_a_fansign_in_Gwangju%2C_in_October_2015_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Boo_Seung-kwan_at_a_fansign_in_Gwangju,_in_October_2015_01.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Yellow Hyacinth, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/7/76/BSS_Seungkwan_Second_Wind_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20230123024219",
+   "page": "https://kpop.fandom.com/wiki/File:BSS_Seungkwan_Second_Wind_concept_photo_1.png",
+   "from": "Second Wind",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.seungkwan-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Boo_Seung-kwan_at_a_fansign_in_Jamsil%2C_in_October_2015_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Boo_Seung-kwan_at_a_fansign_in_Jamsil,_in_October_2015_02.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Yellow Hyacinth, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/6/69/DK_X_Seungkwan_Seungkwan_Serenade_concept_photo_2.png/revision/latest/scale-to-width-down/900?cb=20251222140741",
+   "page": "https://kpop.fandom.com/wiki/File:DK_X_Seungkwan_Seungkwan_Serenade_concept_photo_2.png",
+   "from": "Serenade",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.vernon-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Vernon_Follow_240330_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Vernon_Follow_240330_2.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/1/10/SEVENTEEN_Vernon_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614011638",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Vernon_Boys_Be_promo_photo.png",
+   "from": "Boys Be",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.vernon-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Vernon_Chwe_at_Incheon_International_Airport_in_December_2019.png/960px-Vernon_Chwe_at_Incheon_International_Airport_in_December_2019.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Vernon_Chwe_at_Incheon_International_Airport_in_December_2019.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Dispatch, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/9/92/SEVENTEEN_Vernon_Your_Choice_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20210609161452",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Vernon_Your_Choice_concept_photo_1.png",
+   "from": "Your Choice",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.vernon-super": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Vernon_211120.jpg/960px-Vernon_211120.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:Vernon_211120.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: SEVENTEEN, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/3b/SEVENTEEN_Vernon_FML_concept_photo_%281%29.png/revision/latest?cb=20230418041011",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Vernon_FML_concept_photo_(1).png",
+   "from": "FML",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.vernon-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Vernon_Black_Eye.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Vernon_Black_Eye.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/e/e4/V8_Vernon_V8_concept_photo_3.png/revision/latest/scale-to-width-down/900?cb=20260611223444",
+   "page": "https://kpop.fandom.com/wiki/File:V8_Vernon_V8_concept_photo_3.png",
+   "from": "V8",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dino-common": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Dino_Right_Here_241210.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Dino_Right_Here_241210.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/c/c0/SEVENTEEN_Dino_Love_%26_Letter_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20160425150903",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Dino_Love_%26_Letter_concept_photo.png",
+   "from": "First 'Love & Letter'",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dino-rare": {
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/170811_DINO2.jpg/960px-170811_DINO2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "page": "https://commons.wikimedia.org/wiki/File:170811_DINO2.jpg",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Look at D, CC BY 4.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/8/81/SEVENTEEN_Dino_Your_Choice_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20210609161604",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Dino_Your_Choice_concept_photo_1.png",
+   "from": "Your Choice",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dino-super": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Dino_Wait.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Dino_Wait.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/3/3e/SEVENTEEN_Dino_Always_Yours_concept_photo_%282%29.png/revision/latest/scale-to-width-down/900?cb=20230718113441",
+   "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Dino_Always_Yours_concept_photo_(2).png",
+   "from": "Always Yours",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   },
   "seventeen.dino-moon": {
-   "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Dino_Seventeen_240127.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-   "page": "https://commons.wikimedia.org/wiki/File:Dino_Seventeen_240127.png",
-   "from": "SEVENTEEN · 세븐틴",
-   "credit": "Photo: Seventeen, CC BY 3.0, via Wikimedia Commons"
+   "url": "https://static.wikia.nocookie.net/kpop/images/b/b9/Picheolin_Gilboard_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20260511235016",
+   "page": "https://kpop.fandom.com/wiki/File:Picheolin_Gilboard_concept_photo_1.png",
+   "from": "吉Board",
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
   }
  }
 }
