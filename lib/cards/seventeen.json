@@ -250,7 +250,8 @@
    "url": "https://static.wikia.nocookie.net/kpop/images/6/6d/SEVENTEEN_Jun_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614003844",
    "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Jun_Boys_Be_promo_photo.png",
    "from": "Boys Be",
-   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)",
+   "focusX": 0.62
   },
   "seventeen.jun-rare": {
    "url": "https://static.wikia.nocookie.net/kpop/images/6/62/SEVENTEEN_Jun_Hitorijanai_concept_photo.png/revision/latest?cb=20210327145223",
@@ -280,7 +281,8 @@
    "url": "https://static.wikia.nocookie.net/kpop/images/8/81/SEVENTEEN_Hoshi_Attacca_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20211004185830",
    "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Hoshi_Attacca_concept_photo_1.png",
    "from": "Attacca",
-   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)",
+   "focusX": 0.7
   },
   "seventeen.hoshi-super": {
    "url": "https://static.wikia.nocookie.net/kpop/images/4/4c/SEVENTEEN_Hoshi_Always_Yours_concept_photo_%281%29.png/revision/latest/scale-to-width-down/900?cb=20230628083157",
@@ -352,7 +354,8 @@
    "url": "https://static.wikia.nocookie.net/kpop/images/f/fb/SEVENTEEN_DK_Your_Choice_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20210609160939",
    "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_DK_Your_Choice_concept_photo_1.png",
    "from": "Your Choice",
-   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)",
+   "focusX": 0.6
   },
   "seventeen.dk-super": {
    "url": "https://static.wikia.nocookie.net/kpop/images/6/68/SEVENTEEN_DK_FML_concept_photo_%281%29.png/revision/latest?cb=20230417153938",
@@ -400,7 +403,8 @@
    "url": "https://static.wikia.nocookie.net/kpop/images/6/6e/SEVENTEEN_The8_Power_of_Love_concept_photo_%281%29.png/revision/latest/scale-to-width-down/900?cb=20211116034147",
    "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_The8_Power_of_Love_concept_photo_(1).png",
    "from": "Power of Love",
-   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)",
+   "focusX": 0.33
   },
   "seventeen.the8-super": {
    "url": "https://static.wikia.nocookie.net/kpop/images/2/2b/SEVENTEEN_The8_Always_Yours_concept_photo_%281%29.png/revision/latest/scale-to-width-down/900?cb=20230628083810",
@@ -418,7 +422,8 @@
    "url": "https://static.wikia.nocookie.net/kpop/images/7/73/SEVENTEEN_Seungkwan_Boys_Be_promo_photo.png/revision/latest/scale-to-width-down/900?cb=20200614010323",
    "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Seungkwan_Boys_Be_promo_photo.png",
    "from": "Boys Be",
-   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)",
+   "focusX": 0.66
   },
   "seventeen.seungkwan-rare": {
    "url": "https://static.wikia.nocookie.net/kpop/images/0/09/SEVENTEEN_Seungkwan_Hitorijanai_concept_photo.png/revision/latest/scale-to-width-down/900?cb=20210209085436",
@@ -430,7 +435,8 @@
    "url": "https://static.wikia.nocookie.net/kpop/images/7/76/BSS_Seungkwan_Second_Wind_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20230123024219",
    "page": "https://kpop.fandom.com/wiki/File:BSS_Seungkwan_Second_Wind_concept_photo_1.png",
    "from": "Second Wind",
-   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)",
+   "focusX": 0.85
   },
   "seventeen.seungkwan-moon": {
    "url": "https://static.wikia.nocookie.net/kpop/images/6/69/DK_X_Seungkwan_Seungkwan_Serenade_concept_photo_2.png/revision/latest/scale-to-width-down/900?cb=20251222140741",
@@ -472,7 +478,8 @@
    "url": "https://static.wikia.nocookie.net/kpop/images/8/81/SEVENTEEN_Dino_Your_Choice_concept_photo_1.png/revision/latest/scale-to-width-down/900?cb=20210609161604",
    "page": "https://kpop.fandom.com/wiki/File:SEVENTEEN_Dino_Your_Choice_concept_photo_1.png",
    "from": "Your Choice",
-   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)"
+   "credit": "Official photo via K-pop Wiki (kpop.fandom.com)",
+   "focusX": 0.4
   },
   "seventeen.dino-super": {
    "url": "https://static.wikia.nocookie.net/kpop/images/3/3e/SEVENTEEN_Dino_Always_Yours_concept_photo_%282%29.png/revision/latest/scale-to-width-down/900?cb=20230718113441",

@@ -102,11 +102,14 @@ function pickFour(photos, info) {
                 const photos = await promoPhotos(page);
                 const picks = pickFour(photos, await imageInfo(photos.map((p) => p.file)));
                 picks.forEach((p, i) => {
-                    group.cards[`${member.key}-${RARITIES[i]}`] = {
+                    const id = `${member.key}-${RARITIES[i]}`, old = group.cards[id];
+                    group.cards[id] = {
                         url: p.thumburl ?? p.url,
                         page: p.descriptionurl,
                         from: p.era,
                         credit: "Official photo via K-pop Wiki (kpop.fandom.com)",
+                        // focusX (set by hand): where the face is in a wide photo, kept while the photo stays the same
+                        ...(old?.page === p.descriptionurl && old.focusX !== undefined && { focusX: old.focusX }),
                     };
                 });
                 console.log(`ok   ${member.key}: ${picks.map((p) => `${p.era}${p.portrait ? "" : " [wide]"}`).join(" · ")}`);
