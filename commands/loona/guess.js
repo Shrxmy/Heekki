@@ -96,14 +96,49 @@ async function finish(message, scores, complete) {
     }
 }
 
+// --- guess photo: whose card is this? ---------------------------------------------------------------------
+const PHOTO_MS = 30_000, PHOTO_COINS = 40, PHOTO_COOLDOWN_S = 10 * 60; // coins at most every 10 minutes, so it can't be farmed
+const photoRounds = new Set(); // channel ids with a photo round running
+
+async function photoRound(message) {
+    const guildId = message.guild.id, channelId = message.channel.id;
+    if (photoRounds.has(channelId)) return message.reply("There's already a photo to guess here 🌙");
+    photoRounds.add(channelId);
+    try {
+        const c = pc.roll(Math.random, pc.validGroups(await db.getCardGroups(guildId))); // the server's card groups
+        const photo = await pc.renderPhoto(c);
+        if (!photo) return message.reply("I couldn't load a photo just now. Try again in a moment 🌙");
+        // Listen before posting, so a very fast answer still counts.
+        const answering = message.channel.awaitMessages({ filter: (m) => !m.author.bot && pc.findAnyMember(m.content) === c.member, max: 1, time: PHOTO_MS })
+            .then((got) => got.first()).catch(() => null);
+        await message.reply({ embeds: [new EmbedBuilder().setColor("#7632A0").setTitle("📸 Who's this?")
+            .setDescription(`Type their name in chat. ${PHOTO_MS / 1000} seconds!`).setImage("attachment://who.png")],
+        files: [new AttachmentBuilder(photo, { name: "who.png" })] });
+        const answer = await answering;
+        const reveal = `**${pc.fullName(c.member)}** · ${c.rarity.label} card, from *${escapeMarkdown(c.scan.from)}*`;
+        if (!answer) return message.channel.send(`⏰ Time's up! It was ${reveal}`);
+        const paid = await db.rewardAfterCooldown(guildId, answer.author.id, "photoguess", PHOTO_COOLDOWN_S, PHOTO_COINS)
+            .catch((err) => { console.error(`Photo quiz coins failed: ${err.message}`); return {}; });
+        answer.react("✅").catch(() => {});
+        const prize = paid.balance !== undefined ? ` +${PHOTO_COINS} moon coins`
+            : paid.waitMs ? ` (more coins in ${Math.ceil(paid.waitMs / 60_000)} min)` : "";
+        return message.channel.send({ content: `🎉 <@${answer.author.id}> got it!${prize}\nIt was ${reveal}`, allowedMentions: { users: [answer.author.id] } });
+    } finally {
+        photoRounds.delete(channelId);
+    }
+}
+
 module.exports = {
     name: "guess",
-    description: "LOONA song quiz in your voice channel: guess the song from a 20-second clip.",
+    description: 'LOONA song quiz in your voice channel, or "guess photo": whose photocard is this?',
     aliases: ["songquiz", "gts"],
-    options: [{ name: "action", description: "Leave empty to start, or stop the running game", type: ApplicationCommandOptionType.String, choices: [{ name: "stop", value: "stop" }] }],
+    options: [{ name: "action", description: "Leave empty for the song quiz, photo for the photo quiz, or stop the song quiz", type: ApplicationCommandOptionType.String,
+        choices: [{ name: "photo", value: "photo" }, { name: "stop", value: "stop" }] }],
     games,
+    PHOTO_COINS,
     run: async (client, message, args) => {
         const guildId = message.guild.id;
+        if (["photo", "pic", "picture"].includes(args[0]?.toLowerCase())) return photoRound(message);
         if (args[0]?.toLowerCase() === "stop") {
             if (!games.has(guildId)) return message.reply("There's no song quiz running, Orbit 🌙");
             games.get(guildId).stop();

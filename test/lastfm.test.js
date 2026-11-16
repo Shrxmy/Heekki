@@ -15,7 +15,7 @@ function fakeMsg(authorId = ME) {
     const members = new Map([[ME, person(ME, "Orbit")], [FRIEND, person(FRIEND, "Yves*Fan")]]);
     const cache = { has: (id) => members.has(id), get: (id) => members.get(id) };
     const guild = { id: "g1", name: "VaLul", iconURL: () => null, members: { cache, fetch: async (id) => (id ? members.get(id) ?? null : members) } };
-    return { replies, message: { guild, author: { id: authorId }, member: members.get(authorId), reply: async (p) => { replies.push(p); return {}; } } };
+    return { replies, message: { guild, author: { id: authorId }, member: members.get(authorId), reply: async (p) => { replies.push(p); return { createMessageComponentCollector: () => ({ on() {} }) }; } } };
 }
 const text = (p) => (typeof p === "string" ? p : p.content ?? "");
 const embedOf = (p) => p.embeds[0].toJSON();

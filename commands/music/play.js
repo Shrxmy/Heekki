@@ -1,11 +1,32 @@
 const { ApplicationCommandOptionType, escapeMarkdown } = require("discord.js");
 const { musicEmbed, trackEmbed, link, length, djFor, emoji } = require("../../lib/music/embed");
 
+/**
+ * Queues `tracks` (one or a list) and starts playing if idle. Gets (or re-creates) the player right before queueing:
+ * queueEnd destroys it, which can happen while we wait on a search or the user's pick. Shared by playlist and fm.
+ */
+async function queueTracks(client, guildId, voiceChannelId, textChannelId, tracks) {
+    const player = client.lavalink.getPlayer(guildId) ?? client.lavalink.createPlayer({ guildId, voiceChannelId, textChannelId, selfDeaf: true });
+    if (!player.connected) await player.connect();
+    await player.queue.add(tracks);
+    if (!player.playing && !player.paused && !player.queue.current) await player.play();
+}
+
+/** Why music can't start for this member right now, or null. Shared by play, playlist and fm. */
+function cantPlay(client, member, guildId) {
+    if (!member.voice?.channel) return "Hop into a voice channel first, Orbit 🎧";
+    if (!client.lavalink.useable) return "The music server is taking a nap 💤 Try again in a moment.";
+    if (require("../loona/guess").games.has(guildId)) return "A song quiz is running here. Wait for it to end, or use `guess stop` 🌙";
+    return null;
+}
+
 module.exports = {
     name: "play",
     description: 'Plays a requested song.',
     aliases: ['p'],
     options: [{ name: 'query', description: 'A song name, or a YouTube/Spotify link', type: ApplicationCommandOptionType.String, required: true }],
+    queueTracks,
+    cantPlay,
     run: async (client, message, args) => {
         const { channel } = message.member.voice;
 
@@ -14,23 +35,7 @@ module.exports = {
         if (!client.lavalink.useable) return message.reply("The music server is taking a nap 💤 Try again in a moment.");
         if (require("../loona/guess").games.has(message.guild.id)) return message.reply("A song quiz is running here. Wait for it to end, or use `guess stop` 🌙");
 
-        // Get (or re-create) the player right before queueing: queueEnd destroys it,
-        // which can happen while we wait on the search or the user's pick.
-        const livePlayer = async () => {
-            const player = client.lavalink.getPlayer(message.guild.id) ?? client.lavalink.createPlayer({
-                guildId: message.guild.id,
-                voiceChannelId: channel.id,
-                textChannelId: message.channel.id,
-                selfDeaf: true,
-            });
-            if (!player.connected) await player.connect();
-            return player;
-        };
-        const enqueue = async (tracks) => {
-            const player = await livePlayer();
-            await player.queue.add(tracks);
-            if (!player.playing && !player.paused && !player.queue.current) await player.play();
-        };
+        const enqueue = (tracks) => queueTracks(client, message.guild.id, channel.id, message.channel.id, tracks);
 
         const search = args.join(' ');
         let res;

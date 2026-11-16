@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, EmbedBuilder, escapeMarkdown } = require("discord.js");
+const { ApplicationCommandOptionType, AttachmentBuilder, EmbedBuilder, escapeMarkdown } = require("discord.js");
 const pc = require("../../lib/loona/photocards");
 const loona = require("../../lib/loona");
 const db = require("../../lib/db");
@@ -79,7 +79,13 @@ module.exports = {
         // Groups to show: the one asked for; else the server's groups plus any the person owns cards from.
         const ownedGroups = new Set([...owned.keys()].map((id) => pc.findCard(id)?.group.key).filter(Boolean));
         const keys = [...new Set([...pc.validGroups(await db.getCardGroups(message.guild.id)), ...ownedGroups])];
-        const embed = asked ? collectionEmbed(member, owned, asked.key) : keys.length === 1 ? collectionEmbed(member, owned, keys[0]) : summaryEmbed(member, owned, keys);
-        return message.reply({ embeds: [embed], allowedMentions: { parse: [], repliedUser: true } });
+        const groupKey = asked?.key ?? (keys.length === 1 ? keys[0] : null);
+        if (!groupKey) return message.reply({ embeds: [summaryEmbed(member, owned, keys)], allowedMentions: { parse: [], repliedUser: true } });
+        const embed = collectionEmbed(member, owned, groupKey);
+        // The binder picture is a nice extra: if drawing it fails, the list still shows.
+        const binder = await pc.renderBinder(groupKey, owned).catch((err) => { console.error(`Binder failed: ${err.message}`); return null; });
+        if (binder) embed.setImage("attachment://binder.png");
+        return message.reply({ embeds: [embed], files: binder ? [new AttachmentBuilder(binder, { name: "binder.png" })] : [],
+            allowedMentions: { parse: [], repliedUser: true } });
     },
 };
